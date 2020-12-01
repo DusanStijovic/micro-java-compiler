@@ -1,0 +1,16 @@
+INFO  18:35:28,668 - Compiling source file: C:\Users\sd170145d\OneDrive - student.etf.bg.ac.rs\Softversko Inzenjerstvo\Forth year\Seventh semester\PP1\projekat\workspace\MJCompiler\test\program.mj
+INFO  18:35:28,672 - #1 program
+INFO  18:35:28,672 - #4 MJProgram
+INFO  18:35:28,672 - #4 int
+INFO  18:35:28,673 - #4 x
+INFO  18:35:28,673 - #8 ,
+INFO  18:35:28,673 - #4 y
+INFO  18:35:28,673 - #9 ;
+INFO  18:35:28,673 - #12 {
+INFO  18:35:28,673 - #15 void
+INFO  18:35:28,673 - #4 main
+INFO  18:35:28,673 - #10 (
+INFO  18:35:28,673 - #11 )
+INFO  18:35:28,673 - #12 {
+INFO  18:35:28,673 - #13 }
+INFO  18:35:28,674 - #13 }
