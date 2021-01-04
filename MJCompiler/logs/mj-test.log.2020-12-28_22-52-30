@@ -1,0 +1,16 @@
+INFO  22:52:16,329 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  22:52:16,349 - #2 program
+INFO  22:52:16,350 - #50 Program
+INFO  22:52:16,350 - #21 const
+INFO  22:52:16,350 - #50 int
+INFO  22:52:16,351 - #50 aa
+INFO  22:52:16,351 - #8 =
+INFO  22:52:16,352 - #49 5
+INFO  22:52:16,352 - #11 ,
+INFO  22:52:16,352 - #50 bb
+INFO  22:52:16,353 - #8 =
+INFO  22:52:16,355 - #49 6
+INFO  22:52:16,355 - #5 ;
+ERROR 22:52:16,356 - 
+Sintaksna greska na liniji 3
+ERROR 22:52:16,357 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 3

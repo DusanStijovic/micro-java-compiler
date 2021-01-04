@@ -1,0 +1,8 @@
+INFO  18:04:20,885 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  18:04:20,954 - #2 program
+INFO  18:04:20,954 - #50 MJProgram
+INFO  18:04:20,954 - #50 int
+INFO  18:04:20,955 - #22 switch
+ERROR 18:04:20,955 - 
+Sintaksna greska na liniji 2
+ERROR 18:04:20,955 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 2

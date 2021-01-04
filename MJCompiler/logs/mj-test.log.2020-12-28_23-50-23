@@ -1,0 +1,264 @@
+INFO  23:50:18,215 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  23:50:18,239 - #2 program
+INFO  23:50:18,239 - #50 Program
+INFO  23:50:18,240 - #21 const
+INFO  23:50:18,240 - #50 int
+INFO  23:50:18,240 - #50 aa
+INFO  23:50:18,241 - #8 =
+INFO  23:50:18,242 - #49 5
+INFO  23:50:18,242 - #11 ,
+INFO  23:50:18,242 - #50 bb
+INFO  23:50:18,243 - #8 =
+INFO  23:50:18,245 - #49 6
+INFO  23:50:18,246 - #5 ;
+INFO  23:50:18,246 - #21 const
+INFO  23:50:18,248 - #50 char
+INFO  23:50:18,249 - #50 cc
+INFO  23:50:18,250 - #8 =
+INFO  23:50:18,251 - #48 c
+INFO  23:50:18,252 - #11 ,
+INFO  23:50:18,253 - #50 dd
+INFO  23:50:18,255 - #8 =
+INFO  23:50:18,304 - #48 d
+INFO  23:50:18,305 - #5 ;
+INFO  23:50:18,305 - #21 const
+INFO  23:50:18,306 - #50 boolean
+INFO  23:50:18,307 - #50 ee
+INFO  23:50:18,308 - #8 =
+INFO  23:50:18,308 - #47 true
+INFO  23:50:18,308 - #11 ,
+INFO  23:50:18,309 - #50 gg
+INFO  23:50:18,310 - #8 =
+INFO  23:50:18,311 - #47 false
+INFO  23:50:18,311 - #5 ;
+INFO  23:50:18,311 - #50 int
+INFO  23:50:18,312 - #50 a
+INFO  23:50:18,313 - #11 ,
+INFO  23:50:18,313 - #50 b
+INFO  23:50:18,313 - #11 ,
+INFO  23:50:18,315 - #50 c
+INFO  23:50:18,315 - #16 [
+INFO  23:50:18,316 - #17 ]
+INFO  23:50:18,316 - #11 ,
+INFO  23:50:18,316 - #50 k
+INFO  23:50:18,316 - #11 ,
+INFO  23:50:18,317 - #50 l
+INFO  23:50:18,318 - #16 [
+INFO  23:50:18,319 - #17 ]
+INFO  23:50:18,319 - #11 ,
+INFO  23:50:18,319 - #50 e
+INFO  23:50:18,320 - #16 [
+INFO  23:50:18,320 - #17 ]
+INFO  23:50:18,320 - #11 ,
+INFO  23:50:18,321 - #50 e
+INFO  23:50:18,321 - #11 ,
+INFO  23:50:18,321 - #50 r
+INFO  23:50:18,322 - #5 ;
+INFO  23:50:18,322 - #19 class
+INFO  23:50:18,323 - #50 klasa
+INFO  23:50:18,323 - #3 {
+INFO  23:50:18,324 - #50 int
+INFO  23:50:18,325 - #50 duca1
+INFO  23:50:18,325 - #11 ,
+INFO  23:50:18,326 - #50 duca2
+INFO  23:50:18,327 - #11 ,
+INFO  23:50:18,328 - #50 duca3
+INFO  23:50:18,328 - #5 ;
+INFO  23:50:18,329 - #4 }
+INFO  23:50:18,330 - #19 class
+INFO  23:50:18,330 - #50 klasa3
+INFO  23:50:18,330 - #3 {
+INFO  23:50:18,332 - #50 int
+INFO  23:50:18,333 - #50 bb
+INFO  23:50:18,333 - #5 ;
+INFO  23:50:18,333 - #4 }
+INFO  23:50:18,334 - #3 {
+INFO  23:50:18,334 - #4 }
+INFO  23:50:18,336 - Program(
+ Program
+  GroupVarDeclarations(
+    GroupVarDeclarations(
+      GroupVarDeclarations(
+        GroupVarDeclarations(
+          GroupVarDeclarations(
+            GroupVarDeclarations(
+              NoVarDecl(
+              ) [NoVarDecl]
+              ConstDeclarationGlobalVariables(
+                ConstDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  MultipleConst(
+                    OneConst(
+                      ConstVarAssignment(
+                       aa
+                        ConstVarType(
+                         5
+                        ) [ConstVarType]
+                      ) [ConstVarAssignment]
+                    ) [OneConst]
+                    ConstVarAssignment(
+                     bb
+                      ConstVarType(
+                       6
+                      ) [ConstVarType]
+                    ) [ConstVarAssignment]
+                  ) [MultipleConst]
+                ) [ConstDecl]
+              ) [ConstDeclarationGlobalVariables]
+            ) [GroupVarDeclarations]
+            ConstDeclarationGlobalVariables(
+              ConstDecl(
+                Type(
+                 char
+                ) [Type]
+                MultipleConst(
+                  OneConst(
+                    ConstVarAssignment(
+                     cc
+                      CharType(
+                      ) [CharType]
+                    ) [ConstVarAssignment]
+                  ) [OneConst]
+                  ConstVarAssignment(
+                   dd
+                    CharType(
+                    ) [CharType]
+                  ) [ConstVarAssignment]
+                ) [MultipleConst]
+              ) [ConstDecl]
+            ) [ConstDeclarationGlobalVariables]
+          ) [GroupVarDeclarations]
+          ConstDeclarationGlobalVariables(
+            ConstDecl(
+              Type(
+               boolean
+              ) [Type]
+              MultipleConst(
+                OneConst(
+                  ConstVarAssignment(
+                   ee
+                    BooleanType(
+                    ) [BooleanType]
+                  ) [ConstVarAssignment]
+                ) [OneConst]
+                ConstVarAssignment(
+                 gg
+                  BooleanType(
+                  ) [BooleanType]
+                ) [ConstVarAssignment]
+              ) [MultipleConst]
+            ) [ConstDecl]
+          ) [ConstDeclarationGlobalVariables]
+        ) [GroupVarDeclarations]
+        VariableDeclarationGlobalVariables(
+          VarDeclOne(
+            Type(
+             int
+            ) [Type]
+            MultipleVariables(
+              MultipleVariables(
+                MultipleVariables(
+                  MultipleVariables(
+                    MultipleVariables(
+                      MultipleVariables(
+                        MultipleVariables(
+                          OneVar(
+                            NoArrayVariable(
+                             a
+                            ) [NoArrayVariable]
+                          ) [OneVar]
+                          NoArrayVariable(
+                           b
+                          ) [NoArrayVariable]
+                        ) [MultipleVariables]
+                        ArrrayVariable(
+                         c
+                        ) [ArrrayVariable]
+                      ) [MultipleVariables]
+                      NoArrayVariable(
+                       k
+                      ) [NoArrayVariable]
+                    ) [MultipleVariables]
+                    ArrrayVariable(
+                     l
+                    ) [ArrrayVariable]
+                  ) [MultipleVariables]
+                  ArrrayVariable(
+                   e
+                  ) [ArrrayVariable]
+                ) [MultipleVariables]
+                NoArrayVariable(
+                 e
+                ) [NoArrayVariable]
+              ) [MultipleVariables]
+              NoArrayVariable(
+               r
+              ) [NoArrayVariable]
+            ) [MultipleVariables]
+          ) [VarDeclOne]
+        ) [VariableDeclarationGlobalVariables]
+      ) [GroupVarDeclarations]
+      CLassDeclaration(
+        ClassDefinition(
+         klasa
+          NoExtensionClass(
+          ) [NoExtensionClass]
+          VariableDeclarationClassMembers(
+            VarDeclListDerived1(
+            ) [VarDeclListDerived1]
+            VarDeclOne(
+              Type(
+               int
+              ) [Type]
+              MultipleVariables(
+                MultipleVariables(
+                  OneVar(
+                    NoArrayVariable(
+                     duca1
+                    ) [NoArrayVariable]
+                  ) [OneVar]
+                  NoArrayVariable(
+                   duca2
+                  ) [NoArrayVariable]
+                ) [MultipleVariables]
+                NoArrayVariable(
+                 duca3
+                ) [NoArrayVariable]
+              ) [MultipleVariables]
+            ) [VarDeclOne]
+          ) [VariableDeclarationClassMembers]
+          OptionalMethodsListDerived2(
+          ) [OptionalMethodsListDerived2]
+        ) [ClassDefinition]
+      ) [CLassDeclaration]
+    ) [GroupVarDeclarations]
+    CLassDeclaration(
+      ClassDefinition(
+       klasa3
+        NoExtensionClass(
+        ) [NoExtensionClass]
+        VariableDeclarationClassMembers(
+          VarDeclListDerived1(
+          ) [VarDeclListDerived1]
+          VarDeclOne(
+            Type(
+             int
+            ) [Type]
+            OneVar(
+              NoArrayVariable(
+               bb
+              ) [NoArrayVariable]
+            ) [OneVar]
+          ) [VarDeclOne]
+        ) [VariableDeclarationClassMembers]
+        OptionalMethodsListDerived2(
+        ) [OptionalMethodsListDerived2]
+      ) [ClassDefinition]
+    ) [CLassDeclaration]
+  ) [GroupVarDeclarations]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  23:50:18,337 - ===================================

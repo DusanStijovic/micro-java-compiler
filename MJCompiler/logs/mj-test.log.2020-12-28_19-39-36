@@ -1,0 +1,83 @@
+INFO  19:39:25,002 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  19:39:25,018 - #2 program
+INFO  19:39:25,019 - #50 Program
+INFO  19:39:25,019 - #50 int
+INFO  19:39:25,019 - #50 a
+INFO  19:39:25,020 - #11 ,
+INFO  19:39:25,020 - #50 b
+INFO  19:39:25,021 - #11 ,
+INFO  19:39:25,021 - #50 c
+INFO  19:39:25,021 - #16 [
+INFO  19:39:25,021 - #17 ]
+INFO  19:39:25,022 - #11 ,
+INFO  19:39:25,023 - #50 k
+INFO  19:39:25,024 - #11 ,
+INFO  19:39:25,025 - #50 l
+INFO  19:39:25,026 - #16 [
+INFO  19:39:25,026 - #17 ]
+INFO  19:39:25,028 - #11 ,
+INFO  19:39:25,028 - #50 e
+INFO  19:39:25,029 - #16 [
+INFO  19:39:25,029 - #17 ]
+INFO  19:39:25,030 - #11 ,
+INFO  19:39:25,051 - #50 e
+INFO  19:39:25,051 - #11 ,
+INFO  19:39:25,052 - #50 r
+INFO  19:39:25,053 - #5 ;
+INFO  19:39:25,053 - #3 {
+INFO  19:39:25,054 - #4 }
+INFO  19:39:25,055 - Program(
+ Program
+  VarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VarDeclOne(
+      Type(
+       int
+      ) [Type]
+      MultipleVariables(
+        MultipleVariables(
+          MultipleVariables(
+            MultipleVariables(
+              MultipleVariables(
+                MultipleVariables(
+                  MultipleVariables(
+                    OneVar(
+                      NoArrayVariable(
+                       a
+                      ) [NoArrayVariable]
+                    ) [OneVar]
+                    NoArrayVariable(
+                     b
+                    ) [NoArrayVariable]
+                  ) [MultipleVariables]
+                  ArrrayVariable(
+                   c
+                  ) [ArrrayVariable]
+                ) [MultipleVariables]
+                NoArrayVariable(
+                 k
+                ) [NoArrayVariable]
+              ) [MultipleVariables]
+              ArrrayVariable(
+               l
+              ) [ArrrayVariable]
+            ) [MultipleVariables]
+            ArrrayVariable(
+             e
+            ) [ArrrayVariable]
+          ) [MultipleVariables]
+          NoArrayVariable(
+           e
+          ) [NoArrayVariable]
+        ) [MultipleVariables]
+        NoArrayVariable(
+         r
+        ) [NoArrayVariable]
+      ) [MultipleVariables]
+    ) [VarDeclOne]
+  ) [VarDeclarations]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  19:39:25,055 - ===================================

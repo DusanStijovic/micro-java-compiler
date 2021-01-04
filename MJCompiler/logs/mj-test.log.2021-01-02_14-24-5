@@ -1,0 +1,235 @@
+INFO  13:09:26,784 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  13:09:26,808 - #2 program
+INFO  13:09:26,808 - #50 Program
+INFO  13:09:26,808 - #21 const
+INFO  13:09:26,809 - #50 int
+INFO  13:09:26,809 - #50 aa
+INFO  13:09:26,809 - #8 =
+INFO  13:09:26,809 - #49 5
+INFO  13:09:26,810 - #11 ,
+INFO  13:09:26,810 - #50 bb
+INFO  13:09:26,810 - #8 =
+INFO  13:09:26,810 - #49 6
+INFO  13:09:26,810 - #5 ;
+INFO  13:09:26,810 - #21 const
+INFO  13:09:26,811 - #50 char
+INFO  13:09:26,811 - #50 cc
+INFO  13:09:26,811 - #8 =
+INFO  13:09:26,811 - #48 c
+INFO  13:09:26,811 - #11 ,
+INFO  13:09:26,812 - #50 dd
+INFO  13:09:26,812 - #8 =
+INFO  13:09:26,856 - #48 d
+INFO  13:09:26,856 - #5 ;
+INFO  13:09:26,856 - #21 const
+INFO  13:09:26,856 - #50 boolean
+INFO  13:09:26,856 - #50 ee
+INFO  13:09:26,856 - #8 =
+INFO  13:09:26,856 - #47 true
+INFO  13:09:26,856 - #11 ,
+INFO  13:09:26,857 - #50 gg
+INFO  13:09:26,857 - #8 =
+INFO  13:09:26,857 - #47 false
+INFO  13:09:26,857 - #5 ;
+INFO  13:09:26,857 - #50 int
+INFO  13:09:26,857 - #50 a
+INFO  13:09:26,857 - #11 ,
+INFO  13:09:26,857 - #50 b
+INFO  13:09:26,857 - #11 ,
+INFO  13:09:26,857 - #50 c
+INFO  13:09:26,857 - #16 [
+INFO  13:09:26,857 - #17 ]
+INFO  13:09:26,858 - #11 ,
+INFO  13:09:26,858 - #50 k
+INFO  13:09:26,858 - #11 ,
+INFO  13:09:26,858 - #50 l
+INFO  13:09:26,858 - #16 [
+INFO  13:09:26,858 - #17 ]
+INFO  13:09:26,858 - #11 ,
+INFO  13:09:26,858 - #50 e
+INFO  13:09:26,858 - #16 [
+INFO  13:09:26,858 - #17 ]
+INFO  13:09:26,858 - #11 ,
+INFO  13:09:26,858 - #50 e
+INFO  13:09:26,858 - #11 ,
+INFO  13:09:26,858 - #50 r
+INFO  13:09:26,858 - #5 ;
+INFO  13:09:26,858 - #3 {
+INFO  13:09:26,858 - #13 void
+INFO  13:09:26,859 - #50 proba
+INFO  13:09:26,859 - #6 (
+INFO  13:09:26,859 - #7 )
+INFO  13:09:26,859 - #3 {
+INFO  13:09:26,860 - #50 ime
+INFO  13:09:26,860 - #44 .
+INFO  13:09:26,860 - #50 part1
+INFO  13:09:26,860 - #16 [
+INFO  13:09:26,860 - #49 2
+INFO  13:09:26,861 - #17 ]
+INFO  13:09:26,862 - #44 .
+INFO  13:09:26,862 - #50 part2
+INFO  13:09:26,863 - #44 .
+INFO  13:09:26,863 - #50 part3
+INFO  13:09:26,863 - #44 .
+INFO  13:09:26,863 - #50 part4
+INFO  13:09:26,863 - #16 [
+INFO  13:09:26,863 - #49 3
+INFO  13:09:26,863 - #17 ]
+INFO  13:09:26,863 - #44 .
+INFO  13:09:26,864 - #50 part5
+INFO  13:09:26,864 - #16 [
+INFO  13:09:26,864 - #49 4
+INFO  13:09:26,864 - #17 ]
+INFO  13:09:26,864 - #5 ;
+ERROR 13:09:26,864 - 
+Sintaksna greska na liniji 11
+INFO  13:09:26,864 - #4 }
+INFO  13:09:26,865 - #4 }
+ERROR 13:09:26,865 - Izvrsen oporavak do ; u liniji 11
+INFO  13:09:26,867 - Program(
+ Program
+  GroupVarDeclarations(
+    GroupVarDeclarations(
+      GroupVarDeclarations(
+        GroupVarDeclarations(
+          NoVarDecl(
+          ) [NoVarDecl]
+          ConstDeclarationGlobalVariables(
+            ConstDecl(
+              Type(
+               int
+              ) [Type]
+              MultipleConst(
+                OneConst(
+                  ConstVarAssignment(
+                   aa
+                    ConstVarType(
+                     5
+                    ) [ConstVarType]
+                  ) [ConstVarAssignment]
+                ) [OneConst]
+                ConstVarAssignment(
+                 bb
+                  ConstVarType(
+                   6
+                  ) [ConstVarType]
+                ) [ConstVarAssignment]
+              ) [MultipleConst]
+            ) [ConstDecl]
+          ) [ConstDeclarationGlobalVariables]
+        ) [GroupVarDeclarations]
+        ConstDeclarationGlobalVariables(
+          ConstDecl(
+            Type(
+             char
+            ) [Type]
+            MultipleConst(
+              OneConst(
+                ConstVarAssignment(
+                 cc
+                  CharType(
+                  ) [CharType]
+                ) [ConstVarAssignment]
+              ) [OneConst]
+              ConstVarAssignment(
+               dd
+                CharType(
+                ) [CharType]
+              ) [ConstVarAssignment]
+            ) [MultipleConst]
+          ) [ConstDecl]
+        ) [ConstDeclarationGlobalVariables]
+      ) [GroupVarDeclarations]
+      ConstDeclarationGlobalVariables(
+        ConstDecl(
+          Type(
+           boolean
+          ) [Type]
+          MultipleConst(
+            OneConst(
+              ConstVarAssignment(
+               ee
+                BooleanType(
+                ) [BooleanType]
+              ) [ConstVarAssignment]
+            ) [OneConst]
+            ConstVarAssignment(
+             gg
+              BooleanType(
+              ) [BooleanType]
+            ) [ConstVarAssignment]
+          ) [MultipleConst]
+        ) [ConstDecl]
+      ) [ConstDeclarationGlobalVariables]
+    ) [GroupVarDeclarations]
+    VariableDeclarationGlobalVariables(
+      VarDeclOne(
+        Type(
+         int
+        ) [Type]
+        MultipleVariables(
+          MultipleVariables(
+            MultipleVariables(
+              MultipleVariables(
+                MultipleVariables(
+                  MultipleVariables(
+                    MultipleVariables(
+                      OneVar(
+                        NoArrayVariable(
+                         a
+                        ) [NoArrayVariable]
+                      ) [OneVar]
+                      NoArrayVariable(
+                       b
+                      ) [NoArrayVariable]
+                    ) [MultipleVariables]
+                    ArrrayVariable(
+                     c
+                    ) [ArrrayVariable]
+                  ) [MultipleVariables]
+                  NoArrayVariable(
+                   k
+                  ) [NoArrayVariable]
+                ) [MultipleVariables]
+                ArrrayVariable(
+                 l
+                ) [ArrrayVariable]
+              ) [MultipleVariables]
+              ArrrayVariable(
+               e
+              ) [ArrrayVariable]
+            ) [MultipleVariables]
+            NoArrayVariable(
+             e
+            ) [NoArrayVariable]
+          ) [MultipleVariables]
+          NoArrayVariable(
+           r
+          ) [NoArrayVariable]
+        ) [MultipleVariables]
+      ) [VarDeclOne]
+    ) [VariableDeclarationGlobalVariables]
+  ) [GroupVarDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      NoReturnType(
+      ) [NoReturnType]
+     proba
+      NoFormParam(
+      ) [NoFormParam]
+      VarDeclListDerived1(
+      ) [VarDeclListDerived1]
+      Statements(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          ErrorStmt(
+          ) [ErrorStmt]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  13:09:26,867 - ===================================

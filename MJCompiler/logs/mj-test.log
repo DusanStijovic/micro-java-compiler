@@ -1,247 +1,225 @@
-INFO  18:09:50,647 - Compiling source file: C:\Users\sd170145d\OneDrive - student.etf.bg.ac.rs\Softversko Inzenjerstvo\Forth year\Seventh semester\PP1\projekat\workspace\MicroJava_Compiler\MJCompiler\test\program.mj
-INFO  18:09:50,658 - #1 program
-INFO  18:09:50,659 - #4 Program
-INFO  18:09:50,659 - #19 class
-INFO  18:09:50,659 - #4 A
-INFO  18:09:50,659 - #12 {
-INFO  18:09:50,659 - #4 int
-INFO  18:09:50,659 - #4 x
-INFO  18:09:50,659 - #47 [
-INFO  18:09:50,659 - #48 ]
-INFO  18:09:50,659 - #8 ,
-INFO  18:09:50,659 - #4 y
-INFO  18:09:50,659 - #47 [
-INFO  18:09:50,659 - #48 ]
-INFO  18:09:50,659 - #9 ;
-INFO  18:09:50,659 - #13 }
-INFO  18:09:50,659 - #22 const
-INFO  18:09:50,659 - #4 int
-INFO  18:09:50,659 - #4 pi
-INFO  18:09:50,660 - #7 =
-INFO  18:09:50,660 - #5 3
-INFO  18:09:50,660 - #8 ,
-INFO  18:09:50,660 - #4 e
-INFO  18:09:50,660 - #7 =
-INFO  18:09:50,660 - #5 2
-INFO  18:09:50,660 - #9 ;
-INFO  18:09:50,660 - #19 class
-INFO  18:09:50,660 - #4 B
-INFO  18:09:50,660 - #29 extends
-INFO  18:09:50,661 - #4 A
-INFO  18:09:50,661 - #12 {
-INFO  18:09:50,661 - #4 int
-INFO  18:09:50,661 - #4 i
-INFO  18:09:50,661 - #9 ;
-INFO  18:09:50,661 - #12 {
-INFO  18:09:50,661 - #4 int
-INFO  18:09:50,661 - #4 getValue
-INFO  18:09:50,661 - #10 (
-INFO  18:09:50,662 - #4 int
-INFO  18:09:50,662 - #4 a
-INFO  18:09:50,662 - #11 )
-INFO  18:09:50,662 - #4 int
-INFO  18:09:50,662 - #4 b
-INFO  18:09:50,662 - #9 ;
-INFO  18:09:50,662 - #4 bool
-INFO  18:09:50,662 - #4 c
-INFO  18:09:50,662 - #9 ;
-INFO  18:09:50,663 - #12 {
-INFO  18:09:50,663 - #3 return
-INFO  18:09:50,663 - #4 this
-INFO  18:09:50,663 - #46 .
-INFO  18:09:50,663 - #4 i
-INFO  18:09:50,663 - #6 +
-INFO  18:09:50,663 - #4 this
-INFO  18:09:50,664 - #46 .
-INFO  18:09:50,664 - #4 x
-INFO  18:09:50,665 - #47 [
-INFO  18:09:50,665 - #5 0
-INFO  18:09:50,666 - #48 ]
-INFO  18:09:50,666 - #6 +
-INFO  18:09:50,666 - #4 a
-INFO  18:09:50,666 - #9 ;
-INFO  18:09:50,667 - #13 }
-INFO  18:09:50,667 - #15 void
-INFO  18:09:50,667 - #4 m
-INFO  18:09:50,667 - #10 (
-INFO  18:09:50,667 - #11 )
-INFO  18:09:50,668 - #12 {
-INFO  18:09:50,668 - #13 }
-INFO  18:09:50,668 - #13 }
-INFO  18:09:50,668 - #13 }
-INFO  18:09:50,668 - #19 class
-INFO  18:09:50,668 - #4 C
-INFO  18:09:50,669 - #29 extends
-INFO  18:09:50,669 - #4 B
-INFO  18:09:50,669 - #12 {
-INFO  18:09:50,669 - #4 A
-INFO  18:09:50,669 - #4 theA
-INFO  18:09:50,669 - #9 ;
-INFO  18:09:50,669 - #4 int
-INFO  18:09:50,669 - #4 a
-INFO  18:09:50,669 - #9 ;
-INFO  18:09:50,669 - #13 }
-INFO  18:09:50,669 - #12 {
-INFO  18:09:50,669 - #15 void
-INFO  18:09:50,669 - #4 main
-INFO  18:09:50,670 - #10 (
-INFO  18:09:50,670 - #11 )
-INFO  18:09:50,670 - #4 A
-INFO  18:09:50,670 - #4 a
-INFO  18:09:50,670 - #9 ;
-INFO  18:09:50,670 - #4 C
-INFO  18:09:50,670 - #4 c
-INFO  18:09:50,670 - #9 ;
-INFO  18:09:50,670 - #4 int
-INFO  18:09:50,670 - #4 i
-INFO  18:09:50,670 - #9 ;
-INFO  18:09:50,670 - #4 int
-INFO  18:09:50,670 - #4 x
-INFO  18:09:50,670 - #47 [
-INFO  18:09:50,670 - #48 ]
-INFO  18:09:50,671 - #9 ;
-INFO  18:09:50,671 - #4 char
-INFO  18:09:50,671 - #4 ch
-INFO  18:09:50,671 - #9 ;
-INFO  18:09:50,671 - #12 {
-INFO  18:09:50,671 - #4 a
-INFO  18:09:50,671 - #7 =
-INFO  18:09:50,671 - #27 new
-INFO  18:09:50,671 - #4 A
-INFO  18:09:50,671 - #9 ;
-INFO  18:09:50,671 - #4 a
-INFO  18:09:50,671 - #46 .
-INFO  18:09:50,672 - #4 x
-INFO  18:09:50,672 - #7 =
-INFO  18:09:50,672 - #27 new
-INFO  18:09:50,672 - #4 int
-INFO  18:09:50,672 - #47 [
-INFO  18:09:50,672 - #5 5
-INFO  18:09:50,672 - #48 ]
-INFO  18:09:50,672 - #9 ;
-INFO  18:09:50,672 - #4 a
-INFO  18:09:50,672 - #46 .
-INFO  18:09:50,672 - #4 y
-INFO  18:09:50,672 - #7 =
-INFO  18:09:50,672 - #27 new
-INFO  18:09:50,672 - #4 int
-INFO  18:09:50,672 - #47 [
-INFO  18:09:50,673 - #5 5
-INFO  18:09:50,673 - #48 ]
-INFO  18:09:50,673 - #9 ;
-INFO  18:09:50,673 - #4 c
-INFO  18:09:50,673 - #7 =
-INFO  18:09:50,673 - #27 new
-INFO  18:09:50,677 - #4 C
-INFO  18:09:50,677 - #9 ;
-INFO  18:09:50,678 - #4 c
-INFO  18:09:50,678 - #46 .
-INFO  18:09:50,678 - #4 theA
-INFO  18:09:50,678 - #7 =
-INFO  18:09:50,678 - #4 a
-INFO  18:09:50,678 - #9 ;
-INFO  18:09:50,678 - #4 c
-INFO  18:09:50,678 - #46 .
-INFO  18:09:50,678 - #4 x
-INFO  18:09:50,678 - #7 =
-INFO  18:09:50,678 - #27 new
-INFO  18:09:50,678 - #4 int
-INFO  18:09:50,678 - #47 [
-INFO  18:09:50,678 - #5 5
-INFO  18:09:50,678 - #48 ]
-INFO  18:09:50,678 - #9 ;
-INFO  18:09:50,678 - #4 x
-INFO  18:09:50,678 - #7 =
-INFO  18:09:50,678 - #27 new
-INFO  18:09:50,678 - #4 int
-INFO  18:09:50,678 - #47 [
-INFO  18:09:50,678 - #5 3
-INFO  18:09:50,678 - #48 ]
-INFO  18:09:50,678 - #9 ;
-INFO  18:09:50,678 - #28 read
-INFO  18:09:50,678 - #10 (
-INFO  18:09:50,678 - #4 c
-INFO  18:09:50,679 - #46 .
-INFO  18:09:50,679 - #4 i
-INFO  18:09:50,679 - #11 )
-INFO  18:09:50,679 - #9 ;
-INFO  18:09:50,679 - #4 i
-INFO  18:09:50,679 - #7 =
-INFO  18:09:50,679 - #5 0
-INFO  18:09:50,679 - #9 ;
-INFO  18:09:50,679 - #25 do
-INFO  18:09:50,679 - #12 {
-INFO  18:09:50,679 - #28 read
-INFO  18:09:50,679 - #10 (
-INFO  18:09:50,679 - #4 c
-INFO  18:09:50,679 - #46 .
-INFO  18:09:50,680 - #4 x
-INFO  18:09:50,680 - #47 [
-INFO  18:09:50,680 - #4 i
-INFO  18:09:50,680 - #48 ]
-INFO  18:09:50,680 - #11 )
-INFO  18:09:50,680 - #9 ;
-INFO  18:09:50,680 - #28 read
-INFO  18:09:50,680 - #10 (
-INFO  18:09:50,680 - #4 c
-INFO  18:09:50,680 - #46 .
-INFO  18:09:50,680 - #4 theA
-INFO  18:09:50,680 - #46 .
-INFO  18:09:50,681 - #4 x
-INFO  18:09:50,681 - #47 [
-INFO  18:09:50,681 - #4 i
-INFO  18:09:50,681 - #48 ]
-INFO  18:09:50,681 - #11 )
-INFO  18:09:50,681 - #9 ;
-INFO  18:09:50,681 - #4 i
-INFO  18:09:50,681 - #44 ++
-INFO  18:09:50,681 - #9 ;
-INFO  18:09:50,681 - #13 }
-INFO  18:09:50,681 - #26 while
-INFO  18:09:50,681 - #10 (
-INFO  18:09:50,681 - #4 i
-INFO  18:09:50,681 - #40 <
-INFO  18:09:50,681 - #5 5
-INFO  18:09:50,681 - #11 )
-INFO  18:09:50,681 - #9 ;
-INFO  18:09:50,681 - #2 print
-INFO  18:09:50,681 - #10 (
-INFO  18:09:50,681 - #4 c
-INFO  18:09:50,681 - #46 .
-INFO  18:09:50,681 - #4 getValue
-INFO  18:09:50,681 - #10 (
-INFO  18:09:50,682 - #4 c
-INFO  18:09:50,682 - #46 .
-INFO  18:09:50,682 - #4 theA
-INFO  18:09:50,682 - #46 .
-INFO  18:09:50,682 - #4 x
-INFO  18:09:50,682 - #47 [
-INFO  18:09:50,682 - #5 0
-INFO  18:09:50,682 - #48 ]
-INFO  18:09:50,682 - #11 )
-INFO  18:09:50,682 - #11 )
-INFO  18:09:50,682 - #9 ;
-INFO  18:09:50,682 - #4 c
-INFO  18:09:50,682 - #46 .
-INFO  18:09:50,682 - #4 m
-INFO  18:09:50,682 - #10 (
-INFO  18:09:50,682 - #11 )
-INFO  18:09:50,682 - #9 ;
-INFO  18:09:50,682 - #28 read
-INFO  18:09:50,682 - #10 (
-INFO  18:09:50,682 - #4 ch
-INFO  18:09:50,682 - #11 )
-INFO  18:09:50,682 - #9 ;
-INFO  18:09:50,682 - #2 print
-INFO  18:09:50,682 - #10 (
-INFO  18:09:50,682 - #4 ch
-INFO  18:09:50,682 - #36 ==
-INFO  18:09:50,683 - #16 e
-INFO  18:09:50,683 - #49 ?
-INFO  18:09:50,683 - #4 e
-INFO  18:09:50,683 - #50 :
-INFO  18:09:50,683 - #4 pi
-INFO  18:09:50,683 - #11 )
-INFO  18:09:50,683 - #9 ;
-INFO  18:09:50,683 - #13 }
-INFO  18:09:50,683 - #13 }
+INFO  18:04:25,247 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  18:04:25,319 - #2 program
+INFO  18:04:25,319 - #50 MJProgram
+INFO  18:04:25,319 - #50 int
+INFO  18:04:25,320 - #22 switch
+ERROR 18:04:25,320 - 
+Sintaksna greska na liniji 2
+INFO  18:04:25,320 - #50 zzz
+INFO  18:04:25,320 - #8 =
+INFO  18:04:25,321 - #49 4
+INFO  18:04:25,321 - #11 ,
+INFO  18:04:25,321 - #50 a
+INFO  18:04:25,321 - #8 =
+INFO  18:04:25,321 - #49 45
+INFO  18:04:25,321 - #11 ,
+INFO  18:04:25,321 - #50 b
+INFO  18:04:25,321 - #5 ;
+INFO  18:04:25,321 - #3 {
+INFO  18:04:25,321 - #13 void
+INFO  18:04:25,321 - #50 main
+ERROR 18:04:25,321 - Izvrsen oporavak do greska 2 ; u liniji  8
+INFO  18:04:25,323 - #6 (
+INFO  18:04:25,324 - #7 )
+INFO  18:04:25,324 - #3 {
+INFO  18:04:25,324 - #14 if
+INFO  18:04:25,325 - #6 (
+INFO  18:04:25,325 - #50 a
+INFO  18:04:25,326 - #33 ==
+INFO  18:04:25,329 - #49 3
+INFO  18:04:25,330 - #40 &&
+INFO  18:04:25,331 - #50 b
+INFO  18:04:25,331 - #33 ==
+INFO  18:04:25,331 - #40 &&
+ERROR 18:04:25,331 - 
+Sintaksna greska na liniji 6
+INFO  18:04:25,331 - #50 c
+INFO  18:04:25,332 - #33 ==
+INFO  18:04:25,332 - #49 4
+INFO  18:04:25,332 - #40 &&
+INFO  18:04:25,332 - #50 d
+INFO  18:04:25,332 - #33 ==
+INFO  18:04:25,332 - #49 5
+INFO  18:04:25,332 - #7 )
+INFO  18:04:25,332 - #3 {
+INFO  18:04:25,332 - #50 zzz
+INFO  18:04:25,332 - #8 =
+ERROR 18:04:25,332 - Izvrsen oporavak u uslovu IF-a; u liniji 6
+INFO  18:04:25,333 - #49 0
+INFO  18:04:25,334 - #5 ;
+INFO  18:04:25,334 - #4 }
+INFO  18:04:25,335 - #15 else
+INFO  18:04:25,335 - #14 if
+INFO  18:04:25,335 - #6 (
+INFO  18:04:25,335 - #50 duca
+INFO  18:04:25,335 - #33 ==
+INFO  18:04:25,335 - #49 5
+INFO  18:04:25,335 - #41 ||
+INFO  18:04:25,336 - #50 duca
+INFO  18:04:25,336 - #33 ==
+INFO  18:04:25,336 - #7 )
+ERROR 18:04:25,336 - 
+Sintaksna greska na liniji 9
+INFO  18:04:25,336 - #3 {
+INFO  18:04:25,336 - #50 zzz
+INFO  18:04:25,336 - #8 =
+ERROR 18:04:25,336 - Izvrsen oporavak u uslovu IF-a; u liniji 9
+INFO  18:04:25,336 - #49 1
+INFO  18:04:25,336 - #5 ;
+INFO  18:04:25,336 - #4 }
+INFO  18:04:25,336 - #15 else
+INFO  18:04:25,336 - #3 {
+INFO  18:04:25,336 - #50 zzz
+INFO  18:04:25,336 - #8 =
+INFO  18:04:25,336 - #49 2
+INFO  18:04:25,336 - #5 ;
+INFO  18:04:25,336 - #4 }
+INFO  18:04:25,336 - #4 }
+INFO  18:04:25,337 - #4 }
+INFO  18:04:25,339 - Program(
+ MJProgram
+  GroupVarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VariableDeclarationGlobalVariables(
+      ErrorGlobalDecl(
+      ) [ErrorGlobalDecl]
+    ) [VariableDeclarationGlobalVariables]
+  ) [GroupVarDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      NoReturnType(
+      ) [NoReturnType]
+     main
+      NoFormParam(
+      ) [NoFormParam]
+      VarDeclListDerived1(
+      ) [VarDeclListDerived1]
+      Statements(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          MatchedStatement(
+            ConditionnError(
+            ) [ConditionnError]
+            MultipleStatement(
+              Statements(
+                NoStmt(
+                ) [NoStmt]
+                MatchedStmt(
+                  Assignment(
+                    DesignatorStatement(
+                      Designator(
+                       zzz
+                        NoPartList(
+                        ) [NoPartList]
+                      ) [Designator]
+                      AssignmentOp(
+                        AssignOp(
+                        ) [AssignOp]
+                        BasicExp(
+                          ExprState(
+                            DoNotHaveMinus(
+                            ) [DoNotHaveMinus]
+                            Term(
+                              NumConst(
+                               0
+                              ) [NumConst]
+                              DoNotHaveTermList(
+                              ) [DoNotHaveTermList]
+                            ) [Term]
+                            EndTermList(
+                            ) [EndTermList]
+                          ) [ExprState]
+                        ) [BasicExp]
+                      ) [AssignmentOp]
+                    ) [DesignatorStatement]
+                  ) [Assignment]
+                ) [MatchedStmt]
+              ) [Statements]
+            ) [MultipleStatement]
+            MatchedStatement(
+              ConditionnError(
+              ) [ConditionnError]
+              MultipleStatement(
+                Statements(
+                  NoStmt(
+                  ) [NoStmt]
+                  MatchedStmt(
+                    Assignment(
+                      DesignatorStatement(
+                        Designator(
+                         zzz
+                          NoPartList(
+                          ) [NoPartList]
+                        ) [Designator]
+                        AssignmentOp(
+                          AssignOp(
+                          ) [AssignOp]
+                          BasicExp(
+                            ExprState(
+                              DoNotHaveMinus(
+                              ) [DoNotHaveMinus]
+                              Term(
+                                NumConst(
+                                 1
+                                ) [NumConst]
+                                DoNotHaveTermList(
+                                ) [DoNotHaveTermList]
+                              ) [Term]
+                              EndTermList(
+                              ) [EndTermList]
+                            ) [ExprState]
+                          ) [BasicExp]
+                        ) [AssignmentOp]
+                      ) [DesignatorStatement]
+                    ) [Assignment]
+                  ) [MatchedStmt]
+                ) [Statements]
+              ) [MultipleStatement]
+              MultipleStatement(
+                Statements(
+                  NoStmt(
+                  ) [NoStmt]
+                  MatchedStmt(
+                    Assignment(
+                      DesignatorStatement(
+                        Designator(
+                         zzz
+                          NoPartList(
+                          ) [NoPartList]
+                        ) [Designator]
+                        AssignmentOp(
+                          AssignOp(
+                          ) [AssignOp]
+                          BasicExp(
+                            ExprState(
+                              DoNotHaveMinus(
+                              ) [DoNotHaveMinus]
+                              Term(
+                                NumConst(
+                                 2
+                                ) [NumConst]
+                                DoNotHaveTermList(
+                                ) [DoNotHaveTermList]
+                              ) [Term]
+                              EndTermList(
+                              ) [EndTermList]
+                            ) [ExprState]
+                          ) [BasicExp]
+                        ) [AssignmentOp]
+                      ) [DesignatorStatement]
+                    ) [Assignment]
+                  ) [MatchedStmt]
+                ) [Statements]
+              ) [MultipleStatement]
+            ) [MatchedStatement]
+          ) [MatchedStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  18:04:25,339 - ===================================

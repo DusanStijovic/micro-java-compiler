@@ -1,0 +1,230 @@
+INFO  17:53:39,344 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  17:53:39,398 - #2 program
+INFO  17:53:39,398 - #50 MJProgram
+INFO  17:53:39,398 - #50 int
+INFO  17:53:39,399 - #50 zzz
+INFO  17:53:39,401 - #8 =
+ERROR 17:53:39,401 - 
+Sintaksna greska na liniji 2
+INFO  17:53:39,401 - #49 4
+INFO  17:53:39,401 - #11 ,
+INFO  17:53:39,402 - #50 a
+INFO  17:53:39,403 - #5 ;
+INFO  17:53:39,403 - #3 {
+ERROR 17:53:39,403 - Izvrsen oporavak do  greska 1; u liniji 2
+INFO  17:53:39,406 - #13 void
+INFO  17:53:39,407 - #50 main
+INFO  17:53:39,408 - #6 (
+INFO  17:53:39,408 - #7 )
+INFO  17:53:39,409 - #3 {
+INFO  17:53:39,410 - #14 if
+INFO  17:53:39,430 - #6 (
+INFO  17:53:39,431 - #50 a
+INFO  17:53:39,432 - #33 ==
+INFO  17:53:39,435 - #49 3
+INFO  17:53:39,437 - #40 &&
+INFO  17:53:39,438 - #50 b
+INFO  17:53:39,438 - #33 ==
+INFO  17:53:39,439 - #40 &&
+ERROR 17:53:39,439 - 
+Sintaksna greska na liniji 6
+INFO  17:53:39,439 - #50 c
+INFO  17:53:39,439 - #33 ==
+INFO  17:53:39,439 - #49 4
+INFO  17:53:39,439 - #40 &&
+INFO  17:53:39,439 - #50 d
+INFO  17:53:39,439 - #33 ==
+INFO  17:53:39,439 - #49 5
+INFO  17:53:39,439 - #7 )
+INFO  17:53:39,439 - #3 {
+INFO  17:53:39,439 - #50 zzz
+INFO  17:53:39,439 - #8 =
+ERROR 17:53:39,439 - Izvrsen oporavak u uslovu IF-a; u liniji 6
+INFO  17:53:39,441 - #49 0
+INFO  17:53:39,442 - #5 ;
+INFO  17:53:39,444 - #4 }
+INFO  17:53:39,444 - #15 else
+INFO  17:53:39,445 - #14 if
+INFO  17:53:39,445 - #6 (
+INFO  17:53:39,445 - #50 duca
+INFO  17:53:39,445 - #33 ==
+INFO  17:53:39,445 - #49 5
+INFO  17:53:39,445 - #41 ||
+INFO  17:53:39,446 - #50 duca
+INFO  17:53:39,446 - #33 ==
+INFO  17:53:39,447 - #7 )
+ERROR 17:53:39,447 - 
+Sintaksna greska na liniji 9
+INFO  17:53:39,447 - #3 {
+INFO  17:53:39,447 - #50 zzz
+INFO  17:53:39,447 - #8 =
+ERROR 17:53:39,447 - Izvrsen oporavak u uslovu IF-a; u liniji 9
+INFO  17:53:39,447 - #49 1
+INFO  17:53:39,447 - #5 ;
+INFO  17:53:39,447 - #4 }
+INFO  17:53:39,448 - #15 else
+INFO  17:53:39,448 - #3 {
+INFO  17:53:39,448 - #50 zzz
+INFO  17:53:39,448 - #8 =
+INFO  17:53:39,448 - #49 2
+INFO  17:53:39,448 - #5 ;
+INFO  17:53:39,448 - #4 }
+INFO  17:53:39,448 - #4 }
+INFO  17:53:39,448 - #4 }
+INFO  17:53:39,453 - Program(
+ MJProgram
+  GroupVarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VariableDeclarationGlobalVariables(
+      VarDeclOne(
+        Type(
+         int
+        ) [Type]
+        MultipleVariables(
+          ErrorCommaVariable(
+          ) [ErrorCommaVariable]
+          NoArrayVariable(
+           a
+          ) [NoArrayVariable]
+        ) [MultipleVariables]
+      ) [VarDeclOne]
+    ) [VariableDeclarationGlobalVariables]
+  ) [GroupVarDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      NoReturnType(
+      ) [NoReturnType]
+     main
+      NoFormParam(
+      ) [NoFormParam]
+      VarDeclListDerived1(
+      ) [VarDeclListDerived1]
+      Statements(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          MatchedStatement(
+            ConditionnError(
+            ) [ConditionnError]
+            MultipleStatement(
+              Statements(
+                NoStmt(
+                ) [NoStmt]
+                MatchedStmt(
+                  Assignment(
+                    DesignatorStatement(
+                      Designator(
+                       zzz
+                        NoPartList(
+                        ) [NoPartList]
+                      ) [Designator]
+                      AssignmentOp(
+                        AssignOp(
+                        ) [AssignOp]
+                        BasicExp(
+                          ExprState(
+                            DoNotHaveMinus(
+                            ) [DoNotHaveMinus]
+                            Term(
+                              NumConst(
+                               0
+                              ) [NumConst]
+                              DoNotHaveTermList(
+                              ) [DoNotHaveTermList]
+                            ) [Term]
+                            EndTermList(
+                            ) [EndTermList]
+                          ) [ExprState]
+                        ) [BasicExp]
+                      ) [AssignmentOp]
+                    ) [DesignatorStatement]
+                  ) [Assignment]
+                ) [MatchedStmt]
+              ) [Statements]
+            ) [MultipleStatement]
+            MatchedStatement(
+              ConditionnError(
+              ) [ConditionnError]
+              MultipleStatement(
+                Statements(
+                  NoStmt(
+                  ) [NoStmt]
+                  MatchedStmt(
+                    Assignment(
+                      DesignatorStatement(
+                        Designator(
+                         zzz
+                          NoPartList(
+                          ) [NoPartList]
+                        ) [Designator]
+                        AssignmentOp(
+                          AssignOp(
+                          ) [AssignOp]
+                          BasicExp(
+                            ExprState(
+                              DoNotHaveMinus(
+                              ) [DoNotHaveMinus]
+                              Term(
+                                NumConst(
+                                 1
+                                ) [NumConst]
+                                DoNotHaveTermList(
+                                ) [DoNotHaveTermList]
+                              ) [Term]
+                              EndTermList(
+                              ) [EndTermList]
+                            ) [ExprState]
+                          ) [BasicExp]
+                        ) [AssignmentOp]
+                      ) [DesignatorStatement]
+                    ) [Assignment]
+                  ) [MatchedStmt]
+                ) [Statements]
+              ) [MultipleStatement]
+              MultipleStatement(
+                Statements(
+                  NoStmt(
+                  ) [NoStmt]
+                  MatchedStmt(
+                    Assignment(
+                      DesignatorStatement(
+                        Designator(
+                         zzz
+                          NoPartList(
+                          ) [NoPartList]
+                        ) [Designator]
+                        AssignmentOp(
+                          AssignOp(
+                          ) [AssignOp]
+                          BasicExp(
+                            ExprState(
+                              DoNotHaveMinus(
+                              ) [DoNotHaveMinus]
+                              Term(
+                                NumConst(
+                                 2
+                                ) [NumConst]
+                                DoNotHaveTermList(
+                                ) [DoNotHaveTermList]
+                              ) [Term]
+                              EndTermList(
+                              ) [EndTermList]
+                            ) [ExprState]
+                          ) [BasicExp]
+                        ) [AssignmentOp]
+                      ) [DesignatorStatement]
+                    ) [Assignment]
+                  ) [MatchedStmt]
+                ) [Statements]
+              ) [MultipleStatement]
+            ) [MatchedStatement]
+          ) [MatchedStatement]
+        ) [MatchedStmt]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  17:53:39,453 - ===================================

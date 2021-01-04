@@ -1,0 +1,99 @@
+INFO  19:39:36,622 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  19:39:36,637 - #2 program
+INFO  19:39:36,637 - #50 Program
+INFO  19:39:36,637 - #50 int
+INFO  19:39:36,638 - #50 a
+INFO  19:39:36,638 - #11 ,
+INFO  19:39:36,639 - #50 b
+INFO  19:39:36,640 - #11 ,
+INFO  19:39:36,640 - #50 c
+INFO  19:39:36,640 - #16 [
+INFO  19:39:36,640 - #17 ]
+INFO  19:39:36,641 - #11 ,
+INFO  19:39:36,643 - #50 k
+INFO  19:39:36,643 - #11 ,
+INFO  19:39:36,645 - #50 l
+INFO  19:39:36,647 - #16 [
+INFO  19:39:36,647 - #17 ]
+INFO  19:39:36,648 - #11 ,
+INFO  19:39:36,649 - #50 e
+INFO  19:39:36,650 - #16 [
+INFO  19:39:36,650 - #17 ]
+INFO  19:39:36,651 - #11 ,
+INFO  19:39:36,652 - #50 e
+INFO  19:39:36,652 - #11 ,
+INFO  19:39:36,653 - #50 r
+INFO  19:39:36,654 - #5 ;
+INFO  19:39:36,654 - #3 {
+INFO  19:39:36,655 - #4 }
+INFO  19:39:36,657 - Program(
+ Program
+  VarDeclarations(
+    NoVarDecl(
+    ) [NoVarDecl]
+    VarDeclOne(
+      Type(
+       int
+      ) [Type]
+      MultipleVariables(
+        MultipleVariables(
+          MultipleVariables(
+            MultipleVariables(
+              MultipleVariables(
+                MultipleVariables(
+                  MultipleVariables(
+                    OneVar(
+                      Variable(
+                       a
+                        SquarePartDerived1(
+                        ) [SquarePartDerived1]
+                      ) [Variable]
+                    ) [OneVar]
+                    Variable(
+                     b
+                      SquarePartDerived1(
+                      ) [SquarePartDerived1]
+                    ) [Variable]
+                  ) [MultipleVariables]
+                  Variable(
+                   c
+                    Square(
+                    ) [Square]
+                  ) [Variable]
+                ) [MultipleVariables]
+                Variable(
+                 k
+                  SquarePartDerived1(
+                  ) [SquarePartDerived1]
+                ) [Variable]
+              ) [MultipleVariables]
+              Variable(
+               l
+                Square(
+                ) [Square]
+              ) [Variable]
+            ) [MultipleVariables]
+            Variable(
+             e
+              Square(
+              ) [Square]
+            ) [Variable]
+          ) [MultipleVariables]
+          Variable(
+           e
+            SquarePartDerived1(
+            ) [SquarePartDerived1]
+          ) [Variable]
+        ) [MultipleVariables]
+        Variable(
+         r
+          SquarePartDerived1(
+          ) [SquarePartDerived1]
+        ) [Variable]
+      ) [MultipleVariables]
+    ) [VarDeclOne]
+  ) [VarDeclarations]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  19:39:36,657 - ===================================

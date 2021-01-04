@@ -1,0 +1,7 @@
+INFO  19:15:37,301 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  19:15:37,316 - #2 program
+INFO  19:15:37,317 - #50 Program
+INFO  19:15:37,317 - #19 class
+ERROR 19:15:37,317 - 
+Sintaksna greska na liniji 2
+ERROR 19:15:37,317 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 2

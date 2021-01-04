@@ -1,0 +1,186 @@
+INFO  22:52:45,025 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
+INFO  22:52:45,041 - #2 program
+INFO  22:52:45,041 - #50 Program
+INFO  22:52:45,041 - #21 const
+INFO  22:52:45,042 - #50 int
+INFO  22:52:45,042 - #50 aa
+INFO  22:52:45,043 - #8 =
+INFO  22:52:45,043 - #49 5
+INFO  22:52:45,043 - #11 ,
+INFO  22:52:45,043 - #50 bb
+INFO  22:52:45,043 - #8 =
+INFO  22:52:45,044 - #49 6
+INFO  22:52:45,044 - #5 ;
+INFO  22:52:45,044 - #21 const
+INFO  22:52:45,045 - #50 char
+INFO  22:52:45,045 - #50 cc
+INFO  22:52:45,045 - #8 =
+INFO  22:52:45,045 - #48 c
+INFO  22:52:45,046 - #11 ,
+INFO  22:52:45,046 - #50 dd
+INFO  22:52:45,047 - #8 =
+INFO  22:52:45,047 - #48 d
+INFO  22:52:45,047 - #5 ;
+INFO  22:52:45,047 - #21 const
+INFO  22:52:45,047 - #50 boolean
+INFO  22:52:45,047 - #50 ee
+INFO  22:52:45,047 - #8 =
+INFO  22:52:45,047 - #47 true
+INFO  22:52:45,047 - #11 ,
+INFO  22:52:45,048 - #50 gg
+INFO  22:52:45,048 - #8 =
+INFO  22:52:45,048 - #47 false
+INFO  22:52:45,048 - #5 ;
+INFO  22:52:45,048 - #50 int
+INFO  22:52:45,048 - #50 a
+INFO  22:52:45,049 - #11 ,
+INFO  22:52:45,049 - #50 b
+INFO  22:52:45,049 - #11 ,
+INFO  22:52:45,049 - #50 c
+INFO  22:52:45,049 - #16 [
+INFO  22:52:45,049 - #17 ]
+INFO  22:52:45,049 - #11 ,
+INFO  22:52:45,049 - #50 k
+INFO  22:52:45,049 - #11 ,
+INFO  22:52:45,050 - #50 l
+INFO  22:52:45,050 - #16 [
+INFO  22:52:45,050 - #17 ]
+INFO  22:52:45,050 - #11 ,
+INFO  22:52:45,050 - #50 e
+INFO  22:52:45,050 - #16 [
+INFO  22:52:45,050 - #17 ]
+INFO  22:52:45,050 - #11 ,
+INFO  22:52:45,050 - #50 e
+INFO  22:52:45,050 - #11 ,
+INFO  22:52:45,050 - #50 r
+INFO  22:52:45,051 - #5 ;
+INFO  22:52:45,051 - #3 {
+INFO  22:52:45,051 - #4 }
+INFO  22:52:45,052 - Program(
+ Program
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        VarDeclarations(
+          NoVarDecl(
+          ) [NoVarDecl]
+          ConstDeclaration(
+            ConstDecl(
+              Type(
+               int
+              ) [Type]
+              MultipleConst(
+                OneConst(
+                  ConstVarAssignment(
+                   aa
+                    ConstVarType(
+                     5
+                    ) [ConstVarType]
+                  ) [ConstVarAssignment]
+                ) [OneConst]
+                ConstVarAssignment(
+                 bb
+                  ConstVarType(
+                   6
+                  ) [ConstVarType]
+                ) [ConstVarAssignment]
+              ) [MultipleConst]
+            ) [ConstDecl]
+          ) [ConstDeclaration]
+        ) [VarDeclarations]
+        ConstDeclaration(
+          ConstDecl(
+            Type(
+             char
+            ) [Type]
+            MultipleConst(
+              OneConst(
+                ConstVarAssignment(
+                 cc
+                  CharType(
+                  ) [CharType]
+                ) [ConstVarAssignment]
+              ) [OneConst]
+              ConstVarAssignment(
+               dd
+                CharType(
+                ) [CharType]
+              ) [ConstVarAssignment]
+            ) [MultipleConst]
+          ) [ConstDecl]
+        ) [ConstDeclaration]
+      ) [VarDeclarations]
+      ConstDeclaration(
+        ConstDecl(
+          Type(
+           boolean
+          ) [Type]
+          MultipleConst(
+            OneConst(
+              ConstVarAssignment(
+               ee
+                BooleanType(
+                ) [BooleanType]
+              ) [ConstVarAssignment]
+            ) [OneConst]
+            ConstVarAssignment(
+             gg
+              BooleanType(
+              ) [BooleanType]
+            ) [ConstVarAssignment]
+          ) [MultipleConst]
+        ) [ConstDecl]
+      ) [ConstDeclaration]
+    ) [VarDeclarations]
+    VariableDeclaration(
+      VarDeclOne(
+        Type(
+         int
+        ) [Type]
+        MultipleVariables(
+          MultipleVariables(
+            MultipleVariables(
+              MultipleVariables(
+                MultipleVariables(
+                  MultipleVariables(
+                    MultipleVariables(
+                      OneVar(
+                        NoArrayVariable(
+                         a
+                        ) [NoArrayVariable]
+                      ) [OneVar]
+                      NoArrayVariable(
+                       b
+                      ) [NoArrayVariable]
+                    ) [MultipleVariables]
+                    ArrrayVariable(
+                     c
+                    ) [ArrrayVariable]
+                  ) [MultipleVariables]
+                  NoArrayVariable(
+                   k
+                  ) [NoArrayVariable]
+                ) [MultipleVariables]
+                ArrrayVariable(
+                 l
+                ) [ArrrayVariable]
+              ) [MultipleVariables]
+              ArrrayVariable(
+               e
+              ) [ArrrayVariable]
+            ) [MultipleVariables]
+            NoArrayVariable(
+             e
+            ) [NoArrayVariable]
+          ) [MultipleVariables]
+          NoArrayVariable(
+           r
+          ) [NoArrayVariable]
+        ) [MultipleVariables]
+      ) [VarDeclOne]
+    ) [VariableDeclaration]
+  ) [VarDeclarations]
+  NoMethodDecl(
+  ) [NoMethodDecl]
+) [Program]
+INFO  22:52:45,053 - ===================================
