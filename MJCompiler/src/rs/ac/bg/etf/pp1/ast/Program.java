@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,40 +9,40 @@ public class Program implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String I1;
-    private GroupDeclList GroupDeclList;
-    private MethodDeclList MethodDeclList;
+    private String programName;
+    private ConstVarClassDeclarationList ConstVarClassDeclarationList;
+    private MethodDeclarationList MethodDeclarationList;
 
-    public Program (String I1, GroupDeclList GroupDeclList, MethodDeclList MethodDeclList) {
-        this.I1=I1;
-        this.GroupDeclList=GroupDeclList;
-        if(GroupDeclList!=null) GroupDeclList.setParent(this);
-        this.MethodDeclList=MethodDeclList;
-        if(MethodDeclList!=null) MethodDeclList.setParent(this);
+    public Program (String programName, ConstVarClassDeclarationList ConstVarClassDeclarationList, MethodDeclarationList MethodDeclarationList) {
+        this.programName=programName;
+        this.ConstVarClassDeclarationList=ConstVarClassDeclarationList;
+        if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.setParent(this);
+        this.MethodDeclarationList=MethodDeclarationList;
+        if(MethodDeclarationList!=null) MethodDeclarationList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public String getProgramName() {
+        return programName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setProgramName(String programName) {
+        this.programName=programName;
     }
 
-    public GroupDeclList getGroupDeclList() {
-        return GroupDeclList;
+    public ConstVarClassDeclarationList getConstVarClassDeclarationList() {
+        return ConstVarClassDeclarationList;
     }
 
-    public void setGroupDeclList(GroupDeclList GroupDeclList) {
-        this.GroupDeclList=GroupDeclList;
+    public void setConstVarClassDeclarationList(ConstVarClassDeclarationList ConstVarClassDeclarationList) {
+        this.ConstVarClassDeclarationList=ConstVarClassDeclarationList;
     }
 
-    public MethodDeclList getMethodDeclList() {
-        return MethodDeclList;
+    public MethodDeclarationList getMethodDeclarationList() {
+        return MethodDeclarationList;
     }
 
-    public void setMethodDeclList(MethodDeclList MethodDeclList) {
-        this.MethodDeclList=MethodDeclList;
+    public void setMethodDeclarationList(MethodDeclarationList MethodDeclarationList) {
+        this.MethodDeclarationList=MethodDeclarationList;
     }
 
     public SyntaxNode getParent() {
@@ -66,19 +66,19 @@ public class Program implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(GroupDeclList!=null) GroupDeclList.accept(visitor);
-        if(MethodDeclList!=null) MethodDeclList.accept(visitor);
+        if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.accept(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(GroupDeclList!=null) GroupDeclList.traverseTopDown(visitor);
-        if(MethodDeclList!=null) MethodDeclList.traverseTopDown(visitor);
+        if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.traverseTopDown(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(GroupDeclList!=null) GroupDeclList.traverseBottomUp(visitor);
-        if(MethodDeclList!=null) MethodDeclList.traverseBottomUp(visitor);
+        if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.traverseBottomUp(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -87,17 +87,17 @@ public class Program implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Program(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+programName);
         buffer.append("\n");
 
-        if(GroupDeclList!=null)
-            buffer.append(GroupDeclList.toString("  "+tab));
+        if(ConstVarClassDeclarationList!=null)
+            buffer.append(ConstVarClassDeclarationList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MethodDeclList!=null)
-            buffer.append(MethodDeclList.toString("  "+tab));
+        if(MethodDeclarationList!=null)
+            buffer.append(MethodDeclarationList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

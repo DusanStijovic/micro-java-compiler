@@ -1,37 +1,78 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public abstract class MethodDeclList implements SyntaxNode {
+public class MethodDeclList extends MethodDeclarationList {
 
-    private SyntaxNode parent;
+    private MethodDeclarationList MethodDeclarationList;
+    private MethodDeclaration MethodDeclaration;
 
-    private int line;
-
-    public SyntaxNode getParent() {
-        return parent;
+    public MethodDeclList (MethodDeclarationList MethodDeclarationList, MethodDeclaration MethodDeclaration) {
+        this.MethodDeclarationList=MethodDeclarationList;
+        if(MethodDeclarationList!=null) MethodDeclarationList.setParent(this);
+        this.MethodDeclaration=MethodDeclaration;
+        if(MethodDeclaration!=null) MethodDeclaration.setParent(this);
     }
 
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
+    public MethodDeclarationList getMethodDeclarationList() {
+        return MethodDeclarationList;
     }
 
-    public int getLine() {
-        return line;
+    public void setMethodDeclarationList(MethodDeclarationList MethodDeclarationList) {
+        this.MethodDeclarationList=MethodDeclarationList;
     }
 
-    public void setLine(int line) {
-        this.line=line;
+    public MethodDeclaration getMethodDeclaration() {
+        return MethodDeclaration;
     }
 
-    public abstract void accept(Visitor visitor);
-    public abstract void childrenAccept(Visitor visitor);
-    public abstract void traverseTopDown(Visitor visitor);
-    public abstract void traverseBottomUp(Visitor visitor);
+    public void setMethodDeclaration(MethodDeclaration MethodDeclaration) {
+        this.MethodDeclaration=MethodDeclaration;
+    }
 
-    public String toString() { return toString(""); }
-    public abstract String toString(String tab);
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public void childrenAccept(Visitor visitor) {
+        if(MethodDeclarationList!=null) MethodDeclarationList.accept(visitor);
+        if(MethodDeclaration!=null) MethodDeclaration.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.traverseTopDown(visitor);
+        if(MethodDeclaration!=null) MethodDeclaration.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(MethodDeclarationList!=null) MethodDeclarationList.traverseBottomUp(visitor);
+        if(MethodDeclaration!=null) MethodDeclaration.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("MethodDeclList(\n");
+
+        if(MethodDeclarationList!=null)
+            buffer.append(MethodDeclarationList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(MethodDeclaration!=null)
+            buffer.append(MethodDeclaration.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [MethodDeclList]");
+        return buffer.toString();
+    }
 }

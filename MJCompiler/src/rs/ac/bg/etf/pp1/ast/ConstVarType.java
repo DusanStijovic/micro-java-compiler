@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConstVarType extends ConstType {
 
-    private Integer N1;
+    private Integer assignedValue;
 
-    public ConstVarType (Integer N1) {
-        this.N1=N1;
+    public ConstVarType (Integer assignedValue) {
+        this.assignedValue=assignedValue;
     }
 
-    public Integer getN1() {
-        return N1;
+    public Integer getAssignedValue() {
+        return assignedValue;
     }
 
-    public void setN1(Integer N1) {
-        this.N1=N1;
+    public void setAssignedValue(Integer assignedValue) {
+        this.assignedValue=assignedValue;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class ConstVarType extends ConstType {
         buffer.append(tab);
         buffer.append("ConstVarType(\n");
 
-        buffer.append(" "+tab+N1);
+        buffer.append(" "+tab+assignedValue);
         buffer.append("\n");
 
         buffer.append(tab);

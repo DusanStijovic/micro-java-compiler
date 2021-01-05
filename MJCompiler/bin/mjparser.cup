@@ -1,5 +1,3 @@
-
-
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.*;
@@ -12,11 +10,8 @@ parser code {:
    
    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
-     
-    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
-      done_parsing();
-      report_error(message, info);
-    }
+    
+   
   
     public void syntax_error(Symbol cur_token) {
         report_error("\nSintaksna greska", cur_token);
@@ -33,6 +28,14 @@ parser code {:
         log.error(msg.toString());
     }
 
+ 	public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+        done_parsing();
+      	report_error(message, info);
+    }
+
+
+
+
 
 :}
 
@@ -44,162 +47,489 @@ scan with {:
 	return s;
 :}
 
-/*TERMINALI*/
-terminal PROG, LBRACE, RBRACE, SEMI, LPAREN, RPAREN, EQUAL, RETURN, PLUS, COMMA, PRINT, VOID;
-terminal IF, ELSE, LSQUARE, RSQUARE, BREAK, CLASS, ENUM, CONST, SWITCH, DO, WHILE, NEW, READ;
-terminal EXTENDS, CONTINUE, CASE, MINUS, MUL, DIV, EQUAL_COMPARE, NOT_EQUAL_COMPARE, MOD;
-terminal GREATER, GREATER_EQUAL, LESS, LESS_EQUAL, AND, OR, INC, DEC, DOT, TERNAR, COLON;
 
-terminal  BOOLEAN;
-terminal  CHAR;
+/*Program terminal */
+terminal  PROG;
+
+/*Seperator needed terminals*/
+terminal SEMI, COMMA, COLON, DOT;
+
+/*Variable modificator needed terminals*/
+terminal  CONST;
+
+/*Bracket types needed terminals*/
+terminal LBRACE, RBRACE, LPAREN, RPAREN, LSQUARE, RSQUARE;
+
+/*Program control needed terminals*/
+terminal IF, ELSE, SWITCH, CASE;
+
+/*Loop needed terminals*/
+terminal  CONTINUE, DO, WHILE, BREAK;
+
+/*Class terminals*/
+terminal EXTENDS, CLASS, ENUM;
+
+/*Make new variable terminals */
+terminal NEW;
+
+/*Operators needed terminals*/
+terminal EQUAL_COMPARE, NOT_EQUAL_COMPARE, GREATER, GREATER_EQUAL, LESS, LESS_EQUAL;
+terminal AND, OR, INC, DEC, TERNAR, PLUS, MINUS, MUL, DIV, MOD, EQUAL;
+
+/*Predefined functions terminals*/
+terminal PRINT, READ;
+
+/*Function needed terminals*/
+terminal  VOID, RETURN;
+
+
+
+terminal BOOLEAN;
+terminal Character CHAR;
 terminal Integer NUMBER;
 terminal String IDENT;
 
 
-/*NETERMINALI*/
-nonterminal Program, VarDeclList, MethodDeclList, VarDecl, Type, MethodDecl;
-nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
-nonterminal Designator, Expr, Term, AddOp, Factor, ActualPars, ActualParamList;
-nonterminal Matched, Unmatched, VarList, Variable, VarType, ClassDecl, ConstDecl;
-nonterminal ConstList, ConstVariable, ConstType, GroupDeclList, ExtendClassOption;
-nonterminal OptionalMethodsList, ReturnType, OptionalSquare, MulOp, RelOp;
-nonterminal SpecifeIdentPartList, SpecifeIdentPart, AssignOp, DesignatorPart;
-nonterminal DesignatorStatement, TermList, OptionalSquareNewOp, OptioanalActualPars;
-nonterminal FactorList, Expr1, OptionalMinusVar, ConditionFact, OptionalSecondCondtionVar;
-nonterminal ConditionFactList, ConditionTerm, ConditionTermList, Condition, OptionalPrintParam;
-nonterminal CaseStatement, CaseStatementList;
+//Program
+nonterminal Program, ConstVarClassDeclarationList;
+
+//Group const, var and class
+nonterminal ConstVarClassDeclaration;
+
+//Const variable declaration
+nonterminal  ConstDeclaration, ConstList, ConstVariableAssginment, ConstType;
+
+//Class declaration
+nonterminal ExtendClassOption, ClassDeclaration, OptionalClassMethodsList, OptionalClassVarDeclaration;
+nonterminal ClassVariableDeclaration, ClassVarList, ClassVariable, ClassVariableDeclarationList;
+
+//Variable declaration
+nonterminal VariableDeclaration, VarList, Variable, VariableDeclarationList;
+
+
+//GlobalVariable
+nonterminal GlobalVariableDeclaration, GlobalVarList, GlobalVariable;
+
+
+//Method declaration
+nonterminal MethodDeclarationList, ReturnType, MethodDeclaration, OptionalMethodsLocalVariablesDeclaration;
+
+
+//Method formal parameter declaration
+nonterminal OptionalMethodFormalParams, FormalParamDeclaration, FormalParamDeclarationList, OptionalSquareMethodFormalParam;
+
+//Method actual parameter declaration
+nonterminal OptionalMethodActualParameters, ActualParamDeclarationList;
+
+
+//Designator
+nonterminal Designator, OptionalSpecifeIdentPartList, DesignatorPart, DesignatorStatement;
+nonterminal SpecifeIdentPart, SpecifeIdentPartList, AssignmentStatement;
+
+
+//Operators
+nonterminal AddOperator,  MultiplyOperator, RelationalOperator, AssignmentOperator;
+
+
+//Expression
+nonterminal Expr, Expr1 , OptionalMinusVar;
+
+//Term
+nonterminal TermList, Term;
+
+//Factor
+nonterminal FactorList, Factor, OptionalSquareNewOp;
+
+//Condition
+nonterminal Condition, ConditionFact, ConditionTerm;
+
+//Statement
+nonterminal Statement, StatementList, Matched, Unmatched;
+
+
+//Variables Type
+nonterminal  Type;
+
+//Case statment
+nonterminal CaseStatementList, CaseStatement;
+
+//print oprional variable
+nonterminal OptionalPrintParam;
+
+
+
 
 /*PROGRAM*/
-Program ::= (Program) PROG IDENT GroupDeclList LBRACE MethodDeclList RBRACE;
-
-
-GroupDeclList ::= (GroupVarDeclarations) GroupDeclList VarType
-			 | 
-             (NoVarDecl)/*epsilon*/
-             ; 
-
-VarType ::= (ConstDeclarationGlobalVariables) ConstDecl
-		| (VariableDeclarationGlobalVariables) VarDecl
-		| (CLassDeclaration) ClassDecl
+Program ::= (Program) PROG IDENT:programName ConstVarClassDeclarationList LBRACE MethodDeclarationList RBRACE
 		;
-		
-VarDeclList ::= (VariableDeclarationClassMembers) VarDeclList VarDecl
-			| /*epsilon*/
-			;
-		
-ClassDecl ::= (ClassDefinition) CLASS IDENT:className ExtendClassOption LBRACE VarDeclList OptionalMethodsList RBRACE
-			;
-			
 
-ExtendClassOption ::= (ExtensionClass) EXTENDS Type:classExtendType
-				| (NoExtensionClass) /*epsilon*/
+
+/*Const Var Class Declaration List */
+ConstVarClassDeclarationList ::= (ConstVarClassDeclList) ConstVarClassDeclarationList  ConstVarClassDeclaration
+							| 
+								(NoConstVarClassDeclList) /*epsilon*/
+							;
+
+ConstVarClassDeclaration ::= (GlobalConstDecl) ConstDeclaration
+						|
+							(GlobalVariableDecl) GlobalVariableDeclaration
+						|
+							(GlobalCLassDecl) ClassDeclaration
+						;
+
+
+/*Const declaration */
+
+ConstDeclaration ::=  (ConstVarDecl) CONST Type:constType ConstList SEMI
+				;
+
+ConstList ::= (ConstDeclList)  ConstList COMMA ConstVariableAssginment
+		|
+		 	  (OneConstDecl) ConstVariableAssginment
+		;
+
+ConstVariableAssginment ::= (ConstVarAssign) IDENT:VarName EQUAL ConstType
+				;
+
+ConstType ::= (ConstVarType) NUMBER:assignedValue
+		|
+			 (CharType) CHAR:assignedValue
+		|
+			 (BooleanType) BOOLEAN:assignedValue
+		;
+
+
+/*Class declaration */
+ClassDeclaration ::= (ClassTypeDecl) CLASS IDENT:className ExtendClassOption LBRACE OptionalClassVarDeclaration OptionalClassMethodsList RBRACE
+				;
+
+OptionalClassVarDeclaration ::= (ClassVariableDecl) ClassVariableDeclarationList
+							|
+								(NoClassVariableDecl) /*epsilon*/
+					;
+
+
+ExtendClassOption ::= (ExtensionClass) EXTENDS Type:classExtendedType
+				| 
+					(NoExtensionClass) /*epsilon*/
+				| 
+					(ErrorExtenstionClass) error:l
+					{: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null);  :}
 				;
 		
-OptionalMethodsList ::= (ClassMethods)LBRACE MethodDeclList RBRACE
-				| /*epsilon*/
+OptionalClassMethodsList ::= (ClassMethods) LBRACE MethodDeclarationList RBRACE
+						|
+							(NoClassMethods)/*epsilon*/				
+						;		
+
+//ClassVariable
+
+ClassVariableDeclaration ::= (ClassVariableDeclList) Type:classVarType ClassVarList SEMI
+			|
+			(ClassVariableErrorBrace) error:l
+			{: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null);  :}
+			|
+			(ClassVariableErrorDecl) error:l SEMI
+			{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}			
+			;
+		
+
+ClassVarList ::=  (ClassVariableList) ClassVarList COMMA ClassVariable
+		| 
+		    	  (ClassOneVariable) ClassVariable
+		;	
+			
+ClassVariable ::= (ClassArrrayVariable) IDENT:classVarName LSQUARE RSQUARE
+				|
+				   (ClassNoArrayVariable) IDENT:clasVarName
 				;
-			
 
-/*Constant*/		
-ConstDecl ::=  (ConstDecl) CONST Type:constType ConstList SEMI
-			;
-			
-ConstList ::= (MultipleConst)  ConstList  COMMA ConstVariable
-			| (OneConst) ConstVariable
+/*Multiple class variable declarations */
+ClassVariableDeclarationList ::= (ClassVarDeclList) ClassVariableDeclarationList ClassVariableDeclaration
+			| 
+					(ClassOneVarDecl) ClassVariableDeclaration
 			;
 
-			
-ConstVariable ::= (ConstVarAssignment) IDENT:VarNum EQUAL ConstType
-			;
-			
-ConstType ::= (ConstVarType) NUMBER 
-			| (CharType) CHAR
-			| (BooleanType) BOOLEAN
-			;
 
 /*Variable*/
-VarDecl ::= (VarDeclOne) Type:varType VarList SEMI
-		|
-		(ErrorGlobalDecl) error:l SEMI
-		 {: parser.report_error("Izvrsen oporavak do greska 2 ; u liniji  " + lleft, null);  :}
-		|
-		(ErrorGlobalDecl) error:l  
-		 {: parser.report_error("Izvrsen oporavak do greska 2 ; u liniji  " + lleft, null);  :}
-		;
+VariableDeclaration ::= (VariableDecl) Type:varType VarList SEMI
+	;
 		
 
-VarList ::= (MultipleVariables) VarList COMMA Variable
+VarList ::= (VariableList) VarList COMMA Variable
 			| 
-			(OneVar) Variable
+			(OneVariable) Variable
 			;
 			
 Variable ::= (ArrrayVariable) IDENT:varName LSQUARE RSQUARE
 		|
-		(NoArrayVariable) IDENT:varName
-		|
-		(ErrorCommaVariable) error:l
-    	{: parser.report_error("Izvrsen oporavak do  greska 1; u liniji " + lleft, null);  :}
+			(NoArrayVariable) IDENT:varName
 		;
 
+/*Multiple variable declarations */
+VariableDeclarationList ::= (VarDeclList) VariableDeclarationList VariableDeclaration
+			| 
+					(OneVarDecl) VariableDeclaration
+			;
+
+
+//GlobalVariable
+
+GlobalVariableDeclaration ::= (GlobalVariableDeclList) Type:globalVarType GlobalVarList SEMI
+			;
+		
+
+GlobalVarList ::= (GlobalVariableList) GlobalVarList COMMA GlobalVariable
+			| 
+				  (GlobalOneVariable) GlobalVariable
+			;
 			
-Type ::= (Type) IDENT:typeName;
+GlobalVariable ::= (GlobalArrrayVariable) IDENT:globalVarName LSQUARE RSQUARE
+		|
+			(GlobalNoArrayVariable) IDENT:globalVarName
+		|
+			(GlobalVariableError) error:l
+		{: parser.report_error("Izvrsen oporavak do , ili ; u liniji " + lleft, null);  :}
+		;
+
+
+
+/*Var type nonterminal */
+Type ::= (Type) IDENT:typeName
+		;
 
 
 /*Methods*/
-MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
+MethodDeclarationList ::= (MethodDeclList) MethodDeclarationList MethodDeclaration
 				|
-				(NoMethodDecl) /* epsilon */
+						  (NoMethodDecList) /*epsilon*/				
 				;
 				
-MethodDecl ::= (MethodDecl) ReturnType IDENT:methName LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE;
-ReturnType ::= (FunctionReturnType)Type:retType
-			| (NoReturnType)VOID
+MethodDeclaration ::= (MethodDecl) ReturnType IDENT:methodName LPAREN OptionalMethodFormalParams RPAREN OptionalMethodsLocalVariablesDeclaration LBRACE StatementList RBRACE
+					;
+
+OptionalMethodsLocalVariablesDeclaration ::= (MethodLocalVariableDecl) VariableDeclarationList
+										|    (NoMethodLocalVariableDecl) /*epsilon*/
+										;
+
+ReturnType ::= (FunctionReturnType) Type:returnType
+			|  
+				(NoReturnType) VOID
 			;
 			
-/*Formal Parameters*/
-FormPars ::= (FormParams) FormalParamList
-		  |
-		  (NoFormParam) /* epsilon */
-		  ;
+
+
+
+/*Method Formal Parameters*/
+OptionalMethodFormalParams ::= (MethodFormalParams) FormalParamDeclarationList
+		 				 |
+		 					(NoMethodFormalParams) /* epsilon */
+		 				 ;
 		  
-FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
+FormalParamDeclarationList ::= (FormalParamDeclList) FormalParamDeclarationList COMMA FormalParamDeclaration
 				|
-				(SingleFormalParamDecl) FormalParamDecl
+							(OneFormalParamDecl) FormalParamDeclaration
 				;
 				
-FormalParamDecl ::= (FormalParamDecl) Type:varType IDENT:formalParamName OptionalSquare;
+FormalParamDeclaration ::= (FormalParamDecl) Type:formalParamType IDENT:formalParamName OptionalSquareMethodFormalParam
+						| 
+							(ErrorFormalParamDecl) error:l
+							{: parser.report_error("Izvrsen oporavak do ; ili , u liniji " + lleft, null);  :}
+					;
 
-OptionalSquare ::= (ArrayFormalParam)LSQUARE RSQUARE
-				|(NoArrayFormalParam)/*epsilon*/
+
+
+OptionalSquareMethodFormalParam ::=  (ArrayFormalParam) LSQUARE RSQUARE
+				|
+									(NoArrayFormalParam)/*epsilon*/
 				;				
-				
+
+
 		
+/*Method Actual parameters*/ 
+OptionalMethodActualParameters ::= (MethodActualParams) ActualParamDeclarationList
+								| (NoMethodActualParams)/*epsilon*/
+								;
+
+ActualParamDeclarationList ::=  (ActualParamDeclList) ActualParamDeclarationList COMMA Expr
+							|
+								(OneActualParamDecl) Expr
+							;
+				
+
+
+
+/*DESIGNATOR*/
+
+Designator ::= (Designator) IDENT:variableName OptionalSpecifeIdentPartList
+			;
+
+OptionalSpecifeIdentPartList ::= (IdentParts) SpecifeIdentPartList
+						|
+								(NoIdentParts) /*epsilon*/
+						;
+					
+SpecifeIdentPartList ::= (IdentPartList) SpecifeIdentPartList SpecifeIdentPart
+					|
+						(OneIdentPart) SpecifeIdentPart
+					;
+
+
+SpecifeIdentPart ::= (ClassMemberPart) DOT IDENT:classfieldName
+					|
+					 (ArrayMemberPart) LSQUARE Expr RSQUARE	
+					;
+				
+DesignatorPart ::=  (AssignmentStmt) AssignmentStatement
+				|	
+				    (MetodCall) LPAREN OptionalMethodActualParameters RPAREN
+				|	
+				    (IncrementDesignator) INC
+				|	
+				    (DecrementDesignator) DEC
+				;
+
+				
+DesignatorStatement ::= (DesignatorStmt) Designator DesignatorPart
+					;
+
+AssignmentStatement ::= (AssignmentExpr)  AssignmentOperator Expr
+					|
+					(AssignmentError) error:l
+					{: parser.report_error("Izvrsen oporavak do ; ili , u liniji " + lleft, null);  :}
+					;
+			
+
+/*OPERATORS*/
+
+AddOperator ::= (PlusOp) PLUS
+			|
+				(MinusOp) MINUS
+			;
+
+MultiplyOperator ::= (MultiplyOp) MUL
+				|
+				(DivideOp) DIV
+				|
+				(ModuloOp) MOD
+				;
+
+RelationalOperator ::=  (EqualOp) EQUAL_COMPARE
+					| 
+						(NotEqualOp) NOT_EQUAL_COMPARE
+					|
+						(GreaterOp) GREATER
+					|
+						(GreaterEqualOp) GREATER_EQUAL
+					|
+						(LessOp) LESS
+					|
+						(LessEqualOp) LESS_EQUAL
+					;
+
+AssignmentOperator ::= (AssignOp) EQUAL
+				;
+
+
+
+/*Expression*/
+Expr ::=    (TernarExpr) Expr1 TERNAR Expr1 COLON Expr1
+		| 
+			(NoTernarExpression) Expr1
+		;
+			
+Expr1 ::= (BasicExpression) OptionalMinusVar TermList
+	 	;
+	 
+OptionalMinusVar ::= (TermHaveMinus) MINUS
+				 |
+				  (TermDoNotHaveMinus) /*epsilon*/
+	 			;
+	 
+TermList ::= (MultipleTerms) TermList AddOperator Term
+		|
+		 (OneTerm) Term
+		;
+
+
+
+/*TERM*/
+Term ::= (TermDescription) FactorList;
+
+FactorList ::= (MultipleFactors) FactorList MultiplyOperator Factor
+		|
+			 (OneFactor) Factor
+		;
+
+
+
+/*FACTOR*/
+Factor ::= (NumConst) NUMBER
+		| 
+			(CharConst) CHAR
+		| 
+			(BoolConst) BOOLEAN
+		| 
+			(NewOperator) NEW Type  OptionalSquareNewOp
+		| 
+			(Var) Designator:d
+		| 
+			(FuncCall) Designator LPAREN OptionalMethodActualParameters RPAREN
+		| 
+			(ExprFactor) LPAREN Expr RPAREN
+		;
+		
+OptionalSquareNewOp ::= (NewArrayVariable)  LSQUARE Expr RSQUARE
+					| 
+					 	(NewNonArrayVariable) /*epsilon*/
+ 					;
+
+
+					 
+/*CONDITION*/
+
+
+Condition ::= (ConditionListOr) Condition OR ConditionTerm
+			|
+			  (OneConditionOr) ConditionTerm
+			|
+			  (ErrorCondition)/*epsilon*/
+			;
+
+
+ConditionTerm ::=  	(ConditionListAnd) ConditionTerm AND ConditionFact
+				|
+					(OneConditionAnd) ConditionFact
+				;
+
+ConditionFact ::= (TwoVariablesCondition)  Expr RelationalOperator Expr
+				| 
+				   (OneVariableCondition) Expr
+
+				;
 /*STATEMENT*/
+
 
 
 Statement ::= (MatchedStmt) Matched
 		   |
-		   (UnmatchedStmt) Unmatched
+		   	  (UnmatchedStmt) Unmatched
 		   ; 
 		   
-StatementList ::= (Statements) StatementList Statement
-				|
-				(NoStmt) /* epsilon */
-				;
+StatementList ::= (StmtList) StatementList Statement
+		   |
+		   		  (NoStmt) /*epsilon*/
+		   ;
 
-Unmatched ::= (UnmatchedIf) IF LPAREN Condition RPAREN Statement
+Unmatched ::=	(UnmatchedIf) IF LPAREN Condition RPAREN Statement
 		 	|
-		 	(UnmatchedIfElse) IF  LPAREN Condition RPAREN Matched ELSE Unmatched
+		 		(UnmatchedIfElse) IF  LPAREN Condition RPAREN Matched ELSE Unmatched
 		 	;
 
-/*if (a==3 || b--*/
 
-Matched ::= (Assignment) DesignatorStatement SEMI
+Matched ::= (MatchedDesignator) DesignatorStatement SEMI
 		   |
-		   (ErrorStmt) error SEMI:l
-		   {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
-		   |
-		   (DoStatement) DO Statement WHILE LPAREN Condition RPAREN SEMI
+		   (DoStmt) DO Statement WHILE LPAREN Condition RPAREN SEMI
 		   |
 		   (PrintStmt) PRINT LPAREN Expr OptionalPrintParam RPAREN SEMI
 		   |
@@ -209,7 +539,7 @@ Matched ::= (Assignment) DesignatorStatement SEMI
 		   |
 		   (BreakStmt) BREAK SEMI
 		   |
-		   (ReturnExpr) RETURN Expr:t SEMI
+		   (ReturnExpr) RETURN Expr SEMI
 		   |
 		   (ReturnNoExpr) RETURN SEMI
 		   |
@@ -219,158 +549,24 @@ Matched ::= (Assignment) DesignatorStatement SEMI
 		   |
 		   (SwithStmt) SWITCH LPAREN Expr RPAREN LBRACE CaseStatementList RBRACE
 		   ;
-		   
+
+/*Print statement optional parameter */
+OptionalPrintParam ::=  (AditionalParamPrint) COMMA NUMBER
+					| 
+						(NoAditionalParamPrint) /*epsilon*/
+					; 
+
+
 /*CASE STATEMENT*/
-CaseStatementList ::= (CaseStatementsList) CaseStatementList CaseStatement
-				| (StopCaseStatements) /*epsilon*/
+CaseStatementList ::= (CaseStmtList) CaseStatementList CaseStatement
+				| (NoCaseStmt) /*epsilon*/
 				;
 
-CaseStatement ::= (CaseStatement) CASE NUMBER COLON StatementList
+CaseStatement ::= (CaseStmt) CASE NUMBER COLON StatementList
 				;	
 
-OptionalPrintParam ::= (AditionalParamPrint) COMMA NUMBER
-						| (NoAditionalParamPrint) /*epsilon*/
-						; 
-
-
-/*CONDITION*/
-Condition ::= (Conditionn) ConditionTerm ConditionTermList
-			|
-			(ConditionnError) error:l
-			{: parser.report_error("Izvrsen oporavak u uslovu IF-a; u liniji " + lleft, null);  :}
-			;
-
-ConditionTermList ::= (ConditionListOr) ConditionTermList OR ConditionTerm
-				|
-				(StopConditionListOr)/*epislon*/
-				;
-
-ConditionTerm ::= (ConditionsAnd) ConditionFact ConditionFactList
-				;				
-
-ConditionFactList ::=  (ConditionListAnd) ConditionFactList AND ConditionFact
-					|
-					(StopConditionListAnd) /*epsilon*/
-					;
-
-ConditionFact ::= (VarCondition)  Expr OptionalSecondCondtionVar 
-				;
-				
-OptionalSecondCondtionVar ::= (SecondConditionVariable) RelOp Expr
-							;
-			
-	
-
-/*Expression*/
-Expr ::= (TernarOp) Expr1 TERNAR Expr1 COLON Expr1
-	| (BasicExp) Expr1
-	;
-			
-Expr1 ::= (ExprState) OptionalMinusVar Term:te TermList
-	 ;
-	 
-OptionalMinusVar ::= (HaveMinus) MINUS
-	 			| (DoNotHaveMinus) /*epsilon*/
-	 			;
-	 
-TermList ::= (TemList) TermList AddOp Term:te
-		| (EndTermList) /*epsilon*/
-		;
 
 
 
-/*TERM*/
-Term ::= (Term) Factor:t FactorList;
 
-FactorList ::= (HaveTermList) FactorList MulOp:mulOp Factor:t
-		| (DoNotHaveTermList) /*epsilon*/
-		;
-
-
-/*FACTOR*/
-Factor ::= (NumConst) NUMBER
-		| (CharConst) CHAR
-		| (BoolConst) BOOLEAN
-		| (NewOperator) NEW Type  OptionalSquareNewOp
-		| (Var) Designator:d
-		| (FuncCall) Designator:func LPAREN OptioanalActualPars RPAREN
-		| (ExprFactor) LPAREN Expr RPAREN
-		;
-		
-OptionalSquareNewOp ::= (NewArrayVariable)  LSQUARE Expr RSQUARE
- 					| (NewNonArrayVariable) /*epsilon*/
- 					;
-
-
-
-/*ACTUAL PARAMETERS*/ 
-ActualPars ::= (Actuals) ActualParamList
-			;
-		
-OptioanalActualPars ::= (HaveActualPars) ActualPars
-				| (DoNotHaveActualPars) /*epsilon*/
-				;
-				
-ActualParamList ::= (ActualParams) ActualParamList COMMA Expr
-				|
-				(ActualParam) Expr
-				;
-				
-				
-				
-/*DESIGNATOR*/
-
-Designator ::= (Designator) IDENT:name SpecifeIdentPartList
-			;
-
-SpecifeIdentPartList ::= (IdentPartList) SpecifeIdentPartList SpecifeIdentPart
-						|
-						(NoPartList) /*epsilon*/
-						;
 					
-SpecifeIdentPart ::= (ClassMemberName) DOT IDENT:varPartName
-					|
-					 (ArrayMembeName) LSQUARE Expr RSQUARE	
-					;
-				
-DesignatorStatement ::= (DesignatorStatement) Designator DesignatorPart
-					;
-					
-DesignatorPart ::=  (AssignmentOp) AssignOp Expr
-				|	(MetodCall) LPAREN OptioanalActualPars RPAREN
-				|	(Increment) INC
-				|	(Decrement) DEC
-				;
-				
-				
-/*OPERATORI*/
-
-AddOp ::= (Plus) PLUS
-		| (Minus) MINUS
-		;
-		
-MulOp ::= (Multiply) MUL
-		| (Divide) DIV
-		| (Modulo) MOD
-		;
-		
-RelOp ::= (EqualOp) EQUAL_COMPARE
-		| (NotEqualOp) NOT_EQUAL_COMPARE
-		| (GreaterOp) GREATER
-		| (GreaterEqualOp) GREATER_EQUAL
-		| (LessOp) LESS
-		| (LessEqualOp) LESS_EQUAL
-		;
-		
-AssignOp ::= (AssignOp) EQUAL
-		;
-
-
-
-
-
-
-
-
-
-		

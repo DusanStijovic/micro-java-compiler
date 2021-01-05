@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,29 +9,29 @@ public class Designator implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String name;
-    private SpecifeIdentPartList SpecifeIdentPartList;
+    private String variableName;
+    private OptionalSpecifeIdentPartList OptionalSpecifeIdentPartList;
 
-    public Designator (String name, SpecifeIdentPartList SpecifeIdentPartList) {
-        this.name=name;
-        this.SpecifeIdentPartList=SpecifeIdentPartList;
-        if(SpecifeIdentPartList!=null) SpecifeIdentPartList.setParent(this);
+    public Designator (String variableName, OptionalSpecifeIdentPartList OptionalSpecifeIdentPartList) {
+        this.variableName=variableName;
+        this.OptionalSpecifeIdentPartList=OptionalSpecifeIdentPartList;
+        if(OptionalSpecifeIdentPartList!=null) OptionalSpecifeIdentPartList.setParent(this);
     }
 
-    public String getName() {
-        return name;
+    public String getVariableName() {
+        return variableName;
     }
 
-    public void setName(String name) {
-        this.name=name;
+    public void setVariableName(String variableName) {
+        this.variableName=variableName;
     }
 
-    public SpecifeIdentPartList getSpecifeIdentPartList() {
-        return SpecifeIdentPartList;
+    public OptionalSpecifeIdentPartList getOptionalSpecifeIdentPartList() {
+        return OptionalSpecifeIdentPartList;
     }
 
-    public void setSpecifeIdentPartList(SpecifeIdentPartList SpecifeIdentPartList) {
-        this.SpecifeIdentPartList=SpecifeIdentPartList;
+    public void setOptionalSpecifeIdentPartList(OptionalSpecifeIdentPartList OptionalSpecifeIdentPartList) {
+        this.OptionalSpecifeIdentPartList=OptionalSpecifeIdentPartList;
     }
 
     public SyntaxNode getParent() {
@@ -55,16 +55,16 @@ public class Designator implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(SpecifeIdentPartList!=null) SpecifeIdentPartList.accept(visitor);
+        if(OptionalSpecifeIdentPartList!=null) OptionalSpecifeIdentPartList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(SpecifeIdentPartList!=null) SpecifeIdentPartList.traverseTopDown(visitor);
+        if(OptionalSpecifeIdentPartList!=null) OptionalSpecifeIdentPartList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(SpecifeIdentPartList!=null) SpecifeIdentPartList.traverseBottomUp(visitor);
+        if(OptionalSpecifeIdentPartList!=null) OptionalSpecifeIdentPartList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,11 +73,11 @@ public class Designator implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Designator(\n");
 
-        buffer.append(" "+tab+name);
+        buffer.append(" "+tab+variableName);
         buffer.append("\n");
 
-        if(SpecifeIdentPartList!=null)
-            buffer.append(SpecifeIdentPartList.toString("  "+tab));
+        if(OptionalSpecifeIdentPartList!=null)
+            buffer.append(OptionalSpecifeIdentPartList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

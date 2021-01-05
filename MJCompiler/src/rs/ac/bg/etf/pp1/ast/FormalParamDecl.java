@@ -1,24 +1,22 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class FormalParamDecl implements SyntaxNode {
+public class FormalParamDecl extends FormalParamDeclaration {
 
-    private SyntaxNode parent;
-    private int line;
     private Type Type;
     private String formalParamName;
-    private OptionalSquare OptionalSquare;
+    private OptionalSquareMethodFormalParam OptionalSquareMethodFormalParam;
 
-    public FormalParamDecl (Type Type, String formalParamName, OptionalSquare OptionalSquare) {
+    public FormalParamDecl (Type Type, String formalParamName, OptionalSquareMethodFormalParam OptionalSquareMethodFormalParam) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
         this.formalParamName=formalParamName;
-        this.OptionalSquare=OptionalSquare;
-        if(OptionalSquare!=null) OptionalSquare.setParent(this);
+        this.OptionalSquareMethodFormalParam=OptionalSquareMethodFormalParam;
+        if(OptionalSquareMethodFormalParam!=null) OptionalSquareMethodFormalParam.setParent(this);
     }
 
     public Type getType() {
@@ -37,28 +35,12 @@ public class FormalParamDecl implements SyntaxNode {
         this.formalParamName=formalParamName;
     }
 
-    public OptionalSquare getOptionalSquare() {
-        return OptionalSquare;
+    public OptionalSquareMethodFormalParam getOptionalSquareMethodFormalParam() {
+        return OptionalSquareMethodFormalParam;
     }
 
-    public void setOptionalSquare(OptionalSquare OptionalSquare) {
-        this.OptionalSquare=OptionalSquare;
-    }
-
-    public SyntaxNode getParent() {
-        return parent;
-    }
-
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
-    }
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line=line;
+    public void setOptionalSquareMethodFormalParam(OptionalSquareMethodFormalParam OptionalSquareMethodFormalParam) {
+        this.OptionalSquareMethodFormalParam=OptionalSquareMethodFormalParam;
     }
 
     public void accept(Visitor visitor) {
@@ -67,18 +49,18 @@ public class FormalParamDecl implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
-        if(OptionalSquare!=null) OptionalSquare.accept(visitor);
+        if(OptionalSquareMethodFormalParam!=null) OptionalSquareMethodFormalParam.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
-        if(OptionalSquare!=null) OptionalSquare.traverseTopDown(visitor);
+        if(OptionalSquareMethodFormalParam!=null) OptionalSquareMethodFormalParam.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
-        if(OptionalSquare!=null) OptionalSquare.traverseBottomUp(visitor);
+        if(OptionalSquareMethodFormalParam!=null) OptionalSquareMethodFormalParam.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -96,8 +78,8 @@ public class FormalParamDecl implements SyntaxNode {
         buffer.append(" "+tab+formalParamName);
         buffer.append("\n");
 
-        if(OptionalSquare!=null)
-            buffer.append(OptionalSquare.toString("  "+tab));
+        if(OptionalSquareMethodFormalParam!=null)
+            buffer.append(OptionalSquareMethodFormalParam.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

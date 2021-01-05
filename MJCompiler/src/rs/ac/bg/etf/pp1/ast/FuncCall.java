@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class FuncCall extends Factor {
 
     private Designator Designator;
-    private OptioanalActualPars OptioanalActualPars;
+    private OptionalMethodActualParameters OptionalMethodActualParameters;
 
-    public FuncCall (Designator Designator, OptioanalActualPars OptioanalActualPars) {
+    public FuncCall (Designator Designator, OptionalMethodActualParameters OptionalMethodActualParameters) {
         this.Designator=Designator;
         if(Designator!=null) Designator.setParent(this);
-        this.OptioanalActualPars=OptioanalActualPars;
-        if(OptioanalActualPars!=null) OptioanalActualPars.setParent(this);
+        this.OptionalMethodActualParameters=OptionalMethodActualParameters;
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.setParent(this);
     }
 
     public Designator getDesignator() {
@@ -25,12 +25,12 @@ public class FuncCall extends Factor {
         this.Designator=Designator;
     }
 
-    public OptioanalActualPars getOptioanalActualPars() {
-        return OptioanalActualPars;
+    public OptionalMethodActualParameters getOptionalMethodActualParameters() {
+        return OptionalMethodActualParameters;
     }
 
-    public void setOptioanalActualPars(OptioanalActualPars OptioanalActualPars) {
-        this.OptioanalActualPars=OptioanalActualPars;
+    public void setOptionalMethodActualParameters(OptionalMethodActualParameters OptionalMethodActualParameters) {
+        this.OptionalMethodActualParameters=OptionalMethodActualParameters;
     }
 
     public void accept(Visitor visitor) {
@@ -39,18 +39,18 @@ public class FuncCall extends Factor {
 
     public void childrenAccept(Visitor visitor) {
         if(Designator!=null) Designator.accept(visitor);
-        if(OptioanalActualPars!=null) OptioanalActualPars.accept(visitor);
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Designator!=null) Designator.traverseTopDown(visitor);
-        if(OptioanalActualPars!=null) OptioanalActualPars.traverseTopDown(visitor);
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Designator!=null) Designator.traverseBottomUp(visitor);
-        if(OptioanalActualPars!=null) OptioanalActualPars.traverseBottomUp(visitor);
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -65,8 +65,8 @@ public class FuncCall extends Factor {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(OptioanalActualPars!=null)
-            buffer.append(OptioanalActualPars.toString("  "+tab));
+        if(OptionalMethodActualParameters!=null)
+            buffer.append(OptionalMethodActualParameters.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

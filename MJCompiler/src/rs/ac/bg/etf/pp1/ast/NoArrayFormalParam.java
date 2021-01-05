@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NoArrayFormalParam extends OptionalSquare {
+public class NoArrayFormalParam extends OptionalSquareMethodFormalParam {
 
     public NoArrayFormalParam () {
     }

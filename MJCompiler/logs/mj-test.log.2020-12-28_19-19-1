@@ -1,5 +1,0 @@
-INFO  19:18:23,541 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
-INFO  19:18:23,556 - #50 int
-ERROR 19:18:23,556 - 
-Sintaksna greska na liniji 1
-ERROR 19:18:23,556 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 1

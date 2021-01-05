@@ -1,25 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MetodCall extends DesignatorPart {
 
-    private OptioanalActualPars OptioanalActualPars;
+    private OptionalMethodActualParameters OptionalMethodActualParameters;
 
-    public MetodCall (OptioanalActualPars OptioanalActualPars) {
-        this.OptioanalActualPars=OptioanalActualPars;
-        if(OptioanalActualPars!=null) OptioanalActualPars.setParent(this);
+    public MetodCall (OptionalMethodActualParameters OptionalMethodActualParameters) {
+        this.OptionalMethodActualParameters=OptionalMethodActualParameters;
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.setParent(this);
     }
 
-    public OptioanalActualPars getOptioanalActualPars() {
-        return OptioanalActualPars;
+    public OptionalMethodActualParameters getOptionalMethodActualParameters() {
+        return OptionalMethodActualParameters;
     }
 
-    public void setOptioanalActualPars(OptioanalActualPars OptioanalActualPars) {
-        this.OptioanalActualPars=OptioanalActualPars;
+    public void setOptionalMethodActualParameters(OptionalMethodActualParameters OptionalMethodActualParameters) {
+        this.OptionalMethodActualParameters=OptionalMethodActualParameters;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +27,16 @@ public class MetodCall extends DesignatorPart {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(OptioanalActualPars!=null) OptioanalActualPars.accept(visitor);
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(OptioanalActualPars!=null) OptioanalActualPars.traverseTopDown(visitor);
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(OptioanalActualPars!=null) OptioanalActualPars.traverseBottomUp(visitor);
+        if(OptionalMethodActualParameters!=null) OptionalMethodActualParameters.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +45,8 @@ public class MetodCall extends DesignatorPart {
         buffer.append(tab);
         buffer.append("MetodCall(\n");
 
-        if(OptioanalActualPars!=null)
-            buffer.append(OptioanalActualPars.toString("  "+tab));
+        if(OptionalMethodActualParameters!=null)
+            buffer.append(OptionalMethodActualParameters.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -1,18 +1,96 @@
-program MJProgram
-int switch zzz=4, a=45, b;
+program p
+
+//int c c, d/, a, b, ;
+//int a, d/;
+//int b, ;
+//int a/;
+//int a, b c;
+
+
+const int d = 2;
+const bool d = false, d = true;
+char c;
+const char a = 'a', c = 'c';
+char a, d;
+int a[], a, a[], c;
+bool a;
+
+class Predmet
 {
-void main()
-{
-if(a==3 && b== && c==4 && d==5){
-	zzz=0;
-}
-else if(duca==5 || duca==) {
-	zzz=1;
-}
-else {
-	zzz = 2;
+	 int tezina, visina, brzina ;	//sve je greska
+	 char vrsta;
+
+	{
+		 void postaviTezinu(int tezina, bool brzina, bool brz[]) bool b; {this.tezina = tezina[5]; return;}
+		 int fun(int a) int x, i; char c; { return a;}
+		 bool f() {}
+		 bool f() {{}}
+		 int f() {{{}}}
+	}
 }
 
+class Predmet extends Predmet
+{
 }
+
+class Predmet extends Predmet
+{
+	 char vrsta;
+	 {}
+}
+
+{
+	int fun() {
+		return a ? b[5] : new Nesto[23];
+	}
 	
+	void main() int x, i; char c;
+	{
+		if ( (a-4) < b && a || b && a <= v || v > a) {
+			a++;
+		}
+		
+		if ( as )
+			if (a)
+				a--;
+			else if (a)
+				a--;
+		
+		
+		do {
+		} while (a);
+		
+		do {
+			a = a - 5;
+			a--;
+			break;
+			continue;
+		} while (a);
+		
+		
+		read(a[-(-a + a * b)]);
+		print(as);
+		print(as, 4);
+		
+		fun(b);
+		fun(a+5, b);
+		fun();
+		
+		switch(a) {
+			
+		}
+		
+		switch(a) {
+			case 5:	
+		}
+		
+		switch(a) {
+			case 5:	{{a++;}}
+			case 1: switch(b) {}
+		}
+		
+		a = a / b * a % 3;
+		
+		a = x ? '-' : '+';
+	}
 }

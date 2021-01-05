@@ -1,25 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/0/2021 18:4:17
+// 5/0/2021 21:43:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ClassMethods extends OptionalMethodsList {
+public class ClassMethods extends OptionalClassMethodsList {
 
-    private MethodDeclList MethodDeclList;
+    private MethodDeclarationList MethodDeclarationList;
 
-    public ClassMethods (MethodDeclList MethodDeclList) {
-        this.MethodDeclList=MethodDeclList;
-        if(MethodDeclList!=null) MethodDeclList.setParent(this);
+    public ClassMethods (MethodDeclarationList MethodDeclarationList) {
+        this.MethodDeclarationList=MethodDeclarationList;
+        if(MethodDeclarationList!=null) MethodDeclarationList.setParent(this);
     }
 
-    public MethodDeclList getMethodDeclList() {
-        return MethodDeclList;
+    public MethodDeclarationList getMethodDeclarationList() {
+        return MethodDeclarationList;
     }
 
-    public void setMethodDeclList(MethodDeclList MethodDeclList) {
-        this.MethodDeclList=MethodDeclList;
+    public void setMethodDeclarationList(MethodDeclarationList MethodDeclarationList) {
+        this.MethodDeclarationList=MethodDeclarationList;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +27,16 @@ public class ClassMethods extends OptionalMethodsList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(MethodDeclList!=null) MethodDeclList.accept(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(MethodDeclList!=null) MethodDeclList.traverseTopDown(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(MethodDeclList!=null) MethodDeclList.traverseBottomUp(visitor);
+        if(MethodDeclarationList!=null) MethodDeclarationList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +45,8 @@ public class ClassMethods extends OptionalMethodsList {
         buffer.append(tab);
         buffer.append("ClassMethods(\n");
 
-        if(MethodDeclList!=null)
-            buffer.append(MethodDeclList.toString("  "+tab));
+        if(MethodDeclarationList!=null)
+            buffer.append(MethodDeclarationList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
