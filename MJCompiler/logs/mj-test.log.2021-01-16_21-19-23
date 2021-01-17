@@ -1,0 +1,93 @@
+INFO  21:18:11,537 - #2 program
+INFO  21:18:11,538 - #50 MJ
+INFO  21:18:11,538 - #50 int
+INFO  21:18:11,542 - #50 a
+INFO  21:18:11,543 - #4 ,
+INFO  21:18:11,545 - #50 b
+INFO  21:18:11,545 - #4 ,
+INFO  21:18:11,546 - #50 c
+INFO  21:18:11,546 - #3 ;
+INFO  21:18:11,546 - #8 {
+INFO  21:18:11,548 - #50 int
+INFO  21:18:11,551 - #50 main
+INFO  21:18:11,552 - #10 (
+INFO  21:18:11,553 - #11 )
+INFO  21:18:11,555 - #8 {
+INFO  21:18:11,557 - #50 a
+INFO  21:18:11,559 - #42 =
+INFO  21:18:11,562 - #50 b
+INFO  21:18:11,565 - #50 c
+ERROR 21:18:11,565 - 
+Sintaksna greska na liniji 8
+INFO  21:18:11,566 - #3 ;
+INFO  21:18:11,566 - #9 }
+INFO  21:18:11,566 - #9 }
+ERROR 21:18:11,568 - Izvrsen oporavak do ; u liniji 8
+INFO  21:18:11,582 - Program(
+  ProgramName(
+   MJ
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableList(
+          GlobalVariableList(
+            GlobalOneVariable(
+              GlobalNoArrayVariable(
+               a
+              ) [GlobalNoArrayVariable]
+            ) [GlobalOneVariable]
+            GlobalNoArrayVariable(
+             b
+            ) [GlobalNoArrayVariable]
+          ) [GlobalVariableList]
+          GlobalNoArrayVariable(
+           c
+          ) [GlobalNoArrayVariable]
+        ) [GlobalVariableList]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        FunctionReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [FunctionReturnType]
+       main
+      ) [MethodRetName]
+      NoMethodFormalParams(
+      ) [NoMethodFormalParams]
+      NoMethodLocalVariableDecl(
+      ) [NoMethodLocalVariableDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          MatchedDesignator(
+            AssignmentStmt(
+              Designator(
+               a
+                NoIdentParts(
+                ) [NoIdentParts]
+              ) [Designator]
+              AssignmentError(
+              ) [AssignmentError]
+            ) [AssignmentStmt]
+          ) [MatchedDesignator]
+        ) [MatchedStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  21:18:11,603 - ===================================
+ERROR 21:18:11,604 - Parsiranje NIJE uspesno zavrseno!

@@ -53,8 +53,8 @@ import java_cup.runtime.Symbol;
 //Program controll terminals
 <YYINITIAL>  "if"		{ return new_symbol(sym.IF, yytext()); }
 <YYINITIAL>  "else"		{ return new_symbol(sym.ELSE, yytext()); }
-<YYINITIAL>  "switch"	{ return new_symbol(sym.SWITCH, yytext()); }
-<YYINITIAL>  "case"		{ return new_symbol(sym.CASE, yytext()); }
+//<YYINITIAL>  "switch"	{ return new_symbol(sym.SWITCH, yytext()); }
+//<YYINITIAL>  "case"		{ return new_symbol(sym.CASE, yytext()); }
 
 //Loop needed terminals
 <YYINITIAL>  "do"		{ return new_symbol(sym.DO, yytext()); }
@@ -64,9 +64,9 @@ import java_cup.runtime.Symbol;
 
 
 //Class needed terminals
-<YYINITIAL>  "class"	{ return new_symbol(sym.CLASS, yytext()); }
-<YYINITIAL>  "extends"	{ return new_symbol(sym.EXTENDS, yytext()); }
-<YYINITIAL>  "enum"		{ return new_symbol(sym.ENUM, yytext()); }
+//<YYINITIAL>  "class"	{ return new_symbol(sym.CLASS, yytext()); }
+//<YYINITIAL>  "extends"	{ return new_symbol(sym.EXTENDS, yytext()); }
+//<YYINITIAL>  "enum"		{ return new_symbol(sym.ENUM, yytext()); }
 
 //Make new variable terminals
 <YYINITIAL>  "new"		{ return new_symbol(sym.NEW, yytext()); }
@@ -80,7 +80,7 @@ import java_cup.runtime.Symbol;
 //Seperators needed terminals
 <YYINITIAL>  ";" 		{ return new_symbol(sym.SEMI, yytext()); }
 <YYINITIAL>  "," 		{ return new_symbol(sym.COMMA, yytext()); }
-<YYINITIAL>  "."		{ return new_symbol(sym.DOT, yytext()); }
+//<YYINITIAL>  "."		{ return new_symbol(sym.DOT, yytext()); }
 <YYINITIAL>  ":"		{ return new_symbol(sym.COLON, yytext()); }
 
 //Brackets needed terminals
@@ -115,7 +115,7 @@ import java_cup.runtime.Symbol;
 <YYINITIAL> [:digit:]+  		{ return new_symbol(sym.NUMBER, new Integer (yytext())); }
 
 //Boolean needed terminals
-<YYINITIAL> ("true"|"false")  {return new_symbol(sym.BOOLEAN, new Boolean(yytext()));}
+<YYINITIAL> ("true"|"false")  {return new_symbol(sym.BOOLEAN, new String(yytext()));}
 
 //Identifier needed terminals
 <YYINITIAL> [:letter:]([:letter:]|[:digit:]|_)* 	{return new_symbol (sym.IDENT, yytext()); }

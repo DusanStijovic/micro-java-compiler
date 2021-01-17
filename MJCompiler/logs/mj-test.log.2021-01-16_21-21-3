@@ -1,0 +1,16 @@
+INFO  21:19:23,899 - #2 program
+INFO  21:19:23,899 - #50 MJ
+INFO  21:19:23,899 - #50 int
+INFO  21:19:23,900 - #50 a
+INFO  21:19:23,901 - #4 ,
+INFO  21:19:23,901 - #50 b
+INFO  21:19:23,901 - #4 ,
+INFO  21:19:23,901 - #50 c
+INFO  21:19:23,901 - #3 ;
+INFO  21:19:23,901 - #8 {
+INFO  21:19:23,902 - #50 a
+INFO  21:19:23,902 - #50 c
+INFO  21:19:23,903 - #42 =
+ERROR 21:19:23,903 - 
+Sintaksna greska na liniji 6
+ERROR 21:19:23,903 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 6

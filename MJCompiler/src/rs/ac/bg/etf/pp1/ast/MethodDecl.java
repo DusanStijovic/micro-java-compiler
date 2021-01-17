@@ -1,22 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 22:4:16
+// 16/0/2021 21:30:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class MethodDecl extends MethodDeclaration {
 
-    private ReturnType ReturnType;
-    private String methodName;
+    private MethodRetName MethodRetName;
     private OptionalMethodFormalParams OptionalMethodFormalParams;
     private OptionalMethodsLocalVariablesDeclaration OptionalMethodsLocalVariablesDeclaration;
     private StatementList StatementList;
 
-    public MethodDecl (ReturnType ReturnType, String methodName, OptionalMethodFormalParams OptionalMethodFormalParams, OptionalMethodsLocalVariablesDeclaration OptionalMethodsLocalVariablesDeclaration, StatementList StatementList) {
-        this.ReturnType=ReturnType;
-        if(ReturnType!=null) ReturnType.setParent(this);
-        this.methodName=methodName;
+    public MethodDecl (MethodRetName MethodRetName, OptionalMethodFormalParams OptionalMethodFormalParams, OptionalMethodsLocalVariablesDeclaration OptionalMethodsLocalVariablesDeclaration, StatementList StatementList) {
+        this.MethodRetName=MethodRetName;
+        if(MethodRetName!=null) MethodRetName.setParent(this);
         this.OptionalMethodFormalParams=OptionalMethodFormalParams;
         if(OptionalMethodFormalParams!=null) OptionalMethodFormalParams.setParent(this);
         this.OptionalMethodsLocalVariablesDeclaration=OptionalMethodsLocalVariablesDeclaration;
@@ -25,20 +23,12 @@ public class MethodDecl extends MethodDeclaration {
         if(StatementList!=null) StatementList.setParent(this);
     }
 
-    public ReturnType getReturnType() {
-        return ReturnType;
+    public MethodRetName getMethodRetName() {
+        return MethodRetName;
     }
 
-    public void setReturnType(ReturnType ReturnType) {
-        this.ReturnType=ReturnType;
-    }
-
-    public String getMethodName() {
-        return methodName;
-    }
-
-    public void setMethodName(String methodName) {
-        this.methodName=methodName;
+    public void setMethodRetName(MethodRetName MethodRetName) {
+        this.MethodRetName=MethodRetName;
     }
 
     public OptionalMethodFormalParams getOptionalMethodFormalParams() {
@@ -70,7 +60,7 @@ public class MethodDecl extends MethodDeclaration {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ReturnType!=null) ReturnType.accept(visitor);
+        if(MethodRetName!=null) MethodRetName.accept(visitor);
         if(OptionalMethodFormalParams!=null) OptionalMethodFormalParams.accept(visitor);
         if(OptionalMethodsLocalVariablesDeclaration!=null) OptionalMethodsLocalVariablesDeclaration.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
@@ -78,14 +68,14 @@ public class MethodDecl extends MethodDeclaration {
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ReturnType!=null) ReturnType.traverseTopDown(visitor);
+        if(MethodRetName!=null) MethodRetName.traverseTopDown(visitor);
         if(OptionalMethodFormalParams!=null) OptionalMethodFormalParams.traverseTopDown(visitor);
         if(OptionalMethodsLocalVariablesDeclaration!=null) OptionalMethodsLocalVariablesDeclaration.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ReturnType!=null) ReturnType.traverseBottomUp(visitor);
+        if(MethodRetName!=null) MethodRetName.traverseBottomUp(visitor);
         if(OptionalMethodFormalParams!=null) OptionalMethodFormalParams.traverseBottomUp(visitor);
         if(OptionalMethodsLocalVariablesDeclaration!=null) OptionalMethodsLocalVariablesDeclaration.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
@@ -97,13 +87,10 @@ public class MethodDecl extends MethodDeclaration {
         buffer.append(tab);
         buffer.append("MethodDecl(\n");
 
-        if(ReturnType!=null)
-            buffer.append(ReturnType.toString("  "+tab));
+        if(MethodRetName!=null)
+            buffer.append(MethodRetName.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+methodName);
         buffer.append("\n");
 
         if(OptionalMethodFormalParams!=null)

@@ -10,14 +10,17 @@ parser code {:
    
    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
-    
+	
+	Boolean errorDetected;
    
   
     public void syntax_error(Symbol cur_token) {
+		errorDetected = true;
         report_error("\nSintaksna greska", cur_token);
     }
   
     public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+		errorDetected = true;
         report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
     }
 
@@ -39,6 +42,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -84,20 +90,22 @@ terminal  VOID, RETURN;
 
 
 
-terminal BOOLEAN;
+terminal String BOOLEAN;
 terminal Character CHAR;
 terminal Integer NUMBER;
 terminal String IDENT;
 
 
 //Program
-nonterminal Program, ConstVarClassDeclarationList;
+nonterminal ConstVarClassDeclarationList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName, Program;
 
 //Group const, var and class
 nonterminal ConstVarClassDeclaration;
 
 //Const variable declaration
-nonterminal  ConstDeclaration, ConstList, ConstVariableAssginment, ConstType;
+nonterminal  ConstDeclaration, ConstList, ConstVariableAssginment;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct, ConstType;
 
 //Class declaration
 nonterminal ExtendClassOption, ClassDeclaration, OptionalClassMethodsList, OptionalClassVarDeclaration;
@@ -112,57 +120,63 @@ nonterminal GlobalVariableDeclaration, GlobalVarList, GlobalVariable;
 
 
 //Method declaration
-nonterminal MethodDeclarationList, ReturnType, MethodDeclaration, OptionalMethodsLocalVariablesDeclaration;
-
+nonterminal MethodDeclarationList, MethodDeclaration, OptionalMethodsLocalVariablesDeclaration;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct ReturnType;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodRetName;
+nonterminal FuncCallStart;
 
 //Method formal parameter declaration
-nonterminal OptionalMethodFormalParams, FormalParamDeclaration, FormalParamDeclarationList, OptionalSquareMethodFormalParam;
+nonterminal OptionalMethodFormalParams, FormalParamDeclaration, FormalParamDeclarationList;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct OptionalSquareMethodFormalParam;
+
 
 //Method actual parameter declaration
 nonterminal OptionalMethodActualParameters, ActualParamDeclarationList;
-
+nonterminal rs.etf.pp1.symboltable.concepts.Struct FuncCall;
 
 //Designator
-nonterminal Designator, OptionalSpecifeIdentPartList, DesignatorPart, DesignatorStatement;
-nonterminal SpecifeIdentPart, SpecifeIdentPartList, AssignmentStatement;
-
-
+nonterminal rs.etf.pp1.symboltable.concepts.Struct  Designator, DesignatorStart, LsquareStart;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct DesignatorStatement, DesignatorPart, AssignmentStatement;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct SpecifeIdentPart, SpecifeIdentPartList, OptionalSpecifeIdentPartList;
 //Operators
 nonterminal AddOperator,  MultiplyOperator, RelationalOperator, AssignmentOperator;
 
 
 //Expression
-nonterminal Expr, Expr1 , OptionalMinusVar;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, Expr1, TernarStart, TernarDivider;
+nonterminal OptionalMinusVar;
 
 //Term
-nonterminal TermList, Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct TermList, Term;
 
 //Factor
-nonterminal FactorList, Factor, OptionalSquareNewOp;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct FactorList, Factor, OptionalSquareNewOp;
 
 //Condition
-nonterminal Condition, ConditionFact, ConditionTerm;
+nonterminal Condition, ConditionFact, ConditionTerm, LeftOr, LeftAnd;
 
 //Statement
-nonterminal Statement, StatementList, Matched, Unmatched;
+nonterminal Statement, StatementList, Matched, Unmatched, StartDoStmt, IFCondition, ElseStart, DoCondition, DoConditionStart;
 
 
 //Variables Type
-nonterminal  Type;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct  Type;
 
 //Case statment
 nonterminal CaseStatementList, CaseStatement;
 
 //print oprional variable
-nonterminal OptionalPrintParam;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct OptionalPrintParam;
 
 
 
 
 /*PROGRAM*/
-Program ::= (Program) PROG IDENT:programName ConstVarClassDeclarationList LBRACE MethodDeclarationList RBRACE
+Program ::= (Program) PROG ProgramName:pObjNode ConstVarClassDeclarationList LBRACE MethodDeclarationList RBRACE
 		;
 
+ProgramName ::= (ProgramName) IDENT:programName
+			;
 
 /*Const Var Class Declaration List */
 ConstVarClassDeclarationList ::= (ConstVarClassDeclList) ConstVarClassDeclarationList  ConstVarClassDeclaration
@@ -173,8 +187,8 @@ ConstVarClassDeclarationList ::= (ConstVarClassDeclList) ConstVarClassDeclaratio
 ConstVarClassDeclaration ::= (GlobalConstDecl) ConstDeclaration
 						|
 							(GlobalVariableDecl) GlobalVariableDeclaration
-						|
-							(GlobalCLassDecl) ClassDeclaration
+						// |
+						// 	(GlobalCLassDecl) ClassDeclaration
 						;
 
 
@@ -188,67 +202,67 @@ ConstList ::= (ConstDeclList)  ConstList COMMA ConstVariableAssginment
 		 	  (OneConstDecl) ConstVariableAssginment
 		;
 
-ConstVariableAssginment ::= (ConstVarAssign) IDENT:VarName EQUAL ConstType
+ConstVariableAssginment ::= (ConstVariableAssginment) IDENT:VarName EQUAL ConstType
 				;
 
-ConstType ::= (ConstVarType) NUMBER:assignedValue
+ConstType ::= (ConstIntType) NUMBER:assignedValue
 		|
-			 (CharType) CHAR:assignedValue
+			 (ConstCharType) CHAR:assignedValue
 		|
-			 (BooleanType) BOOLEAN:assignedValue
+			 (ConstBooleanType) BOOLEAN:assignedValue
 		;
 
 
 /*Class declaration */
-ClassDeclaration ::= (ClassTypeDecl) CLASS IDENT:className ExtendClassOption LBRACE OptionalClassVarDeclaration OptionalClassMethodsList RBRACE
-				;
+// ClassDeclaration ::= (ClassTypeDecl) CLASS IDENT:className ExtendClassOption LBRACE OptionalClassVarDeclaration OptionalClassMethodsList RBRACE
+// 				;
 
-OptionalClassVarDeclaration ::= (ClassVariableDecl) ClassVariableDeclarationList
-							|
-								(NoClassVariableDecl) /*epsilon*/
-					;
+// OptionalClassVarDeclaration ::= (ClassVariableDecl) ClassVariableDeclarationList
+// 							|
+// 								(NoClassVariableDecl) /*epsilon*/
+// 					;
 
 
-ExtendClassOption ::= (ExtensionClass) EXTENDS Type:classExtendedType
-				| 
-					(NoExtensionClass) /*epsilon*/
-				| 
-					(ErrorExtenstionClass) error:l
-					{: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null);  :}
-				;
+// ExtendClassOption ::= (ExtensionClass) EXTENDS Type:classExtendedType
+// 				| 
+// 					(NoExtensionClass) /*epsilon*/
+// 				| 
+// 					(ErrorExtenstionClass) error:l
+// 					{: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null);  :}
+// 				;
 		
-OptionalClassMethodsList ::= (ClassMethods) LBRACE MethodDeclarationList RBRACE
-						|
-							(NoClassMethods)/*epsilon*/				
-						;		
+// OptionalClassMethodsList ::= (ClassMethods) LBRACE MethodDeclarationList RBRACE
+// 						|
+// 							(NoClassMethods)/*epsilon*/				
+// 						;		
 
 //ClassVariable
 
-ClassVariableDeclaration ::= (ClassVariableDeclList) Type:classVarType ClassVarList SEMI
-			|
-			(ClassVariableErrorBrace) error:l
-			{: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null);  :}
-			|
-			(ClassVariableErrorDecl) error:l SEMI
-			{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}			
-			;
+// ClassVariableDeclaration ::= (ClassVariableDeclList) Type:classVarType ClassVarList SEMI
+// 			|
+// 			(ClassVariableErrorBrace) error:l
+// 			{: parser.report_error("Izvrsen oporavak do { u liniji " + lleft, null);  :}
+// 			|
+// 			(ClassVariableErrorDecl) error:l SEMI
+// 			{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}			
+// 			;
 		
 
-ClassVarList ::=  (ClassVariableList) ClassVarList COMMA ClassVariable
-		| 
-		    	  (ClassOneVariable) ClassVariable
-		;	
+// ClassVarList ::=  (ClassVariableList) ClassVarList COMMA ClassVariable
+// 		| 
+// 		    	  (ClassOneVariable) ClassVariable
+// 		;	
 			
-ClassVariable ::= (ClassArrrayVariable) IDENT:classVarName LSQUARE RSQUARE
-				|
-				   (ClassNoArrayVariable) IDENT:clasVarName
-				;
+// ClassVariable ::= (ClassArrrayVariable) IDENT:classVarName LSQUARE RSQUARE
+// 				|
+// 				   (ClassNoArrayVariable) IDENT:clasVarName
+// 				;
 
 /*Multiple class variable declarations */
-ClassVariableDeclarationList ::= (ClassVarDeclList) ClassVariableDeclarationList ClassVariableDeclaration
-			| 
-					(ClassOneVarDecl) ClassVariableDeclaration
-			;
+// ClassVariableDeclarationList ::= (ClassVarDeclList) ClassVariableDeclarationList ClassVariableDeclaration
+// 			| 
+// 					(ClassOneVarDecl) ClassVariableDeclaration
+// 			;
 
 
 /*Variable*/
@@ -275,7 +289,7 @@ VariableDeclarationList ::= (VarDeclList) VariableDeclarationList VariableDeclar
 
 //GlobalVariable
 
-GlobalVariableDeclaration ::= (GlobalVariableDeclList) Type:globalVarType GlobalVarList SEMI
+GlobalVariableDeclaration ::= (GlobalVariableDeclaration) Type:globalVarType GlobalVarList SEMI
 			;
 		
 
@@ -305,7 +319,7 @@ MethodDeclarationList ::= (MethodDeclList) MethodDeclarationList MethodDeclarati
 						  (NoMethodDecList) /*epsilon*/				
 				;
 				
-MethodDeclaration ::= (MethodDecl) ReturnType IDENT:methodName LPAREN OptionalMethodFormalParams RPAREN OptionalMethodsLocalVariablesDeclaration LBRACE StatementList RBRACE
+MethodDeclaration ::= (MethodDecl) MethodRetName LPAREN OptionalMethodFormalParams RPAREN OptionalMethodsLocalVariablesDeclaration LBRACE StatementList RBRACE
 					;
 
 OptionalMethodsLocalVariablesDeclaration ::= (MethodLocalVariableDecl) VariableDeclarationList
@@ -315,6 +329,9 @@ OptionalMethodsLocalVariablesDeclaration ::= (MethodLocalVariableDecl) VariableD
 ReturnType ::= (FunctionReturnType) Type:returnType
 			|  
 				(NoReturnType) VOID
+			;
+	
+MethodRetName ::= (MethodRetName) ReturnType IDENT:methodName
 			;
 			
 
@@ -334,7 +351,7 @@ FormalParamDeclarationList ::= (FormalParamDeclList) FormalParamDeclarationList 
 FormalParamDeclaration ::= (FormalParamDecl) Type:formalParamType IDENT:formalParamName OptionalSquareMethodFormalParam
 						| 
 							(ErrorFormalParamDecl) error:l
-							{: parser.report_error("Izvrsen oporavak do ; ili , u liniji " + lleft, null);  :}
+							{: parser.report_error("Izvrsen oporavak do ; ili ) u liniji " + lleft, null);  :}
 					;
 
 
@@ -361,44 +378,49 @@ ActualParamDeclarationList ::=  (ActualParamDeclList) ActualParamDeclarationList
 
 /*DESIGNATOR*/
 
-Designator ::= (Designator) IDENT:variableName OptionalSpecifeIdentPartList
+Designator ::= (Designator)  IDENT:variableName OptionalSpecifeIdentPartList
 			;
 
-OptionalSpecifeIdentPartList ::= (IdentParts) SpecifeIdentPartList
+OptionalSpecifeIdentPartList ::= (IdentParts) SpecifeIdentPart
 						|
 								(NoIdentParts) /*epsilon*/
 						;
 					
-SpecifeIdentPartList ::= (IdentPartList) SpecifeIdentPartList SpecifeIdentPart
-					|
-						(OneIdentPart) SpecifeIdentPart
+// SpecifeIdentPartList ::= (IdentPartList) SpecifeIdentPartList SpecifeIdentPart
+// 					|
+// 						(OneIdentPart) SpecifeIdentPart
+// 					;
+
+
+SpecifeIdentPart ::= (ArrayMemberPart) LsquareStart Expr RSQUARE	
+					// |
+					// (ClassMemberPart) DOT IDENT:classfieldName
 					;
+					
+LsquareStart ::= (LsquareStart) LSQUARE
+			;
 
-
-SpecifeIdentPart ::= (ClassMemberPart) DOT IDENT:classfieldName
-					|
-					 (ArrayMemberPart) LSQUARE Expr RSQUARE	
-					;
-				
-DesignatorPart ::=  (AssignmentStmt) AssignmentStatement
-				|	
-				    (MetodCall) LPAREN OptionalMethodActualParameters RPAREN
-				|	
-				    (IncrementDesignator) INC
-				|	
-				    (DecrementDesignator) DEC
-				;
-
-				
-DesignatorStatement ::= (DesignatorStmt) Designator DesignatorPart
+DesignatorStatement ::=  (AssignmentStmt)  Designator AssignmentStatement
+					|	
+				    (DesignatorStatementFunctionCall) FuncCall
+					|	
+				    (IncrementDesignator) Designator INC
+					|	
+				    (DecrementDesignator) Designator DEC
 					;
 
 AssignmentStatement ::= (AssignmentExpr)  AssignmentOperator Expr
 					|
 					(AssignmentError) error:l
-					{: parser.report_error("Izvrsen oporavak do ; ili , u liniji " + lleft, null);  :}
+					{: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null);  :}
 					;
 			
+
+FuncCall ::= (FuncCall) FuncCallStart OptionalMethodActualParameters RPAREN
+		;
+
+FuncCallStart ::= (FuncCallStart)  Designator LPAREN 
+				;
 
 /*OPERATORS*/
 
@@ -433,18 +455,20 @@ AssignmentOperator ::= (AssignOp) EQUAL
 
 
 /*Expression*/
-Expr ::=    (TernarExpr) Expr1 TERNAR Expr1 COLON Expr1
+Expr ::=    (TernarExpr) TernarStart  Expr1 TernarDivider Expr1
 		| 
 			(NoTernarExpression) Expr1
 		;
+
+TernarStart ::= (TernarStart) Expr1 TERNAR
+			;
+
+TernarDivider ::= (TernarDivider) COLON;
 			
-Expr1 ::= (BasicExpression) OptionalMinusVar TermList
+Expr1 ::= (BasicExpressionWithMinus) MINUS TermList
+			|
+			(BasicExpressionWithOutMinus) TermList
 	 	;
-	 
-OptionalMinusVar ::= (TermHaveMinus) MINUS
-				 |
-				  (TermDoNotHaveMinus) /*epsilon*/
-	 			;
 	 
 TermList ::= (MultipleTerms) TermList AddOperator Term
 		|
@@ -464,7 +488,7 @@ FactorList ::= (MultipleFactors) FactorList MultiplyOperator Factor
 
 
 /*FACTOR*/
-Factor ::= (NumConst) NUMBER
+Factor ::=  (NumConst) NUMBER
 		| 
 			(CharConst) CHAR
 		| 
@@ -474,10 +498,11 @@ Factor ::= (NumConst) NUMBER
 		| 
 			(Var) Designator:d
 		| 
-			(FuncCall) Designator LPAREN OptionalMethodActualParameters RPAREN
+			(FuncCallFactor) FuncCall
 		| 
 			(ExprFactor) LPAREN Expr RPAREN
 		;
+
 		
 OptionalSquareNewOp ::= (NewArrayVariable)  LSQUARE Expr RSQUARE
 					| 
@@ -489,18 +514,25 @@ OptionalSquareNewOp ::= (NewArrayVariable)  LSQUARE Expr RSQUARE
 /*CONDITION*/
 
 
-Condition ::= (ConditionListOr) Condition OR ConditionTerm
+Condition ::= (ConditionListOr) LeftOr ConditionTerm
 			|
 			  (OneConditionOr) ConditionTerm
 			|
-			  (ErrorCondition)/*epsilon*/
+			  (ErrorCondition) error:l /*epsilon*/
+			  {: parser.report_error("Izvrsen oporavak do ) u liniji " + lleft, null);  :}
 			;
 
 
-ConditionTerm ::=  	(ConditionListAnd) ConditionTerm AND ConditionFact
+LeftOr ::= (LeftOr)  Condition OR;
+
+ConditionTerm ::=  	(ConditionListAnd) LeftAnd  ConditionFact
 				|
 					(OneConditionAnd) ConditionFact
 				;
+
+LeftAnd ::= (LeftAnd) ConditionTerm AND;
+
+
 
 ConditionFact ::= (TwoVariablesCondition)  Expr RelationalOperator Expr
 				| 
@@ -521,15 +553,15 @@ StatementList ::= (StmtList) StatementList Statement
 		   		  (NoStmt) /*epsilon*/
 		   ;
 
-Unmatched ::=	(UnmatchedIf) IF LPAREN Condition RPAREN Statement
+Unmatched ::=	(UnmatchedIf) IFCondition RPAREN Statement
 		 	|
-		 		(UnmatchedIfElse) IF  LPAREN Condition RPAREN Matched ELSE Unmatched
+		 		(UnmatchedIfElse) IFCondition RPAREN Matched ElseStart Unmatched
 		 	;
 
 
 Matched ::= (MatchedDesignator) DesignatorStatement SEMI
 		   |
-		   (DoStmt) DO Statement WHILE LPAREN Condition RPAREN SEMI
+		   (DoStmt) StartDoStmt Statement DoCondition RPAREN SEMI
 		   |
 		   (PrintStmt) PRINT LPAREN Expr OptionalPrintParam RPAREN SEMI
 		   |
@@ -543,12 +575,22 @@ Matched ::= (MatchedDesignator) DesignatorStatement SEMI
 		   |
 		   (ReturnNoExpr) RETURN SEMI
 		   |
-		   (MatchedStatement) IF LPAREN Condition RPAREN Matched ELSE Matched
+		   (MatchedStatement) IFCondition RPAREN Matched ElseStart Matched
 		   |
 		   (MultipleStatement) LBRACE StatementList RBRACE
-		   |
-		   (SwithStmt) SWITCH LPAREN Expr RPAREN LBRACE CaseStatementList RBRACE
+		//    |
+		//    (SwithStmt) SWITCH LPAREN Expr RPAREN LBRACE CaseStatementList RBRACE
 		   ;
+StartDoStmt ::= (StartDoStmt) DO
+			;
+
+DoCondition ::= (DoCondition) DoConditionStart Condition;
+DoConditionStart ::= (DoConditionStart) WHILE LPAREN;
+
+IFCondition ::= (IFCondition) IF LPAREN Condition
+			;
+
+ElseStart ::= (ElseStart) ELSE;
 
 /*Print statement optional parameter */
 OptionalPrintParam ::=  (AditionalParamPrint) COMMA NUMBER
@@ -558,12 +600,12 @@ OptionalPrintParam ::=  (AditionalParamPrint) COMMA NUMBER
 
 
 /*CASE STATEMENT*/
-CaseStatementList ::= (CaseStmtList) CaseStatementList CaseStatement
-				| (NoCaseStmt) /*epsilon*/
-				;
+// CaseStatementList ::= (CaseStmtList) CaseStatementList CaseStatement
+// 				| (NoCaseStmt) /*epsilon*/
+// 				;
 
-CaseStatement ::= (CaseStmt) CASE NUMBER COLON StatementList
-				;	
+// CaseStatement ::= (CaseStmt) CASE NUMBER COLON StatementList
+// 				;	
 
 
 

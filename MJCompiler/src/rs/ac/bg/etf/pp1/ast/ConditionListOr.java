@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 22:4:16
+// 16/0/2021 21:30:43
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConditionListOr extends Condition {
 
-    private Condition Condition;
+    private LeftOr LeftOr;
     private ConditionTerm ConditionTerm;
 
-    public ConditionListOr (Condition Condition, ConditionTerm ConditionTerm) {
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
+    public ConditionListOr (LeftOr LeftOr, ConditionTerm ConditionTerm) {
+        this.LeftOr=LeftOr;
+        if(LeftOr!=null) LeftOr.setParent(this);
         this.ConditionTerm=ConditionTerm;
         if(ConditionTerm!=null) ConditionTerm.setParent(this);
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public LeftOr getLeftOr() {
+        return LeftOr;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setLeftOr(LeftOr LeftOr) {
+        this.LeftOr=LeftOr;
     }
 
     public ConditionTerm getConditionTerm() {
@@ -38,18 +38,18 @@ public class ConditionListOr extends Condition {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Condition!=null) Condition.accept(visitor);
+        if(LeftOr!=null) LeftOr.accept(visitor);
         if(ConditionTerm!=null) ConditionTerm.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
+        if(LeftOr!=null) LeftOr.traverseTopDown(visitor);
         if(ConditionTerm!=null) ConditionTerm.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
+        if(LeftOr!=null) LeftOr.traverseBottomUp(visitor);
         if(ConditionTerm!=null) ConditionTerm.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class ConditionListOr extends Condition {
         buffer.append(tab);
         buffer.append("ConditionListOr(\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
+        if(LeftOr!=null)
+            buffer.append(LeftOr.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

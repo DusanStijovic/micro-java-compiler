@@ -1,0 +1,80 @@
+INFO  21:28:05,852 - #2 program
+INFO  21:28:05,852 - #50 MJ
+INFO  21:28:05,852 - #50 int
+INFO  21:28:05,854 - #50 a
+INFO  21:28:05,854 - #4 ,
+INFO  21:28:05,855 - #50 b
+INFO  21:28:05,855 - #4 ,
+INFO  21:28:05,855 - #50 c
+INFO  21:28:05,855 - #3 ;
+INFO  21:28:05,855 - #8 {
+INFO  21:28:05,856 - #50 int
+INFO  21:28:05,857 - #50 main
+INFO  21:28:05,857 - #10 (
+INFO  21:28:05,857 - #50 int
+INFO  21:28:05,858 - #50 a
+INFO  21:28:05,858 - #50 a
+ERROR 21:28:05,858 - 
+Sintaksna greska na liniji 6
+INFO  21:28:05,858 - #11 )
+INFO  21:28:05,858 - #8 {
+INFO  21:28:05,858 - #9 }
+INFO  21:28:05,858 - #9 }
+ERROR 21:28:05,859 - Izvrsen oporavak do ; ili ) u liniji 6
+INFO  21:28:05,867 - Program(
+  ProgramName(
+   MJ
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableList(
+          GlobalVariableList(
+            GlobalOneVariable(
+              GlobalNoArrayVariable(
+               a
+              ) [GlobalNoArrayVariable]
+            ) [GlobalOneVariable]
+            GlobalNoArrayVariable(
+             b
+            ) [GlobalNoArrayVariable]
+          ) [GlobalVariableList]
+          GlobalNoArrayVariable(
+           c
+          ) [GlobalNoArrayVariable]
+        ) [GlobalVariableList]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        FunctionReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [FunctionReturnType]
+       main
+      ) [MethodRetName]
+      MethodFormalParams(
+        OneFormalParamDecl(
+          ErrorFormalParamDecl(
+          ) [ErrorFormalParamDecl]
+        ) [OneFormalParamDecl]
+      ) [MethodFormalParams]
+      NoMethodLocalVariableDecl(
+      ) [NoMethodLocalVariableDecl]
+      NoStmt(
+      ) [NoStmt]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  21:28:05,888 - ===================================
+ERROR 21:28:05,888 - Parsiranje NIJE uspesno zavrseno!

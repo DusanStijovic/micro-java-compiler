@@ -1,0 +1,123 @@
+INFO  21:31:26,307 - #2 program
+INFO  21:31:26,308 - #50 MJ
+INFO  21:31:26,308 - #50 int
+INFO  21:31:26,310 - #50 a
+INFO  21:31:26,311 - #4 ,
+INFO  21:31:26,311 - #50 b
+INFO  21:31:26,311 - #4 ,
+INFO  21:31:26,311 - #50 c
+INFO  21:31:26,311 - #3 ;
+INFO  21:31:26,311 - #8 {
+INFO  21:31:26,313 - #50 int
+INFO  21:31:26,314 - #50 main
+INFO  21:31:26,316 - #10 (
+INFO  21:31:26,317 - #50 int
+INFO  21:31:26,318 - #50 a
+INFO  21:31:26,318 - #11 )
+INFO  21:31:26,321 - #50 bool
+INFO  21:31:26,321 - #50 k
+INFO  21:31:26,321 - #3 ;
+INFO  21:31:26,322 - #8 {
+INFO  21:31:26,322 - #14 if
+INFO  21:31:26,324 - #10 (
+INFO  21:31:26,324 - #50 k
+INFO  21:31:26,324 - #32 &&
+INFO  21:31:26,328 - #11 )
+ERROR 21:31:26,328 - 
+Sintaksna greska na liniji 10
+INFO  21:31:26,371 - #8 {
+INFO  21:31:26,371 - #9 }
+INFO  21:31:26,371 - #9 }
+ERROR 21:31:26,372 - Izvrsen oporavak do ) u liniji 10
+INFO  21:31:26,376 - #9 }
+INFO  21:31:26,386 - Program(
+  ProgramName(
+   MJ
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableList(
+          GlobalVariableList(
+            GlobalOneVariable(
+              GlobalNoArrayVariable(
+               a
+              ) [GlobalNoArrayVariable]
+            ) [GlobalOneVariable]
+            GlobalNoArrayVariable(
+             b
+            ) [GlobalNoArrayVariable]
+          ) [GlobalVariableList]
+          GlobalNoArrayVariable(
+           c
+          ) [GlobalNoArrayVariable]
+        ) [GlobalVariableList]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        FunctionReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [FunctionReturnType]
+       main
+      ) [MethodRetName]
+      MethodFormalParams(
+        OneFormalParamDecl(
+          FormalParamDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NoArrayFormalParam(
+            ) [NoArrayFormalParam]
+          ) [FormalParamDecl]
+        ) [OneFormalParamDecl]
+      ) [MethodFormalParams]
+      MethodLocalVariableDecl(
+        OneVarDecl(
+          VariableDecl(
+            Type(
+             bool
+            ) [Type]
+            OneVariable(
+              NoArrayVariable(
+               k
+              ) [NoArrayVariable]
+            ) [OneVariable]
+          ) [VariableDecl]
+        ) [OneVarDecl]
+      ) [MethodLocalVariableDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        UnmatchedStmt(
+          UnmatchedIf(
+            IFCondition(
+              ErrorCondition(
+              ) [ErrorCondition]
+            ) [IFCondition]
+            MatchedStmt(
+              MultipleStatement(
+                NoStmt(
+                ) [NoStmt]
+              ) [MultipleStatement]
+            ) [MatchedStmt]
+          ) [UnmatchedIf]
+        ) [UnmatchedStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  21:31:26,386 - ===================================
+ERROR 21:31:26,387 - Parsiranje NIJE uspesno zavrseno!

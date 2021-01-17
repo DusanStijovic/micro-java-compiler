@@ -1,13 +1,127 @@
-INFO  21:44:42,101 - Compiling source file: C:\Users\dusan\OneDrive - student.etf.bg.ac.rs\Documents\GitHub\MicroJava_Compiler\MJCompiler\test\program.mj
-INFO  21:44:42,140 - #2 program
-INFO  21:44:42,140 - #50 p
-INFO  21:44:42,140 - #8 {
-INFO  21:44:42,141 - #9 }
-INFO  21:44:42,141 - Program(
- p
-  NoConstVarClassDeclList(
-  ) [NoConstVarClassDeclList]
-  NoMethodDecList(
-  ) [NoMethodDecList]
+INFO  21:32:36,308 - #2 program
+INFO  21:32:36,308 - #50 MJ
+INFO  21:32:36,308 - #50 int
+INFO  21:32:36,310 - #50 a
+INFO  21:32:36,310 - #4 ,
+INFO  21:32:36,311 - #50 b
+INFO  21:32:36,311 - #4 ,
+INFO  21:32:36,311 - #50 c
+INFO  21:32:36,311 - #3 ;
+INFO  21:32:36,311 - #8 {
+INFO  21:32:36,312 - #50 int
+INFO  21:32:36,312 - #50 main
+INFO  21:32:36,313 - #10 (
+INFO  21:32:36,313 - #50 int
+INFO  21:32:36,314 - #50 a
+INFO  21:32:36,314 - #11 )
+INFO  21:32:36,316 - #50 bool
+INFO  21:32:36,316 - #50 k
+INFO  21:32:36,316 - #3 ;
+INFO  21:32:36,316 - #8 {
+INFO  21:32:36,317 - #14 if
+INFO  21:32:36,317 - #10 (
+INFO  21:32:36,317 - #50 a
+INFO  21:32:36,318 - #31 <=
+INFO  21:32:36,319 - #10 (
+INFO  21:32:36,321 - #50 b
+INFO  21:32:36,343 - #50 c
+ERROR 21:32:36,343 - 
+Sintaksna greska na liniji 10
+INFO  21:32:36,344 - #11 )
+INFO  21:32:36,344 - #11 )
+INFO  21:32:36,344 - #8 {
+INFO  21:32:36,345 - #9 }
+INFO  21:32:36,345 - #9 }
+ERROR 21:32:36,345 - Izvrsen oporavak do ) u liniji 10
+INFO  21:32:36,348 - #9 }
+INFO  21:32:36,360 - Program(
+  ProgramName(
+   MJ
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableList(
+          GlobalVariableList(
+            GlobalOneVariable(
+              GlobalNoArrayVariable(
+               a
+              ) [GlobalNoArrayVariable]
+            ) [GlobalOneVariable]
+            GlobalNoArrayVariable(
+             b
+            ) [GlobalNoArrayVariable]
+          ) [GlobalVariableList]
+          GlobalNoArrayVariable(
+           c
+          ) [GlobalNoArrayVariable]
+        ) [GlobalVariableList]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        FunctionReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [FunctionReturnType]
+       main
+      ) [MethodRetName]
+      MethodFormalParams(
+        OneFormalParamDecl(
+          FormalParamDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NoArrayFormalParam(
+            ) [NoArrayFormalParam]
+          ) [FormalParamDecl]
+        ) [OneFormalParamDecl]
+      ) [MethodFormalParams]
+      MethodLocalVariableDecl(
+        OneVarDecl(
+          VariableDecl(
+            Type(
+             bool
+            ) [Type]
+            OneVariable(
+              NoArrayVariable(
+               k
+              ) [NoArrayVariable]
+            ) [OneVariable]
+          ) [VariableDecl]
+        ) [OneVarDecl]
+      ) [MethodLocalVariableDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        UnmatchedStmt(
+          UnmatchedIf(
+            IFCondition(
+              ErrorCondition(
+              ) [ErrorCondition]
+            ) [IFCondition]
+            MatchedStmt(
+              MultipleStatement(
+                NoStmt(
+                ) [NoStmt]
+              ) [MultipleStatement]
+            ) [MatchedStmt]
+          ) [UnmatchedIf]
+        ) [UnmatchedStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [MethodDeclList]
 ) [Program]
-INFO  21:44:42,142 - ===================================
+INFO  21:32:36,360 - ===================================
+ERROR 21:32:36,360 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,35 @@
+INFO  21:11:19,700 - #2 program
+INFO  21:11:19,701 - #50 MJ
+INFO  21:11:19,701 - #50 int
+INFO  21:11:19,704 - #50 a
+INFO  21:11:19,706 - #50 b
+ERROR 21:11:19,706 - 
+Sintaksna greska na liniji 5
+INFO  21:11:19,706 - #3 ;
+INFO  21:11:19,706 - #8 {
+INFO  21:11:19,706 - #9 }
+ERROR 21:11:19,707 - Izvrsen oporavak do , ili ; u liniji 5
+INFO  21:11:19,722 - Program(
+  ProgramName(
+   MJ
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalOneVariable(
+          GlobalVariableError(
+          ) [GlobalVariableError]
+        ) [GlobalOneVariable]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  NoMethodDecList(
+  ) [NoMethodDecList]
+) [Program]
+INFO  21:11:19,723 - ===================================
+ERROR 21:11:19,723 - Parsiranje NIJE uspesno zavrseno!

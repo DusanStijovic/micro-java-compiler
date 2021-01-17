@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2021 22:4:16
+// 16/0/2021 21:30:43
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,24 +9,27 @@ public class Program implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String programName;
+    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
+
+    private ProgramName ProgramName;
     private ConstVarClassDeclarationList ConstVarClassDeclarationList;
     private MethodDeclarationList MethodDeclarationList;
 
-    public Program (String programName, ConstVarClassDeclarationList ConstVarClassDeclarationList, MethodDeclarationList MethodDeclarationList) {
-        this.programName=programName;
+    public Program (ProgramName ProgramName, ConstVarClassDeclarationList ConstVarClassDeclarationList, MethodDeclarationList MethodDeclarationList) {
+        this.ProgramName=ProgramName;
+        if(ProgramName!=null) ProgramName.setParent(this);
         this.ConstVarClassDeclarationList=ConstVarClassDeclarationList;
         if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.setParent(this);
         this.MethodDeclarationList=MethodDeclarationList;
         if(MethodDeclarationList!=null) MethodDeclarationList.setParent(this);
     }
 
-    public String getProgramName() {
-        return programName;
+    public ProgramName getProgramName() {
+        return ProgramName;
     }
 
-    public void setProgramName(String programName) {
-        this.programName=programName;
+    public void setProgramName(ProgramName ProgramName) {
+        this.ProgramName=ProgramName;
     }
 
     public ConstVarClassDeclarationList getConstVarClassDeclarationList() {
@@ -66,17 +69,20 @@ public class Program implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(ProgramName!=null) ProgramName.accept(visitor);
         if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.accept(visitor);
         if(MethodDeclarationList!=null) MethodDeclarationList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(ProgramName!=null) ProgramName.traverseTopDown(visitor);
         if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.traverseTopDown(visitor);
         if(MethodDeclarationList!=null) MethodDeclarationList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(ProgramName!=null) ProgramName.traverseBottomUp(visitor);
         if(ConstVarClassDeclarationList!=null) ConstVarClassDeclarationList.traverseBottomUp(visitor);
         if(MethodDeclarationList!=null) MethodDeclarationList.traverseBottomUp(visitor);
         accept(visitor);
@@ -87,7 +93,10 @@ public class Program implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Program(\n");
 
-        buffer.append(" "+tab+programName);
+        if(ProgramName!=null)
+            buffer.append(ProgramName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(ConstVarClassDeclarationList!=null)

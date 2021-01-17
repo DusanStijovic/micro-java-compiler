@@ -1,0 +1,26 @@
+INFO  21:21:43,482 - #2 program
+INFO  21:21:43,483 - #50 MJ
+INFO  21:21:43,483 - #50 int
+INFO  21:21:43,487 - #50 a
+INFO  21:21:43,488 - #4 ,
+INFO  21:21:43,489 - #50 b
+INFO  21:21:43,489 - #4 ,
+INFO  21:21:43,490 - #50 c
+INFO  21:21:43,490 - #3 ;
+INFO  21:21:43,490 - #8 {
+INFO  21:21:43,492 - #50 int
+INFO  21:21:43,495 - #50 main
+INFO  21:21:43,495 - #10 (
+INFO  21:21:43,497 - #11 )
+INFO  21:21:43,499 - #8 {
+INFO  21:21:43,501 - #50 a
+INFO  21:21:43,502 - #50 c
+ERROR 21:21:43,503 - 
+Sintaksna greska na liniji 8
+INFO  21:21:43,503 - #42 =
+INFO  21:21:43,503 - #50 b
+INFO  21:21:43,503 - #50 c
+INFO  21:21:43,504 - #3 ;
+INFO  21:21:43,504 - #9 }
+INFO  21:21:43,505 - #9 }
+ERROR 21:21:43,505 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10

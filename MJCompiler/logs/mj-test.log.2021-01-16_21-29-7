@@ -1,0 +1,34 @@
+INFO  21:28:40,843 - #2 program
+INFO  21:28:40,844 - #50 MJ
+INFO  21:28:40,844 - #50 int
+INFO  21:28:40,845 - #50 a
+INFO  21:28:40,846 - #4 ,
+INFO  21:28:40,846 - #50 b
+INFO  21:28:40,847 - #4 ,
+INFO  21:28:40,847 - #50 c
+INFO  21:28:40,847 - #3 ;
+INFO  21:28:40,847 - #8 {
+INFO  21:28:40,848 - #50 int
+INFO  21:28:40,848 - #50 main
+INFO  21:28:40,849 - #10 (
+INFO  21:28:40,849 - #50 int
+INFO  21:28:40,849 - #50 a
+INFO  21:28:40,849 - #11 )
+INFO  21:28:40,851 - #50 bool
+INFO  21:28:40,851 - #50 k
+INFO  21:28:40,851 - #8 {
+ERROR 21:28:40,851 - 
+Sintaksna greska na liniji 8
+INFO  21:28:40,852 - #14 if
+INFO  21:28:40,852 - #10 (
+INFO  21:28:40,852 - #50 k
+INFO  21:28:40,852 - #32 &&
+INFO  21:28:40,852 - #11 )
+INFO  21:28:40,870 - #8 {
+INFO  21:28:40,870 - #9 }
+INFO  21:28:40,871 - #9 }
+ERROR 21:28:40,871 - Izvrsen oporavak do ; ili ) u liniji 6
+INFO  21:28:40,874 - #9 }
+ERROR 21:28:40,874 - 
+Sintaksna greska na liniji 15
+ERROR 21:28:40,874 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 15
