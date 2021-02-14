@@ -32,6 +32,7 @@ public class Compiler {
 		Logger log = Logger.getLogger(Compiler.class);
 		if (args.length != 2) {
 			log.error("Broj ulaznih parametara nije odgovarajuci, ocekivano 2.");
+			ErrorMessage.reportErrorAndExit("Broj ulaznih parametara nije odgovarajuci, ocekivano 2.");
 			return;
 		}
 		String fileNameIn = args[0], fileNameOut = args[1];
