@@ -1,0 +1,84 @@
+//dodela vrednosti
+
+
+
+int a[];
+char b[];  
+bool c[];
+
+int a1;
+char a2;
+bool a3;
+
+int int_;
+char char_;
+bool bool_;
+ 
+{
+
+void func(){
+
+ int_ = a1;
+ int_ = a2;
+ int_ = a3;
+
+ char_ = a1;
+ char_ = a2;
+ char_ = a3;
+
+ bool_ = a1;
+ bool_ = a2;
+ bool_ = a3;
+
+
+ int_ = a;
+ int_ = b;
+ int_ = c;
+
+ char_ = a;
+ char_ = b;
+ char_ = c;
+
+ bool_ = a;
+ bool_ = b;
+ bool_ = c;
+
+ int_ = a[4 + int_*3];
+ int_ = b[4 + int_*3];
+ int_ = c[4 + int_*3];
+
+ char_ = a[4 + int_*3];
+ char_ = b[4 + int_*3];
+ char_ = c[4 + int_*3];
+
+ bool_ = a[4 + int_*3];
+ bool_ = b[4 + int_*3];
+ bool_ = c[4 + int_*3];
+
+a = bool_;
+a = char_;
+a = int_;
+
+b = bool_;
+b = char_;
+b = int_;
+
+c = bool_;
+c = char_;
+c = int_;
+
+a = a;
+a = b;
+a = c;
+
+b = a;
+b = b;
+b = c;
+
+c = a;
+c = b;
+c = c;
+}
+
+
+}

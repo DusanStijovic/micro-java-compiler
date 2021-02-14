@@ -1,0 +1,92 @@
+//Dodela vrednosti, expr i ternarni 
+
+program MJ 
+int a, b;
+char a1,b1;
+bool a2,b2;
+
+int array1[], array2 [];
+char array3[], array4[];
+bool array5[], array6[];
+{
+
+int inc(int a){
+    a++;
+    return a;
+}
+
+
+bool greater(int a, int b){
+	if (a>b){
+		return true;
+	} else {
+		return false;
+	}
+}
+void main()
+
+{
+
+    a++;
+    a--;
+    print(a);
+    print(eol);
+
+    array1 = new int[10];
+    array3 = new char[10];
+    array5 = new bool[10];
+
+    array1[4]++;
+    array1[4]++;
+    print(array1[4]);
+    print(eol);
+
+
+
+    print(2 + 4*5 - 2);
+    print(eol);
+
+    b = 10;
+    array1[2] = 4;
+    a = b;
+    print(a);
+    print(eol);
+    a = array1[2];
+    print(a);
+    print(eol);
+
+
+    b1 = 'c';
+    array3[3] = 'd';
+    a1 = b1;
+    print(a1);
+    print(eol);
+    a1 = array3[3];
+    print(a1);
+    print(eol);
+
+    b2 = true;
+    array5[9] = false;
+    a2 = b2;
+    print(a2);
+    print(eol);
+    a2 = array5[9];
+    print(a2);
+    print(eol);
+
+    a = 8;
+    array1[a + 1] = 9;
+    b = array1[inc(a-1) + 1];
+    print(b);
+    print(eol);
+    print(array1[ -1 + inc(a-1) + 2]);
+    print(eol);
+    
+    print(greater(array1[inc(a-1) + 1], array1[2])? array1[inc(a-1) + 1]: array1[2]);
+    print(eol);
+    array1[inc(a-1) + 1] = 3;
+    print(greater(array1[inc(a-1) + 1], array1[2])? array1[inc(a-1) + 1]: array1[2]);
+    print(eol);
+}
+
+}

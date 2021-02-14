@@ -70,7 +70,7 @@ terminal LBRACE, RBRACE, LPAREN, RPAREN, LSQUARE, RSQUARE;
 terminal IF, ELSE, SWITCH, CASE;
 
 /*Loop needed terminals*/
-terminal  CONTINUE, DO, WHILE, BREAK;
+terminal  CONTINUE, DO, WHILE, BREAK, FOR;
 
 /*Class terminals*/
 terminal EXTENDS, CLASS, ENUM;
@@ -157,7 +157,7 @@ nonterminal Condition, ConditionFact, ConditionTerm, LeftOr, LeftAnd;
 
 //Statement
 nonterminal Statement, StatementList, Matched, Unmatched, StartDoStmt, IFCondition, ElseStart, DoCondition, DoConditionStart;
-
+nonterminal StartFor, ForCondition, BeginingStmtFor;
 
 //Variables Type
 nonterminal rs.etf.pp1.symboltable.concepts.Struct  Type;
@@ -563,6 +563,8 @@ Matched ::= (MatchedDesignator) DesignatorStatement SEMI
 		   |
 		   (DoStmt) StartDoStmt Statement DoCondition RPAREN SEMI
 		   |
+		   (ForStmt) FOR LPAREN StartFor ForCondition DesignatorStatement BeginingStmtFor  LBRACE StatementList RBRACE
+		   |
 		   (PrintStmt) PRINT LPAREN Expr OptionalPrintParam RPAREN SEMI
 		   |
 		   (ReadStmt) READ LPAREN Designator RPAREN SEMI
@@ -581,6 +583,14 @@ Matched ::= (MatchedDesignator) DesignatorStatement SEMI
 		//    |
 		//    (SwithStmt) SWITCH LPAREN Expr RPAREN LBRACE CaseStatementList RBRACE
 		   ;
+
+
+BeginingStmtFor ::= (BeginingStmtFor) RPAREN;
+
+StartFor ::= (StartFor) DesignatorStatement SEMI;
+
+ForCondition ::= (ForCondition) Condition SEMI;
+		   
 StartDoStmt ::= (StartDoStmt) DO
 			;
 

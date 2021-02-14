@@ -70,7 +70,7 @@ terminal LBRACE, RBRACE, LPAREN, RPAREN, LSQUARE, RSQUARE;
 terminal IF, ELSE, SWITCH, CASE;
 
 /*Loop needed terminals*/
-terminal  CONTINUE, DO, WHILE, BREAK;
+terminal  CONTINUE, DO, WHILE, BREAK, FOR;
 
 /*Class terminals*/
 terminal EXTENDS, CLASS, ENUM;
@@ -190,7 +190,9 @@ nonterminal IFCondition IFCondition;
 nonterminal ElseStart ElseStart;
 nonterminal DoCondition DoCondition;
 nonterminal DoConditionStart DoConditionStart;
-
+nonterminal StartFor StartFor;
+nonterminal ForCondition ForCondition;
+nonterminal BeginingStmtFor BeginingStmtFor;
 
 //Variables Type
 nonterminal rs.etf.pp1.symboltable.concepts.Struct  Type;
@@ -597,6 +599,8 @@ Matched ::= (MatchedDesignator) DesignatorStatement:D1 SEMI {: RESULT=new Matche
 		   |
 		   (DoStmt) StartDoStmt:S1 Statement:S2 DoCondition:D3 RPAREN SEMI {: RESULT=new DoStmt(S1, S2, D3); RESULT.setLine(S1left); :}
 		   |
+		   (ForStmt) FOR LPAREN StartFor:S1 ForCondition:F2 DesignatorStatement:D3 BeginingStmtFor:B4  LBRACE StatementList:S5 RBRACE {: RESULT=new ForStmt(S1, F2, D3, B4, S5); RESULT.setLine(S1left); :}
+		   |
 		   (PrintStmt) PRINT LPAREN Expr:E1 OptionalPrintParam:O2 RPAREN SEMI {: RESULT=new PrintStmt(E1, O2); RESULT.setLine(E1left); :}
 		   |
 		   (ReadStmt) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new ReadStmt(D1); RESULT.setLine(D1left); :}
@@ -615,6 +619,14 @@ Matched ::= (MatchedDesignator) DesignatorStatement:D1 SEMI {: RESULT=new Matche
 		//    |
 		//    (SwithStmt) SWITCH LPAREN Expr RPAREN LBRACE CaseStatementList RBRACE
 		   ;
+
+
+BeginingStmtFor ::= (BeginingStmtFor) RPAREN {: RESULT=new BeginingStmtFor(); :};
+
+StartFor ::= (StartFor) DesignatorStatement:D1 SEMI {: RESULT=new StartFor(D1); RESULT.setLine(D1left); :};
+
+ForCondition ::= (ForCondition) Condition:C1 SEMI {: RESULT=new ForCondition(C1); RESULT.setLine(C1left); :};
+		   
 StartDoStmt ::= (StartDoStmt) DO {: RESULT=new StartDoStmt(); :}
 			;
 

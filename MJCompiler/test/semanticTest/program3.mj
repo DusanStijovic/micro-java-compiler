@@ -1,0 +1,102 @@
+//metode ret da l je isti kao tip
+
+program test302
+
+
+int a[];
+char b[]; 
+bool c[];
+
+
+int int_;
+char char_;
+bool bool_;
+ 
+{
+
+    void noret(){}
+    void ret_void(){return;}
+    void ret_int_void(){return int_;}
+    void ret_char_void(){return char_;}
+    void ret_bool_void(){return bool_;}
+    void ret_int_array_void(){return a;}
+    void ret_char_array_void(){return b;}
+    void ret_bool_array_void(){return c;}
+    void ret_int_void(){return 2;}
+    void ret_char_void(){return '2';}
+    void ret_boo_voidl(){return true;}
+    void ret_int_array1_void(){return a[3];}
+    void ret_char_array1_void(){return b[4];}
+    void ret_bool_array1_void(){return c[9];}
+    void ret_int_array2_void(){return a;}
+    void ret_char_array2_void(){return b;}
+    void ret_bool_array2_void(){return c;}
+
+    int no_ret_int(){}
+    int ret_int_int(){return;}
+    int ret_bool_int(){return true;}
+    int ret_char_int(){return 'a';}
+    int ret_int_int(){ return int_;}
+    int ret_bool_int(){return bool_;}
+    int ret_char_int(){ return char_;}
+    int ret_int_array_int(){return a;}
+    int ret_char_array_int(){return b;}
+    int ret_bool_array_int(){return c;}
+    int ret_int_void1(){return 2;}
+    int ret_char_void2(){return '2';}
+    int ret_boo_voidl3(){return true;}
+    int ret_int_array1_int(){return a[2];}
+    int ret_char_array1_int(){return b[2];}
+    int ret_bool_array1_int(){return c[3];}
+    int ret_int_array2_int(){return a;}
+    int ret_char_array2_int(){return b;}
+    int ret_bool_array2_int(){return c;}
+
+    bool no_ret_bool(){}
+    bool ret_bool(){return;}
+    bool ret_int_bool(){ return int_;}
+    bool ret_boo_booll(){return bool_;}
+    bool ret_char_bool(){ return char_;}
+    bool ret_int_bool(){ return int_;}
+    bool ret_bool_bool(){return bool_;}
+    bool ret_char_bool(){ return char_;}
+    bool ret_int_array_bool(){return a;}
+    bool ret_char_array_bool(){return b;}
+    bool ret_bool_array_bool(){return c;}
+    bool ret_int_bool1(){return 2;}
+    bool ret_char_bool2(){return '2';}
+    bool ret_boo_bool3(){return true;}
+    bool ret_int_array1_bool(){return a[4];}
+    bool ret_char_array1_bool(){return b[4];}
+    bool ret_bool_array1_bool(){return c[4];}
+    bool ret_int_array2_bool(){return a;}
+    bool ret_char_array2_bool(){return b;}
+    bool ret_bool_array2_bool(){return c;}
+
+    char no_ret_char(){}
+    char ret_char(){return;}
+    char ret_int_char(){ return int_;}
+    char ret_bool_char(){return bool_;}
+    char ret_char_char(){ return char_;}
+    char ret_int_char(){ return int_;}
+    char ret_bool_char(){return bool_;}
+    char ret_char_char(){ return char_;}
+    char ret_int_array_char(){return a;}
+    char ret_char_array_char(){return b;}
+    char ret_bool_array_char(){return c;}
+    char ret_bool_char(){return true;}
+    char no_ret_bool_char(){}
+    char ret_int_char1(){return 2;}
+    char ret_char_char2(){return '2';}
+    char ret_boo_char3(){return true;}
+    char ret_int_array1_char(){return a[4];}
+    char ret_char_array1_char(){return b[4];}
+    char ret_bool_array1_char(){return c[4];}
+    char ret_int_array2_char(){return a;}
+    char ret_char_array2char(){return b;}
+    char ret_bool_array2_char(){return c;}
+
+
+ void main(){}
+
+}

@@ -1,0 +1,49 @@
+//Testirnaje read
+program test302
+int ai, bi[];
+char ac, bc[];
+bool ab, bb[];
+
+const int cai = 2;
+const char cac = 'f';
+const bool cab = true;
+
+{
+
+
+
+int k(){
+
+}
+
+void e(int r, int b){
+
+}
+
+void main(){
+
+    read(a);
+    //read(2);
+    //read('2');
+   // read(true);
+
+    read(ai);
+    read(bi);
+    read(ac);
+    read(bc);
+    read(ab);
+    read(bb);
+
+    read(cai);
+    read(cac);
+    read(cab);
+
+    read(e);
+    read(k);
+
+
+
+
+}
+
+}

@@ -32,6 +32,8 @@ public class SemanticPass extends VisitorAdaptor {
 	// Method call helper
 	List<Struct> actualParams = new ArrayList<>();
 	Stack<List<Struct>> allMethodCallParams = new Stack<>();
+	List<Obj> currentMethodParams = new ArrayList<>();
+	String currentMethod = "";
 
 	// Method return helper
 	Struct methodRetType = Tab.noType;
@@ -40,7 +42,9 @@ public class SemanticPass extends VisitorAdaptor {
 	// Main method helper
 	Boolean haveMain = false;
 
-	// CondFact
+	/*******************************************************************************************************************************/
+	// CondFact \\
+
 	public void visit(OneVariableCondition oneVariableCondition) {
 		if (!oneVariableCondition.getExpr().struct.equals(Tab.find("bool").getType())) {
 			report_error("Izraz u conditionu mora biti tipa bool", oneVariableCondition);
@@ -51,10 +55,39 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(TwoVariablesCondition twoVariablesCondition) {
 		Struct first = twoVariablesCondition.getExpr().struct;
 		Struct second = twoVariablesCondition.getExpr1().struct;
-		returnExprType(first, second, twoVariablesCondition);
+		Struct expType = returnConditionRelOpExprType(first, second, twoVariablesCondition);
+		checkIfRelOpAllowed(expType, twoVariablesCondition);
 	}
 
-	// Expr
+	private Struct returnConditionRelOpExprType(Struct first, Struct second, SyntaxNode node) {
+		if (!first.equals(second)) {
+			report_error("Nisu isti tipovi podataka", node);
+			return Tab.noType;
+		}
+		return first;
+
+	}
+
+	private void checkIfRelOpAllowed(Struct first, TwoVariablesCondition node) {
+		RelationalOperator rO = node.getRelationalOperator();
+		if (first.getKind() != Struct.Array)
+			return;
+
+		if (rO.getClass() == EqualOp.class) {
+			return;
+
+		}
+		if (rO.getClass() == NotEqualOp.class) {
+			return;
+		}
+		report_error("Za niz se mogu koristiti samo == i != relacioni operatori ", rO);
+
+	}
+
+	/*******************************************************************************************************************************/
+
+	/********************************************************************************************************************************/
+	// Expression \\
 	public void visit(NumConst numConst) {
 		numConst.struct = Tab.intType;
 	}
@@ -93,7 +126,6 @@ public class SemanticPass extends VisitorAdaptor {
 
 	public void visit(FuncCallFactor funcCall) {
 		funcCall.struct = funcCall.getFuncCall().struct;
-		// dodaj mozda ako je ovde void da izbaci gresku odmah
 	}
 
 	public void visit(ExprFactor exprFactor) {
@@ -158,32 +190,23 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	private Struct returnExprType(Struct first, Struct second, SyntaxNode node) {
-		if (first.equals(second) && first.equals(Tab.intType)) {
-			return first;
-		} else {
+		if (!first.equals(second)) {
 			report_error("Nisu isti tipovi podataka", node);
 			return Tab.noType;
 		}
+		if (!first.equals(Tab.intType)) {
+			report_error("U racunskim izrazima se mora koristiti int", node);
+			return Tab.noType;
+		}
+		return first;
+
 	}
 
-	public void report_error(String message, SyntaxNode info) {
-		errorDetected = true;
-		StringBuilder msg = new StringBuilder(message);
-		int line = (info == null) ? 0 : info.getLine();
-		if (line != 0)
-			msg.append(" na liniji ").append(line);
-		log.error(msg.toString());
-	}
+	/***************************************************************************************************************************/
 
-	public void report_info(String message, SyntaxNode info) {
-		StringBuilder msg = new StringBuilder(message);
-		int line = (info == null) ? 0 : info.getLine();
-		if (line != 0)
-			msg.append(" na liniji ").append(line);
-		log.info(msg.toString());
-	}
+	/****************************************************************************************************************************/
+	// Designator \\
 
-	// Designator
 	public void visit(Designator designator) {
 		Tab.dump();
 		String varName = designator.getVariableName();
@@ -234,7 +257,8 @@ public class SemanticPass extends VisitorAdaptor {
 		identParts.struct = identParts.getSpecifeIdentPart().struct;
 	}
 
-	// Designator inc/dec
+	/******************************************************************************************************************************/
+	// Designator inc/dec \\
 	public void visit(IncrementDesignator inc) {
 		if (inc.getDesignator().struct.getKind() == Struct.Array) {
 			report_error("Ne mozete inkrementirati niz, vec samo njegove elemente", inc);
@@ -246,7 +270,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		Obj obj = Tab.find(inc.getDesignator().getVariableName());
 		if (obj.getKind() != Obj.Var) {
-			report_error("Inc se moze koristiti samo za promenjive tipa int, ne za konstante, imena metoda", inc);
+			report_error("Inc se moze koristiti samo za promenjive, ne za konstante, imena metoda", inc);
 		}
 		report_info("Koriscenje promenjive za inc", inc);
 		printObjNode(obj);
@@ -270,7 +294,8 @@ public class SemanticPass extends VisitorAdaptor {
 		printObjNode(obj);
 	}
 
-	// Designator assigExpr
+	/******************************************************************************************************************************/
+	// Designator assignment statement \\
 	public void visit(AssignmentStmt assignmentStmt) {
 		if (!assignmentStmt.getAssignmentStatement().struct.assignableTo(assignmentStmt.getDesignator().struct)) {
 			report_error("Ne mozete dodeliti jedan tip drugom, nisu kompatibilni", assignmentStmt);
@@ -285,13 +310,24 @@ public class SemanticPass extends VisitorAdaptor {
 		assignmentError.struct = Tab.noType;
 	}
 
-	// Dostmt and break and continue
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Do statement and break and continue \\
 	public void visit(StartDoStmt startDoStmt) {
 		doStmtStarted++;
 	}
 
 	public void visit(BreakStmt breakStmt) {
 		loopOnlyStmt("Break se moze koristiti samo u okviru do-while petlje", breakStmt.getParent());
+	}
+	
+	public void visit(StartFor startFor) {
+		doStmtStarted++;
+	}
+	
+	public void visit(ForStmt forStmt) {
+		doStmtStarted--;
 	}
 
 	public void visit(ContinueStmt continueStmt) {
@@ -309,7 +345,10 @@ public class SemanticPass extends VisitorAdaptor {
 		doStmtStarted--;
 	}
 
-	// Read stmt
+	/******************************************************************************************************************************/
+
+	/*******************************************************************************************************************************/
+	// Read stmt \\
 	public void visit(ReadStmt readStmt) {
 		Obj obj = Tab.find(readStmt.getDesignator().getVariableName());
 		if (readStmt.getDesignator().struct.getKind() == Struct.Array) {
@@ -333,7 +372,10 @@ public class SemanticPass extends VisitorAdaptor {
 		report_info("Poziv funkcije print", printStmt);
 	}
 
-	// FormalParam function
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// FormalParam function \\
 
 	public void visit(FormalParamDecl formalParamDecl) {
 		String formalParamName = formalParamDecl.getFormalParamName();
@@ -342,6 +384,7 @@ public class SemanticPass extends VisitorAdaptor {
 			Obj inserted = Tab.insert(Obj.Var, formalParamName,
 					formalParamDecl.getOptionalSquareMethodFormalParam().struct);
 			inserted.setFpPos(Tab.currentScope.getnVars());
+			currentMethodParams.add(inserted);
 			report_info("Deklaracija formalnog parametra", formalParamDecl);
 			printObjNode(inserted);
 		} else {
@@ -358,7 +401,8 @@ public class SemanticPass extends VisitorAdaptor {
 		noArray.struct = globalVarType;
 	}
 
-	// Functions
+	/******************************************************************************************************************************/
+	// Function declaration \\
 	public void visit(MethodRetName methodRetName) {
 		Obj obj = Tab.find(methodRetName.getMethodName());
 		methodRetType = methodRetName.getReturnType().struct;
@@ -380,6 +424,7 @@ public class SemanticPass extends VisitorAdaptor {
 			methodRetName.obj = Tab.noObj;
 			printObjNode(obj);
 		}
+		currentMethod = methodRetName.getMethodName();
 	}
 
 	public void visit(NoReturnType noRetType) {
@@ -420,9 +465,14 @@ public class SemanticPass extends VisitorAdaptor {
 //		}
 		haveReturn = false;
 		methodRetType = Tab.noType;
-
+		currentMethodParams.clear();
+		currentMethod = "";
 	}
 
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Function call \\
 	public void visit(FuncCall funcCall) {
 		funcCall.struct = funcCall.getFuncCallStart().getDesignator().struct;
 		String methodName = funcCall.getFuncCallStart().getDesignator().getVariableName();
@@ -443,15 +493,22 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	private void checkActualFormalCompatibility(List<Struct> actual, Obj method, SyntaxNode funcCall) {
-		ArrayList<Obj> locals = new ArrayList<>(method.getLocalSymbols());
-		if (actual.size() != method.getLevel()) {
-			report_error("Broj formalnih i stvarnih parametara se razlikuje", funcCall);
-		}
-
+		List<Obj> locals = new ArrayList<>(method.getLocalSymbols());
 		int numToGo = actual.size();
-		if (numToGo > method.getLevel())
-			numToGo = method.getLevel();
-
+		if (method.getName().equals(currentMethod)) {
+			locals = currentMethodParams;
+			if (actual.size() != locals.size()) {
+				report_error("Broj formalnih i stvarnih parametara se razlikuje", funcCall);
+			}
+			if (numToGo > locals.size())
+				numToGo = locals.size();
+		} else {
+			if (actual.size() != method.getLevel()) {
+				report_error("Broj formalnih i stvarnih parametara se razlikuje", funcCall);
+			}
+			if (numToGo > method.getLevel())
+				numToGo = method.getLevel();
+		}
 		Struct arrayNoType = new Struct(Struct.Array, Tab.noType);
 		for (int actualParamNumber = 0; actualParamNumber < numToGo; actualParamNumber++) {
 			if (!locals.get(actualParamNumber).getType().equals(actual.get(actualParamNumber))
@@ -480,7 +537,10 @@ public class SemanticPass extends VisitorAdaptor {
 		haveReturn = true;
 	}
 
-	// Acutal params
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Acutal params \\
 
 	public void visit(OneActualParamDecl oneActualParamDecl) {
 		Struct actual = oneActualParamDecl.getExpr().struct;
@@ -492,7 +552,10 @@ public class SemanticPass extends VisitorAdaptor {
 		actualParams.add(actual);
 	}
 
-	// Global var declaration
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Global var declaration \\
 	public void visit(GlobalNoArrayVariable globalVarDeclNoArray) {
 		Obj obj = Tab.find(globalVarDeclNoArray.getGlobalVarName());
 		if (obj == Tab.noObj) {
@@ -517,7 +580,10 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
-	// Global const declaration
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Global const declaration \\
 	public void visit(ConstVariableAssginment constVarAssign) {
 		Obj obj = Tab.find(constVarAssign.getVarName());
 		if (obj == Tab.noObj) {
@@ -549,34 +615,6 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 	}
-	// Local var declaration
-
-	public void visit(ArrrayVariable oneVariable) {
-		Obj obj = Tab.find(oneVariable.getVarName());
-		if (obj == Tab.noObj) {
-			Struct newStruct = new Struct(Struct.Array, globalVarType);
-			Obj inserted = Tab.insert(Obj.Var, oneVariable.getVarName(), newStruct);
-			report_info("Definicija lokalne promenjive metode", oneVariable);
-			printObjNode(inserted);
-		} else {
-			report_error("Lokalna promenjiva metode sa datim imenom je vec definisana", oneVariable);
-			printObjNode(obj);
-		}
-	}
-
-	public void visit(NoArrayVariable noArrayVariable) {
-		Obj obj = Tab.find(noArrayVariable.getVarName());
-		if (obj == Tab.noObj) {
-			Obj inserted = Tab.insert(Obj.Var, noArrayVariable.getVarName(), globalVarType);
-			report_info("Definicija lokalne promenjive metode", noArrayVariable);
-			printObjNode(inserted);
-		} else {
-			report_error("Lokalna promenjiva metode sa datim imenom je vec definisana", noArrayVariable);
-			printObjNode(obj);
-		}
-	}
-
-	// posle kad budemo radili metode
 
 	public void visit(ConstIntType constIntType) {
 		constIntType.struct = Tab.intType;
@@ -591,11 +629,40 @@ public class SemanticPass extends VisitorAdaptor {
 		constBooleanType.struct = boolObj.getType();
 	}
 
-	public void visit(ProgramName progName) {
-		progName.obj = Tab.insert(Obj.Prog, progName.getProgramName(), Tab.noType);
-		Tab.openScope();
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Local var declaration \\
+
+	public void visit(ArrrayVariable oneVariable) {
+		Obj obj = Tab.find(oneVariable.getVarName());
+		if (obj == Tab.noObj || obj.getLevel() == 0) {
+			Struct newStruct = new Struct(Struct.Array, globalVarType);
+			Obj inserted = Tab.insert(Obj.Var, oneVariable.getVarName(), newStruct);
+			report_info("Definicija lokalne promenjive metode", oneVariable);
+			printObjNode(inserted);
+		} else {
+			report_error("Lokalna promenjiva metode sa datim imenom je vec definisana", oneVariable);
+			printObjNode(obj);
+		}
 	}
 
+	public void visit(NoArrayVariable noArrayVariable) {
+		Obj obj = Tab.find(noArrayVariable.getVarName());
+		if (obj == Tab.noObj || obj.getLevel() == 0) {
+			Obj inserted = Tab.insert(Obj.Var, noArrayVariable.getVarName(), globalVarType);
+			report_info("Definicija lokalne promenjive metode", noArrayVariable);
+			printObjNode(inserted);
+		} else {
+			report_error("Lokalna promenjiva metode sa datim imenom je vec definisana", noArrayVariable);
+			printObjNode(obj);
+		}
+	}
+
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Program \\
 	public void visit(Program program) {
 		numOfVariables = Tab.currentScope.getnVars();
 		Tab.chainLocalSymbols(program.getProgramName().obj);
@@ -605,13 +672,29 @@ public class SemanticPass extends VisitorAdaptor {
 		if (!haveMain) {
 			report_error("Program mora imati globalnu metodu main", program);
 		}
+		Tab.dump();
 		if (errorDetected) {
+			log.info("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
+			log.info("                                 GRESKE: 							            ");
+			log.info("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
+			log.info(allErrors.toString());
 			report_error("Semanticka analiza neuspesna", program);
 		} else {
 			report_info("Semanticka analiza uspesno zavrsena", program);
+
 		}
-		Tab.dump();
+
 	}
+
+	public void visit(ProgramName progName) {
+		progName.obj = Tab.insert(Obj.Prog, progName.getProgramName(), Tab.noType);
+		Tab.openScope();
+	}
+
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Type \\
 
 	public void visit(Type type) {
 		Obj typeNode = Tab.find(type.getTypeName());
@@ -631,6 +714,10 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 	}
 
+	/******************************************************************************************************************************/
+
+	/******************************************************************************************************************************/
+	// Helper function for printing \\
 	private void printObjNode(Obj var) {
 		StringBuilder printObj = new StringBuilder();
 		printObj.append(initializefoundGlobal(var));
@@ -678,4 +765,26 @@ public class SemanticPass extends VisitorAdaptor {
 		return errorDetected == false;
 	}
 
+	StringBuilder allErrors = new StringBuilder();
+
+	public void report_error(String message, SyntaxNode info) {
+		errorDetected = true;
+		StringBuilder msg = new StringBuilder(message);
+		int line = (info == null) ? 0 : info.getLine();
+		if (line != 0)
+			msg.append(" na liniji ").append(line);
+		allErrors.append("\n");
+		allErrors.append(msg);
+		log.error(msg.toString());
+	}
+
+	public void report_info(String message, SyntaxNode info) {
+		StringBuilder msg = new StringBuilder(message);
+		int line = (info == null) ? 0 : info.getLine();
+		if (line != 0)
+			msg.append(" na liniji ").append(line);
+		log.info(msg.toString());
+	}
+
+	/******************************************************************************************************************************/
 }

@@ -1,0 +1,323 @@
+INFO  22:45:58,696 - #2 program
+INFO  22:45:58,696 - #51 Rekurzija
+INFO  22:45:58,697 - #51 int
+INFO  22:45:58,697 - #51 k
+INFO  22:45:58,698 - #3 ;
+INFO  22:45:58,698 - #8 {
+INFO  22:45:58,698 - #46 void
+INFO  22:45:58,699 - #51 main
+INFO  22:45:58,699 - #10 (
+INFO  22:45:58,700 - #11 )
+INFO  22:45:58,700 - #8 {
+INFO  22:45:58,701 - #19 do
+INFO  22:45:58,701 - #8 {
+INFO  22:45:58,702 - #22 for
+INFO  22:45:58,702 - #10 (
+INFO  22:45:58,702 - #51 k
+INFO  22:45:58,702 - #43 =
+INFO  22:45:58,703 - #50 0
+INFO  22:45:58,704 - #3 ;
+INFO  22:45:58,705 - #51 k
+INFO  22:45:58,705 - #31 <
+INFO  22:45:58,705 - #50 5
+INFO  22:45:58,706 - #3 ;
+INFO  22:45:58,706 - #51 k
+INFO  22:45:58,707 - #35 ++
+INFO  22:45:58,707 - #11 )
+INFO  22:45:58,746 - #8 {
+INFO  22:45:58,748 - #44 print
+INFO  22:45:58,748 - #10 (
+INFO  22:45:58,748 - #51 k
+INFO  22:45:58,748 - #11 )
+INFO  22:45:58,751 - #3 ;
+INFO  22:45:58,751 - #14 if
+INFO  22:45:58,751 - #10 (
+INFO  22:45:58,751 - #51 k
+INFO  22:45:58,752 - #27 ==
+INFO  22:45:58,752 - #50 3
+INFO  22:45:58,753 - #11 )
+INFO  22:45:58,755 - #21 break
+INFO  22:45:58,755 - #3 ;
+INFO  22:45:58,755 - #9 }
+INFO  22:45:58,757 - #44 print
+INFO  22:45:58,757 - #10 (
+INFO  22:45:58,757 - #50 9
+INFO  22:45:58,757 - #11 )
+INFO  22:45:58,757 - #3 ;
+INFO  22:45:58,758 - #9 }
+INFO  22:45:58,758 - #20 while
+INFO  22:45:58,758 - #10 (
+INFO  22:45:58,758 - #48 true
+INFO  22:45:58,759 - #11 )
+INFO  22:45:58,761 - #3 ;
+INFO  22:45:58,761 - #9 }
+INFO  22:45:58,761 - #9 }
+INFO  22:45:58,773 - Program(
+  ProgramName(
+   Rekurzija
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalOneVariable(
+          GlobalNoArrayVariable(
+           k
+          ) [GlobalNoArrayVariable]
+        ) [GlobalOneVariable]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        NoReturnType(
+        ) [NoReturnType]
+       main
+      ) [MethodRetName]
+      NoMethodFormalParams(
+      ) [NoMethodFormalParams]
+      NoMethodLocalVariableDecl(
+      ) [NoMethodLocalVariableDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          DoStmt(
+            StartDoStmt(
+            ) [StartDoStmt]
+            MatchedStmt(
+              MultipleStatement(
+                StmtList(
+                  StmtList(
+                    NoStmt(
+                    ) [NoStmt]
+                    MatchedStmt(
+                      ForStmt(
+                        StartFor(
+                          AssignmentStmt(
+                            Designator(
+                             k
+                              NoIdentParts(
+                              ) [NoIdentParts]
+                            ) [Designator]
+                            AssignmentExpr(
+                              AssignOp(
+                              ) [AssignOp]
+                              NoTernarExpression(
+                                BasicExpressionWithOutMinus(
+                                  OneTerm(
+                                    TermDescription(
+                                      OneFactor(
+                                        NumConst(
+                                         0
+                                        ) [NumConst]
+                                      ) [OneFactor]
+                                    ) [TermDescription]
+                                  ) [OneTerm]
+                                ) [BasicExpressionWithOutMinus]
+                              ) [NoTernarExpression]
+                            ) [AssignmentExpr]
+                          ) [AssignmentStmt]
+                        ) [StartFor]
+                        ForCondition(
+                          OneConditionOr(
+                            OneConditionAnd(
+                              TwoVariablesCondition(
+                                NoTernarExpression(
+                                  BasicExpressionWithOutMinus(
+                                    OneTerm(
+                                      TermDescription(
+                                        OneFactor(
+                                          Var(
+                                            Designator(
+                                             k
+                                              NoIdentParts(
+                                              ) [NoIdentParts]
+                                            ) [Designator]
+                                          ) [Var]
+                                        ) [OneFactor]
+                                      ) [TermDescription]
+                                    ) [OneTerm]
+                                  ) [BasicExpressionWithOutMinus]
+                                ) [NoTernarExpression]
+                                LessOp(
+                                ) [LessOp]
+                                NoTernarExpression(
+                                  BasicExpressionWithOutMinus(
+                                    OneTerm(
+                                      TermDescription(
+                                        OneFactor(
+                                          NumConst(
+                                           5
+                                          ) [NumConst]
+                                        ) [OneFactor]
+                                      ) [TermDescription]
+                                    ) [OneTerm]
+                                  ) [BasicExpressionWithOutMinus]
+                                ) [NoTernarExpression]
+                              ) [TwoVariablesCondition]
+                            ) [OneConditionAnd]
+                          ) [OneConditionOr]
+                        ) [ForCondition]
+                        IncrementDesignator(
+                          Designator(
+                           k
+                            NoIdentParts(
+                            ) [NoIdentParts]
+                          ) [Designator]
+                        ) [IncrementDesignator]
+                        BeginingStmtFor(
+                        ) [BeginingStmtFor]
+                        StmtList(
+                          StmtList(
+                            NoStmt(
+                            ) [NoStmt]
+                            MatchedStmt(
+                              PrintStmt(
+                                NoTernarExpression(
+                                  BasicExpressionWithOutMinus(
+                                    OneTerm(
+                                      TermDescription(
+                                        OneFactor(
+                                          Var(
+                                            Designator(
+                                             k
+                                              NoIdentParts(
+                                              ) [NoIdentParts]
+                                            ) [Designator]
+                                          ) [Var]
+                                        ) [OneFactor]
+                                      ) [TermDescription]
+                                    ) [OneTerm]
+                                  ) [BasicExpressionWithOutMinus]
+                                ) [NoTernarExpression]
+                                NoAditionalParamPrint(
+                                ) [NoAditionalParamPrint]
+                              ) [PrintStmt]
+                            ) [MatchedStmt]
+                          ) [StmtList]
+                          UnmatchedStmt(
+                            UnmatchedIf(
+                              IFCondition(
+                                OneConditionOr(
+                                  OneConditionAnd(
+                                    TwoVariablesCondition(
+                                      NoTernarExpression(
+                                        BasicExpressionWithOutMinus(
+                                          OneTerm(
+                                            TermDescription(
+                                              OneFactor(
+                                                Var(
+                                                  Designator(
+                                                   k
+                                                    NoIdentParts(
+                                                    ) [NoIdentParts]
+                                                  ) [Designator]
+                                                ) [Var]
+                                              ) [OneFactor]
+                                            ) [TermDescription]
+                                          ) [OneTerm]
+                                        ) [BasicExpressionWithOutMinus]
+                                      ) [NoTernarExpression]
+                                      EqualOp(
+                                      ) [EqualOp]
+                                      NoTernarExpression(
+                                        BasicExpressionWithOutMinus(
+                                          OneTerm(
+                                            TermDescription(
+                                              OneFactor(
+                                                NumConst(
+                                                 3
+                                                ) [NumConst]
+                                              ) [OneFactor]
+                                            ) [TermDescription]
+                                          ) [OneTerm]
+                                        ) [BasicExpressionWithOutMinus]
+                                      ) [NoTernarExpression]
+                                    ) [TwoVariablesCondition]
+                                  ) [OneConditionAnd]
+                                ) [OneConditionOr]
+                              ) [IFCondition]
+                              MatchedStmt(
+                                BreakStmt(
+                                ) [BreakStmt]
+                              ) [MatchedStmt]
+                            ) [UnmatchedIf]
+                          ) [UnmatchedStmt]
+                        ) [StmtList]
+                      ) [ForStmt]
+                    ) [MatchedStmt]
+                  ) [StmtList]
+                  MatchedStmt(
+                    PrintStmt(
+                      NoTernarExpression(
+                        BasicExpressionWithOutMinus(
+                          OneTerm(
+                            TermDescription(
+                              OneFactor(
+                                NumConst(
+                                 9
+                                ) [NumConst]
+                              ) [OneFactor]
+                            ) [TermDescription]
+                          ) [OneTerm]
+                        ) [BasicExpressionWithOutMinus]
+                      ) [NoTernarExpression]
+                      NoAditionalParamPrint(
+                      ) [NoAditionalParamPrint]
+                    ) [PrintStmt]
+                  ) [MatchedStmt]
+                ) [StmtList]
+              ) [MultipleStatement]
+            ) [MatchedStmt]
+            DoCondition(
+              DoConditionStart(
+              ) [DoConditionStart]
+              OneConditionOr(
+                OneConditionAnd(
+                  OneVariableCondition(
+                    NoTernarExpression(
+                      BasicExpressionWithOutMinus(
+                        OneTerm(
+                          TermDescription(
+                            OneFactor(
+                              BoolConst(
+                               true
+                              ) [BoolConst]
+                            ) [OneFactor]
+                          ) [TermDescription]
+                        ) [OneTerm]
+                      ) [BasicExpressionWithOutMinus]
+                    ) [NoTernarExpression]
+                  ) [OneVariableCondition]
+                ) [OneConditionAnd]
+              ) [OneConditionOr]
+            ) [DoCondition]
+          ) [DoStmt]
+        ) [MatchedStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  22:45:58,774 - ===================================
+INFO  22:45:58,774 - Parsiranje uspesno zavrseno!
+INFO  22:45:58,778 - Definicija globalne promenjive na liniji 2
+INFO  22:45:58,779 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  22:45:58,779 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  22:45:58,779 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  22:45:58,779 - Koriscenje promenjive za inc na liniji 11
+INFO  22:45:58,779 - Pristup promenljivoj, metodi, konstanti na liniji 12
+INFO  22:45:58,779 - Poziv funkcije print na liniji 12
+INFO  22:45:58,779 - Pristup promenljivoj, metodi, konstanti na liniji 13
+INFO  22:45:58,779 - Poziv funkcije print na liniji 15
+INFO  22:45:58,780 - Definicija globalne metode na liniji 6
+INFO  22:45:58,780 - Semanticka analiza uspesno zavrsena na liniji 1
+INFO  22:45:58,780 - Semanticka analiza uspesno zavrsena!
+INFO  22:45:58,788 - Generisanje koda je uspesno!

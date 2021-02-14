@@ -1,0 +1,35 @@
+//Inc dec testiranje
+
+program MJ 
+int ai , bia[];
+char ac, bca[];
+bool ab, bba[];
+
+const int aic= 2;
+const char acc = 'a';
+const bool abc = true;
+
+
+{
+
+void main(){
+
+
+ai++;
+ac++;
+ab++;
+aic++;
+acc++;
+abc++;
+
+ai--;
+ac--;
+ab--;
+aic--;
+acc--;
+abc--;
+
+
+
+}
+}

@@ -1,0 +1,53 @@
+//Testirnaje print
+program test302
+int ai, bi[];
+char ac, bc[];
+bool ab, bb[];
+
+const int cai = 2;
+const char cac = 'f';
+const bool cab = true;
+
+{
+
+
+
+int k(){
+
+}
+
+void e(int r, int b){
+
+}
+
+int r(int w, int b){
+
+}
+
+void main(){
+ print(a);
+    //print(2);
+    //print('2');
+   // print(true);
+
+    print(ai);
+    print(bi);
+    print(ac);
+    print(bc);
+    print(ab);
+    print(bb);
+
+    print(cai); 
+    print(cac);
+    print(cab);
+
+    print(e);
+    print(k);
+
+
+//print(e(k(),k()));
+//print(r(k(), k()));
+
+}
+
+}

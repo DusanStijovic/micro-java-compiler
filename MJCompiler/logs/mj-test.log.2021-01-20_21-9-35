@@ -1,0 +1,356 @@
+INFO  21:09:10,311 - #2 program
+INFO  21:09:10,311 - #50 Rekurzija
+INFO  21:09:10,311 - #8 {
+INFO  21:09:10,312 - #50 int
+INFO  21:09:10,313 - #50 sum
+INFO  21:09:10,313 - #10 (
+INFO  21:09:10,313 - #50 int
+INFO  21:09:10,314 - #50 n
+INFO  21:09:10,314 - #11 )
+INFO  21:09:10,314 - #50 int
+INFO  21:09:10,315 - #50 e
+INFO  21:09:10,315 - #3 ;
+INFO  21:09:10,315 - #8 {
+INFO  21:09:10,315 - #43 print
+INFO  21:09:10,315 - #10 (
+INFO  21:09:10,315 - #50 e
+INFO  21:09:10,315 - #11 )
+INFO  21:09:10,317 - #3 ;
+INFO  21:09:10,317 - #14 if
+INFO  21:09:10,317 - #10 (
+INFO  21:09:10,317 - #50 n
+INFO  21:09:10,317 - #28 >
+INFO  21:09:10,317 - #49 0
+INFO  21:09:10,318 - #11 )
+INFO  21:09:10,318 - #8 {
+INFO  21:09:10,318 - #46 return
+INFO  21:09:10,348 - #50 n
+INFO  21:09:10,348 - #37 +
+INFO  21:09:10,348 - #50 sum
+INFO  21:09:10,350 - #10 (
+INFO  21:09:10,350 - #50 n
+INFO  21:09:10,351 - #38 -
+INFO  21:09:10,351 - #49 1
+INFO  21:09:10,352 - #11 )
+INFO  21:09:10,353 - #3 ;
+INFO  21:09:10,354 - #9 }
+INFO  21:09:10,354 - #46 return
+INFO  21:09:10,355 - #49 0
+INFO  21:09:10,355 - #3 ;
+INFO  21:09:10,355 - #9 }
+INFO  21:09:10,355 - #45 void
+INFO  21:09:10,356 - #50 main
+INFO  21:09:10,357 - #10 (
+INFO  21:09:10,357 - #11 )
+INFO  21:09:10,358 - #8 {
+INFO  21:09:10,358 - #43 print
+INFO  21:09:10,359 - #10 (
+INFO  21:09:10,359 - #50 sum
+INFO  21:09:10,359 - #10 (
+INFO  21:09:10,359 - #49 5
+INFO  21:09:10,359 - #11 )
+INFO  21:09:10,359 - #11 )
+INFO  21:09:10,359 - #3 ;
+INFO  21:09:10,359 - #9 }
+INFO  21:09:10,359 - #9 }
+INFO  21:09:10,366 - Program(
+  ProgramName(
+   Rekurzija
+  ) [ProgramName]
+  NoConstVarClassDeclList(
+  ) [NoConstVarClassDeclList]
+  MethodDeclList(
+    MethodDeclList(
+      NoMethodDecList(
+      ) [NoMethodDecList]
+      MethodDecl(
+        MethodRetName(
+          FunctionReturnType(
+            Type(
+             int
+            ) [Type]
+          ) [FunctionReturnType]
+         sum
+        ) [MethodRetName]
+        MethodFormalParams(
+          OneFormalParamDecl(
+            FormalParamDecl(
+              Type(
+               int
+              ) [Type]
+             n
+              NoArrayFormalParam(
+              ) [NoArrayFormalParam]
+            ) [FormalParamDecl]
+          ) [OneFormalParamDecl]
+        ) [MethodFormalParams]
+        MethodLocalVariableDecl(
+          OneVarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariable(
+                NoArrayVariable(
+                 e
+                ) [NoArrayVariable]
+              ) [OneVariable]
+            ) [VariableDecl]
+          ) [OneVarDecl]
+        ) [MethodLocalVariableDecl]
+        StmtList(
+          StmtList(
+            StmtList(
+              NoStmt(
+              ) [NoStmt]
+              MatchedStmt(
+                PrintStmt(
+                  NoTernarExpression(
+                    BasicExpressionWithOutMinus(
+                      OneTerm(
+                        TermDescription(
+                          OneFactor(
+                            Var(
+                              Designator(
+                               e
+                                NoIdentParts(
+                                ) [NoIdentParts]
+                              ) [Designator]
+                            ) [Var]
+                          ) [OneFactor]
+                        ) [TermDescription]
+                      ) [OneTerm]
+                    ) [BasicExpressionWithOutMinus]
+                  ) [NoTernarExpression]
+                  NoAditionalParamPrint(
+                  ) [NoAditionalParamPrint]
+                ) [PrintStmt]
+              ) [MatchedStmt]
+            ) [StmtList]
+            UnmatchedStmt(
+              UnmatchedIf(
+                IFCondition(
+                  OneConditionOr(
+                    OneConditionAnd(
+                      TwoVariablesCondition(
+                        NoTernarExpression(
+                          BasicExpressionWithOutMinus(
+                            OneTerm(
+                              TermDescription(
+                                OneFactor(
+                                  Var(
+                                    Designator(
+                                     n
+                                      NoIdentParts(
+                                      ) [NoIdentParts]
+                                    ) [Designator]
+                                  ) [Var]
+                                ) [OneFactor]
+                              ) [TermDescription]
+                            ) [OneTerm]
+                          ) [BasicExpressionWithOutMinus]
+                        ) [NoTernarExpression]
+                        GreaterOp(
+                        ) [GreaterOp]
+                        NoTernarExpression(
+                          BasicExpressionWithOutMinus(
+                            OneTerm(
+                              TermDescription(
+                                OneFactor(
+                                  NumConst(
+                                   0
+                                  ) [NumConst]
+                                ) [OneFactor]
+                              ) [TermDescription]
+                            ) [OneTerm]
+                          ) [BasicExpressionWithOutMinus]
+                        ) [NoTernarExpression]
+                      ) [TwoVariablesCondition]
+                    ) [OneConditionAnd]
+                  ) [OneConditionOr]
+                ) [IFCondition]
+                MatchedStmt(
+                  MultipleStatement(
+                    StmtList(
+                      NoStmt(
+                      ) [NoStmt]
+                      MatchedStmt(
+                        ReturnExpr(
+                          NoTernarExpression(
+                            BasicExpressionWithOutMinus(
+                              MultipleTerms(
+                                OneTerm(
+                                  TermDescription(
+                                    OneFactor(
+                                      Var(
+                                        Designator(
+                                         n
+                                          NoIdentParts(
+                                          ) [NoIdentParts]
+                                        ) [Designator]
+                                      ) [Var]
+                                    ) [OneFactor]
+                                  ) [TermDescription]
+                                ) [OneTerm]
+                                PlusOp(
+                                ) [PlusOp]
+                                TermDescription(
+                                  OneFactor(
+                                    FuncCallFactor(
+                                      FuncCall(
+                                        FuncCallStart(
+                                          Designator(
+                                           sum
+                                            NoIdentParts(
+                                            ) [NoIdentParts]
+                                          ) [Designator]
+                                        ) [FuncCallStart]
+                                        MethodActualParams(
+                                          OneActualParamDecl(
+                                            NoTernarExpression(
+                                              BasicExpressionWithOutMinus(
+                                                MultipleTerms(
+                                                  OneTerm(
+                                                    TermDescription(
+                                                      OneFactor(
+                                                        Var(
+                                                          Designator(
+                                                           n
+                                                            NoIdentParts(
+                                                            ) [NoIdentParts]
+                                                          ) [Designator]
+                                                        ) [Var]
+                                                      ) [OneFactor]
+                                                    ) [TermDescription]
+                                                  ) [OneTerm]
+                                                  MinusOp(
+                                                  ) [MinusOp]
+                                                  TermDescription(
+                                                    OneFactor(
+                                                      NumConst(
+                                                       1
+                                                      ) [NumConst]
+                                                    ) [OneFactor]
+                                                  ) [TermDescription]
+                                                ) [MultipleTerms]
+                                              ) [BasicExpressionWithOutMinus]
+                                            ) [NoTernarExpression]
+                                          ) [OneActualParamDecl]
+                                        ) [MethodActualParams]
+                                      ) [FuncCall]
+                                    ) [FuncCallFactor]
+                                  ) [OneFactor]
+                                ) [TermDescription]
+                              ) [MultipleTerms]
+                            ) [BasicExpressionWithOutMinus]
+                          ) [NoTernarExpression]
+                        ) [ReturnExpr]
+                      ) [MatchedStmt]
+                    ) [StmtList]
+                  ) [MultipleStatement]
+                ) [MatchedStmt]
+              ) [UnmatchedIf]
+            ) [UnmatchedStmt]
+          ) [StmtList]
+          MatchedStmt(
+            ReturnExpr(
+              NoTernarExpression(
+                BasicExpressionWithOutMinus(
+                  OneTerm(
+                    TermDescription(
+                      OneFactor(
+                        NumConst(
+                         0
+                        ) [NumConst]
+                      ) [OneFactor]
+                    ) [TermDescription]
+                  ) [OneTerm]
+                ) [BasicExpressionWithOutMinus]
+              ) [NoTernarExpression]
+            ) [ReturnExpr]
+          ) [MatchedStmt]
+        ) [StmtList]
+      ) [MethodDecl]
+    ) [MethodDeclList]
+    MethodDecl(
+      MethodRetName(
+        NoReturnType(
+        ) [NoReturnType]
+       main
+      ) [MethodRetName]
+      NoMethodFormalParams(
+      ) [NoMethodFormalParams]
+      NoMethodLocalVariableDecl(
+      ) [NoMethodLocalVariableDecl]
+      StmtList(
+        NoStmt(
+        ) [NoStmt]
+        MatchedStmt(
+          PrintStmt(
+            NoTernarExpression(
+              BasicExpressionWithOutMinus(
+                OneTerm(
+                  TermDescription(
+                    OneFactor(
+                      FuncCallFactor(
+                        FuncCall(
+                          FuncCallStart(
+                            Designator(
+                             sum
+                              NoIdentParts(
+                              ) [NoIdentParts]
+                            ) [Designator]
+                          ) [FuncCallStart]
+                          MethodActualParams(
+                            OneActualParamDecl(
+                              NoTernarExpression(
+                                BasicExpressionWithOutMinus(
+                                  OneTerm(
+                                    TermDescription(
+                                      OneFactor(
+                                        NumConst(
+                                         5
+                                        ) [NumConst]
+                                      ) [OneFactor]
+                                    ) [TermDescription]
+                                  ) [OneTerm]
+                                ) [BasicExpressionWithOutMinus]
+                              ) [NoTernarExpression]
+                            ) [OneActualParamDecl]
+                          ) [MethodActualParams]
+                        ) [FuncCall]
+                      ) [FuncCallFactor]
+                    ) [OneFactor]
+                  ) [TermDescription]
+                ) [OneTerm]
+              ) [BasicExpressionWithOutMinus]
+            ) [NoTernarExpression]
+            NoAditionalParamPrint(
+            ) [NoAditionalParamPrint]
+          ) [PrintStmt]
+        ) [MatchedStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  21:09:10,366 - ===================================
+INFO  21:09:10,366 - Parsiranje uspesno zavrseno!
+INFO  21:09:10,369 - Deklaracija formalnog parametra na liniji 6
+INFO  21:09:10,369 - Definicija lokalne promenjive metode na liniji 7
+INFO  21:09:10,369 - Pristup promenljivoj, metodi, konstanti na liniji 9
+INFO  21:09:10,369 - Poziv funkcije print na liniji 9
+INFO  21:09:10,370 - Pristup promenljivoj, metodi, konstanti na liniji 10
+INFO  21:09:10,370 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  21:09:10,370 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  21:09:10,370 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  21:09:10,370 - Formalni parameter funkcije na liniji 11
+INFO  21:09:10,370 - Poziv funckije na liniji 11
+INFO  21:09:10,372 - Definicija globalne metode na liniji 6
+INFO  21:09:10,372 - Pristup promenljivoj, metodi, konstanti na liniji 19
+INFO  21:09:10,372 - Formalni parameter funkcije na liniji 19
+INFO  21:09:10,372 - Poziv funckije na liniji 19
+INFO  21:09:10,372 - Poziv funkcije print na liniji 19
+INFO  21:09:10,372 - Definicija globalne metode na liniji 17
+INFO  21:09:10,373 - Semanticka analiza uspesno zavrsena na liniji 1
+INFO  21:09:10,373 - Semanticka analiza uspesno zavrsena!
+INFO  21:09:10,380 - Generisanje koda je uspesno!

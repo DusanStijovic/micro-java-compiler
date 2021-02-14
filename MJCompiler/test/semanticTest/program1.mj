@@ -1,0 +1,12 @@
+//const isti tip levo i desno
+
+program test302
+
+const int a = 4, b = 5;
+const bool v  = true, d = false;
+const char k='k', r='r';
+
+ 
+{
+ void main(){}
+}

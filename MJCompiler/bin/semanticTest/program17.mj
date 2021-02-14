@@ -1,0 +1,24 @@
+//Condition 
+
+program MJ 
+int a, b;
+char a1,b1;
+bool a2,b2;
+
+int array1[], array2 [];
+char array3[], array4[];
+
+{
+
+void main(){
+
+
+a = true? 3:4;
+a = false? 'a': 'b';
+
+a = a2? 4:5;
+
+
+}
+
+}

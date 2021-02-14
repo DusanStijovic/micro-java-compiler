@@ -1,0 +1,26 @@
+//visestruko definisanje globalnih promenjivih
+
+//metode main  dve metode formalni parametri
+
+program test302
+
+//Prvi test
+
+
+
+//Drugi test
+const char  a = true,b = true,c = true;
+const  bool a ='2' ,b = 'r', c = 'g'; 
+const int a = 2, b = 4, c = 5;
+
+
+{
+
+
+void main(){
+   a++;
+   a  = b;
+   b = c;
+
+}
+}

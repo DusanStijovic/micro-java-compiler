@@ -1,0 +1,47 @@
+//Condition 
+
+program MJ 
+int a, b;
+char a1,b1;
+bool a2,b2;
+
+int array1[], array2 [];
+char array3[], array4[];
+bool array5[], array6[];
+{
+
+int inc(int a){
+    a++;
+    return a;
+}
+
+
+bool greater(int a, int b){
+	if (a>b){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+void main(){
+a = 5;
+
+  if(a>1){
+  	if(a>2){
+  		if(a>3){
+  			if(a>4){
+  				if(a>5){
+  						print('y');
+  				} else {
+  					print('n');
+  				}
+  				print(eol);
+  			}
+  		}
+  	}
+  }
+
+}
+
+}

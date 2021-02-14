@@ -58,6 +58,7 @@ import java_cup.runtime.Symbol;
 
 //Loop needed terminals
 <YYINITIAL>  "do"		{ return new_symbol(sym.DO, yytext()); }
+<YYINITIAL>  "for"		{ return new_symbol(sym.FOR, yytext()); }
 <YYINITIAL>  "while"	{ return new_symbol(sym.WHILE, yytext()); }
 <YYINITIAL>  "continue"	{ return new_symbol(sym.CONTINUE, yytext()); }
 <YYINITIAL>  "break"	{ return new_symbol(sym.BREAK, yytext()); }

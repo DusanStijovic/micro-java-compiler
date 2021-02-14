@@ -1,0 +1,23 @@
+//Koriscenje konstanti, metoda, promenjivih koje nisu definisane
+
+
+program test302
+
+{
+
+
+void main(){
+   a++;
+   a  = b + 5 * 4;
+   b = c;
+   a--;
+   a = k[g];
+   b = r[4];
+   c();
+   k(a,b);
+
+    read(r);
+    print(k+5);
+
+}
+}

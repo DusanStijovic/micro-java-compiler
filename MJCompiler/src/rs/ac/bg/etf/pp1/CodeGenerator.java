@@ -24,9 +24,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	Stack<Boolean> ternarCond = new Stack<>();
 	Boolean currentTernarCond = false;
 
-	/****************************************************************************************
-	 * Method declaration
-	 */
+	/*********************************************************************************************************/
+	// Method declaration
+
 	public void visit(MethodRetName methodRetName) {
 		if ("main".equals(methodRetName.getMethodName())) {
 			mainPC = Code.pc;
@@ -45,8 +45,8 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.exit);
 			Code.put(Code.return_);
 		} else {
-			Code.put(Code.const_n);
 			Code.put(Code.trap);
+			Code.put(Code.const_n);
 		}
 
 	}
@@ -63,9 +63,9 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	/***********************************************************************************/
 
-	/***********************************************************************************
-	 * Print stmt
-	 */
+	/***********************************************************************************/
+	// Print statement
+
 	public void visit(PrintStmt printStmt) {
 		Code.loadConst(printStmt.getOptionalPrintParam().struct.getKind());
 		if (printStmt.getExpr().struct.getKind() == Struct.Char) {
@@ -98,9 +98,9 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	/*******************************************************************************************/
 
-	/********************************************************************************************************
-	 * Factor
-	 */
+	/*******************************************************************************************/
+	// Factor
+
 	public void visit(BoolConst constBooleanType) {
 		Obj con = Tab.insert(Obj.Con, "$", constBooleanType.struct);
 		con.setLevel(0);
@@ -141,8 +141,6 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.rem);
 		}
 	}
-
-	
 
 	public void visit(MultipleTerms multipleTerms) {
 		if (multipleTerms.getAddOperator().getClass() == PlusOp.class) {
@@ -221,15 +219,16 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Obj findSymbol(String methodName, String varName) {
 		Collection<Obj> symbols = null;
 		if (methodName != null) {
-			// pretrazi lokalne promenjive metoda
 			symbols = programObj.getLocalSymbols().stream().filter((Obj obj) -> {
 				return obj.getName().equals(methodName);
-			}).findFirst().orElse(null).getLocalSymbols();
-			Obj help = symbols.stream().filter((Obj obj) -> {
-				return obj.getName().equals(varName);
-			}).findFirst().orElse(null);
-			if (help != null)
-				return help;
+			}).findFirst().orElse(new Obj(Obj.Meth, "$", Tab.noType)).getLocalSymbols();
+			if (symbols != null) {
+				Obj help = symbols.stream().filter((Obj obj) -> {
+					return obj.getName().equals(varName);
+				}).findFirst().orElse(null);
+				if (help != null)
+					return help;
+			}
 		}
 		symbols = programObj.getLocalSymbols();
 		Obj symbol = symbols.stream().filter((Obj obj) -> {
@@ -334,6 +333,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	/**************************************************************************************************************/
 
+	
 	/*************************************************************************************
 	 * Condtition
 	 * 
@@ -382,8 +382,6 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	private Stack<Integer> leftOrToFixUp = new Stack<>();
 
-	
-	
 	public void visit(LeftOr leftOr) {
 		Code.put(Code.dup);
 		Code.put(Code.const_n);
@@ -465,6 +463,8 @@ public class CodeGenerator extends VisitorAdaptor {
 	Stack<Integer> doWhileAddressStart = new Stack<>();
 	Stack<Integer> doWhileConditionStart = new Stack<>();
 
+	Stack<Integer> forAdressStart = new Stack<>();
+
 	public void visit(StartDoStmt startDoStmt) {
 		doWhileAddressStart.push(Code.pc);
 		breakPatchAddress.push(new ArrayList<>());
@@ -494,7 +494,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	public void visit(ContinueStmt continueStmt) {
 		continuePatchAddress.peek().add(Code.pc + 1);
-		Code.putJump(Code.pc);
+		Code.putJump(0);
 	}
 
 	public void visit(DoStmt doStmt) {
@@ -502,6 +502,49 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.fixup(address);
 		}
 	}
+
 	/**********************************************************************************************/
+
+	Stack<Integer> fixUpEntryFor = new Stack<Integer>();
+	Stack<Integer> fixUpEndFor = new Stack<Integer>();
+	Stack<Integer> beginingEndFor = new Stack<Integer>();
+
+	public void visit(ForCondition forCondition) {
+		Code.put(Code.const_1);
+		fixUpEntryFor.push(Code.pc + 1);
+		Code.putFalseJump(Code.eq, Code.pc);// Za kraj petlje
+
+		fixUpEndFor.push(Code.pc + 1);
+		Code.putJump(Code.pc);
+		beginingEndFor.push(Code.pc);// Pocetak uslova
+	}
+
+	public void visit(StartFor startFor) {
+		doWhileAddressStart.push(Code.pc);
+		breakPatchAddress.push(new ArrayList<>());
+		continuePatchAddress.push(new ArrayList<>());
+
+	}
+
+	public void visit(BeginingStmtFor beginingStmtFor) {
+		Code.putJump(doWhileAddressStart.pop());
+		Code.fixup(fixUpEndFor.pop());
+	}
+
+	public void visit(ForStmt forStmt) {
+		int saveBegining = beginingEndFor.pop();
+		Code.putJump(saveBegining);
+		Code.fixup(fixUpEntryFor.pop());
+
+		for (int address : breakPatchAddress.pop()) {
+			Code.fixup(address);
+		}
+
+		for (int address : continuePatchAddress.pop()) {
+			int oldPC = Code.get2(address);
+			Code.put2(address, saveBegining + oldPC );
+		}
+
+	}
 
 }

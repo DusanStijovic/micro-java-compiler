@@ -1,0 +1,61 @@
+//Condition 
+
+program MJ 
+int a, b;
+char a1,b1;
+bool a2,b2;
+
+int array1[], array2 [];
+char array3[], array4[];
+
+{
+
+void main(){
+
+
+    if(a>b){
+
+    }
+
+
+    if(a){
+        
+    }
+	if(a1>b1){
+
+	}
+	
+
+if(a>a1){
+
+}
+
+if(a>a2){
+
+}
+
+if(a2 && a1){
+
+}
+
+
+
+if(a2 && a){
+
+}
+
+
+if(array1==array3){
+
+}
+
+if(array1==array2){
+}
+
+if(array1>array3){
+}
+
+if(array1>array2){
+}
+}
+}

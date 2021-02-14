@@ -1,0 +1,48 @@
+
+
+program MJ 
+int i,c;
+int a, b;
+{
+
+void proba(){
+    a++;
+    print(a);
+    print(eol);
+}
+void main()
+bool e, prr, k;
+char pr;
+int c, r,a,b;
+{
+
+e = false;
+	pr = true ? (e ? 'k':'a') : 'b';
+	print(pr);
+	a = 4;
+	k = true;
+	prr = false;
+	c = 2;
+	r = 4;
+	if(a>=b && k || e &&  k){
+	c = 5;
+		if (prr) {
+			c = 4;
+		} else {
+			c = 3;
+		}
+	} else {
+		c  = 9;
+		
+	}
+	
+	print(c);
+	print(eol);
+	print(pr);
+	print(eol);
+	proba();
+	print(a);
+}
+
+
+}

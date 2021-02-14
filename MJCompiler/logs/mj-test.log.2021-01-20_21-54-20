@@ -1,0 +1,34 @@
+INFO  21:53:12,452 - #2 program
+INFO  21:53:12,452 - #50 Rekurzija
+INFO  21:53:12,452 - #50 int
+INFO  21:53:12,453 - #50 k
+INFO  21:53:12,453 - #3 ;
+INFO  21:53:12,454 - #8 {
+INFO  21:53:12,454 - #45 void
+INFO  21:53:12,455 - #50 main
+INFO  21:53:12,455 - #10 (
+INFO  21:53:12,456 - #11 )
+INFO  21:53:12,456 - #8 {
+INFO  21:53:12,456 - #50 for
+INFO  21:53:12,457 - #10 (
+INFO  21:53:12,458 - #50 k
+INFO  21:53:12,459 - #42 =
+ERROR 21:53:12,459 - 
+Sintaksna greska na liniji 9
+INFO  21:53:12,459 - #49 0
+INFO  21:53:12,459 - #3 ;
+INFO  21:53:12,459 - #50 k
+INFO  21:53:12,459 - #30 <
+INFO  21:53:12,459 - #49 5
+INFO  21:53:12,459 - #3 ;
+INFO  21:53:12,459 - #50 k
+INFO  21:53:12,459 - #34 ++
+INFO  21:53:12,460 - #11 )
+INFO  21:53:12,498 - #8 {
+INFO  21:53:12,498 - #9 }
+INFO  21:53:12,498 - #9 }
+ERROR 21:53:12,498 - Izvrsen oporavak do ; ili ) u liniji 7
+INFO  21:53:12,500 - #9 }
+ERROR 21:53:12,500 - 
+Sintaksna greska na liniji 16
+ERROR 21:53:12,500 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 16

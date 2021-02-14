@@ -1,0 +1,26 @@
+//Do while 
+
+program MJ 
+int i,c;
+
+{
+
+void main(){
+
+	i = 0;
+	c = 0;
+	do {
+       c = 0;
+        do{
+            c++;
+        }  while(c<8);
+	i++;
+	c++;
+	} while(i<=8);
+	
+	print(i);
+	print(eol);
+	print(c);
+	print(eol);
+}
+}

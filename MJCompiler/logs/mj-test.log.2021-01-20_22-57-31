@@ -1,0 +1,278 @@
+INFO  22:57:26,576 - #2 program
+INFO  22:57:26,576 - #51 Rekurzija
+INFO  22:57:26,577 - #51 int
+INFO  22:57:26,577 - #51 k
+INFO  22:57:26,578 - #3 ;
+INFO  22:57:26,578 - #8 {
+INFO  22:57:26,578 - #46 void
+INFO  22:57:26,579 - #51 main
+INFO  22:57:26,579 - #10 (
+INFO  22:57:26,580 - #11 )
+INFO  22:57:26,580 - #8 {
+INFO  22:57:26,581 - #22 for
+INFO  22:57:26,581 - #10 (
+INFO  22:57:26,581 - #51 k
+INFO  22:57:26,581 - #43 =
+INFO  22:57:26,582 - #50 0
+INFO  22:57:26,583 - #3 ;
+INFO  22:57:26,584 - #51 k
+INFO  22:57:26,584 - #31 <
+INFO  22:57:26,584 - #50 5
+INFO  22:57:26,585 - #3 ;
+INFO  22:57:26,586 - #51 k
+INFO  22:57:26,586 - #35 ++
+INFO  22:57:26,586 - #11 )
+INFO  22:57:26,586 - #8 {
+INFO  22:57:26,587 - #14 if
+INFO  22:57:26,623 - #10 (
+INFO  22:57:26,623 - #51 k
+INFO  22:57:26,623 - #27 ==
+INFO  22:57:26,623 - #50 3
+INFO  22:57:26,625 - #11 )
+INFO  22:57:26,626 - #18 continue
+INFO  22:57:26,626 - #3 ;
+INFO  22:57:26,626 - #44 print
+INFO  22:57:26,628 - #10 (
+INFO  22:57:26,628 - #51 k
+INFO  22:57:26,628 - #11 )
+INFO  22:57:26,630 - #3 ;
+INFO  22:57:26,630 - #9 }
+INFO  22:57:26,630 - #44 print
+INFO  22:57:26,631 - #10 (
+INFO  22:57:26,631 - #50 9
+INFO  22:57:26,631 - #11 )
+INFO  22:57:26,631 - #3 ;
+INFO  22:57:26,631 - #9 }
+INFO  22:57:26,632 - #9 }
+INFO  22:57:26,640 - Program(
+  ProgramName(
+   Rekurzija
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalOneVariable(
+          GlobalNoArrayVariable(
+           k
+          ) [GlobalNoArrayVariable]
+        ) [GlobalOneVariable]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        NoReturnType(
+        ) [NoReturnType]
+       main
+      ) [MethodRetName]
+      NoMethodFormalParams(
+      ) [NoMethodFormalParams]
+      NoMethodLocalVariableDecl(
+      ) [NoMethodLocalVariableDecl]
+      StmtList(
+        StmtList(
+          NoStmt(
+          ) [NoStmt]
+          MatchedStmt(
+            ForStmt(
+              StartFor(
+                AssignmentStmt(
+                  Designator(
+                   k
+                    NoIdentParts(
+                    ) [NoIdentParts]
+                  ) [Designator]
+                  AssignmentExpr(
+                    AssignOp(
+                    ) [AssignOp]
+                    NoTernarExpression(
+                      BasicExpressionWithOutMinus(
+                        OneTerm(
+                          TermDescription(
+                            OneFactor(
+                              NumConst(
+                               0
+                              ) [NumConst]
+                            ) [OneFactor]
+                          ) [TermDescription]
+                        ) [OneTerm]
+                      ) [BasicExpressionWithOutMinus]
+                    ) [NoTernarExpression]
+                  ) [AssignmentExpr]
+                ) [AssignmentStmt]
+              ) [StartFor]
+              ForCondition(
+                OneConditionOr(
+                  OneConditionAnd(
+                    TwoVariablesCondition(
+                      NoTernarExpression(
+                        BasicExpressionWithOutMinus(
+                          OneTerm(
+                            TermDescription(
+                              OneFactor(
+                                Var(
+                                  Designator(
+                                   k
+                                    NoIdentParts(
+                                    ) [NoIdentParts]
+                                  ) [Designator]
+                                ) [Var]
+                              ) [OneFactor]
+                            ) [TermDescription]
+                          ) [OneTerm]
+                        ) [BasicExpressionWithOutMinus]
+                      ) [NoTernarExpression]
+                      LessOp(
+                      ) [LessOp]
+                      NoTernarExpression(
+                        BasicExpressionWithOutMinus(
+                          OneTerm(
+                            TermDescription(
+                              OneFactor(
+                                NumConst(
+                                 5
+                                ) [NumConst]
+                              ) [OneFactor]
+                            ) [TermDescription]
+                          ) [OneTerm]
+                        ) [BasicExpressionWithOutMinus]
+                      ) [NoTernarExpression]
+                    ) [TwoVariablesCondition]
+                  ) [OneConditionAnd]
+                ) [OneConditionOr]
+              ) [ForCondition]
+              IncrementDesignator(
+                Designator(
+                 k
+                  NoIdentParts(
+                  ) [NoIdentParts]
+                ) [Designator]
+              ) [IncrementDesignator]
+              BeginingStmtFor(
+              ) [BeginingStmtFor]
+              StmtList(
+                StmtList(
+                  NoStmt(
+                  ) [NoStmt]
+                  UnmatchedStmt(
+                    UnmatchedIf(
+                      IFCondition(
+                        OneConditionOr(
+                          OneConditionAnd(
+                            TwoVariablesCondition(
+                              NoTernarExpression(
+                                BasicExpressionWithOutMinus(
+                                  OneTerm(
+                                    TermDescription(
+                                      OneFactor(
+                                        Var(
+                                          Designator(
+                                           k
+                                            NoIdentParts(
+                                            ) [NoIdentParts]
+                                          ) [Designator]
+                                        ) [Var]
+                                      ) [OneFactor]
+                                    ) [TermDescription]
+                                  ) [OneTerm]
+                                ) [BasicExpressionWithOutMinus]
+                              ) [NoTernarExpression]
+                              EqualOp(
+                              ) [EqualOp]
+                              NoTernarExpression(
+                                BasicExpressionWithOutMinus(
+                                  OneTerm(
+                                    TermDescription(
+                                      OneFactor(
+                                        NumConst(
+                                         3
+                                        ) [NumConst]
+                                      ) [OneFactor]
+                                    ) [TermDescription]
+                                  ) [OneTerm]
+                                ) [BasicExpressionWithOutMinus]
+                              ) [NoTernarExpression]
+                            ) [TwoVariablesCondition]
+                          ) [OneConditionAnd]
+                        ) [OneConditionOr]
+                      ) [IFCondition]
+                      MatchedStmt(
+                        ContinueStmt(
+                        ) [ContinueStmt]
+                      ) [MatchedStmt]
+                    ) [UnmatchedIf]
+                  ) [UnmatchedStmt]
+                ) [StmtList]
+                MatchedStmt(
+                  PrintStmt(
+                    NoTernarExpression(
+                      BasicExpressionWithOutMinus(
+                        OneTerm(
+                          TermDescription(
+                            OneFactor(
+                              Var(
+                                Designator(
+                                 k
+                                  NoIdentParts(
+                                  ) [NoIdentParts]
+                                ) [Designator]
+                              ) [Var]
+                            ) [OneFactor]
+                          ) [TermDescription]
+                        ) [OneTerm]
+                      ) [BasicExpressionWithOutMinus]
+                    ) [NoTernarExpression]
+                    NoAditionalParamPrint(
+                    ) [NoAditionalParamPrint]
+                  ) [PrintStmt]
+                ) [MatchedStmt]
+              ) [StmtList]
+            ) [ForStmt]
+          ) [MatchedStmt]
+        ) [StmtList]
+        MatchedStmt(
+          PrintStmt(
+            NoTernarExpression(
+              BasicExpressionWithOutMinus(
+                OneTerm(
+                  TermDescription(
+                    OneFactor(
+                      NumConst(
+                       9
+                      ) [NumConst]
+                    ) [OneFactor]
+                  ) [TermDescription]
+                ) [OneTerm]
+              ) [BasicExpressionWithOutMinus]
+            ) [NoTernarExpression]
+            NoAditionalParamPrint(
+            ) [NoAditionalParamPrint]
+          ) [PrintStmt]
+        ) [MatchedStmt]
+      ) [StmtList]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  22:57:26,641 - ===================================
+INFO  22:57:26,641 - Parsiranje uspesno zavrseno!
+INFO  22:57:26,646 - Definicija globalne promenjive na liniji 2
+INFO  22:57:26,646 - Pristup promenljivoj, metodi, konstanti na liniji 10
+INFO  22:57:26,646 - Pristup promenljivoj, metodi, konstanti na liniji 10
+INFO  22:57:26,647 - Pristup promenljivoj, metodi, konstanti na liniji 10
+INFO  22:57:26,647 - Koriscenje promenjive za inc na liniji 10
+INFO  22:57:26,647 - Pristup promenljivoj, metodi, konstanti na liniji 11
+INFO  22:57:26,647 - Pristup promenljivoj, metodi, konstanti na liniji 12
+INFO  22:57:26,647 - Poziv funkcije print na liniji 12
+INFO  22:57:26,647 - Poziv funkcije print na liniji 15
+INFO  22:57:26,647 - Definicija globalne metode na liniji 6
+INFO  22:57:26,647 - Semanticka analiza uspesno zavrsena na liniji 1
+INFO  22:57:26,648 - Semanticka analiza uspesno zavrsena!
+INFO  22:57:26,656 - Generisanje koda je uspesno!

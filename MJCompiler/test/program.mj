@@ -1,0 +1,26 @@
+program Rekurzija 
+int k;
+
+{
+
+void main()
+int l;
+{
+
+	
+	for (k=0; k<5; k++){
+		if(k==3) continue;
+		print(k);
+		for( l= 4; l>0 ; l--){
+			print(k);
+		}
+		//if(k==3) break;
+	}
+	print(9);
+	
+	
+	
+}
+
+
+}

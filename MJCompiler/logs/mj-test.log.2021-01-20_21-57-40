@@ -1,0 +1,58 @@
+INFO  21:56:47,040 - #2 program
+INFO  21:56:47,040 - #51 Rekurzija
+INFO  21:56:47,040 - #51 int
+INFO  21:56:47,041 - #51 k
+INFO  21:56:47,041 - #3 ;
+INFO  21:56:47,041 - #8 {
+INFO  21:56:47,042 - #46 void
+INFO  21:56:47,042 - #51 main
+INFO  21:56:47,043 - #10 (
+INFO  21:56:47,043 - #11 )
+INFO  21:56:47,044 - #8 {
+INFO  21:56:47,044 - #9 }
+INFO  21:56:47,044 - #9 }
+INFO  21:56:47,048 - Program(
+  ProgramName(
+   Rekurzija
+  ) [ProgramName]
+  ConstVarClassDeclList(
+    NoConstVarClassDeclList(
+    ) [NoConstVarClassDeclList]
+    GlobalVariableDecl(
+      GlobalVariableDeclaration(
+        Type(
+         int
+        ) [Type]
+        GlobalOneVariable(
+          GlobalNoArrayVariable(
+           k
+          ) [GlobalNoArrayVariable]
+        ) [GlobalOneVariable]
+      ) [GlobalVariableDeclaration]
+    ) [GlobalVariableDecl]
+  ) [ConstVarClassDeclList]
+  MethodDeclList(
+    NoMethodDecList(
+    ) [NoMethodDecList]
+    MethodDecl(
+      MethodRetName(
+        NoReturnType(
+        ) [NoReturnType]
+       main
+      ) [MethodRetName]
+      NoMethodFormalParams(
+      ) [NoMethodFormalParams]
+      NoMethodLocalVariableDecl(
+      ) [NoMethodLocalVariableDecl]
+      NoStmt(
+      ) [NoStmt]
+    ) [MethodDecl]
+  ) [MethodDeclList]
+) [Program]
+INFO  21:56:47,075 - ===================================
+INFO  21:56:47,075 - Parsiranje uspesno zavrseno!
+INFO  21:56:47,078 - Definicija globalne promenjive na liniji 2
+INFO  21:56:47,079 - Definicija globalne metode na liniji 6
+INFO  21:56:47,079 - Semanticka analiza uspesno zavrsena na liniji 1
+INFO  21:56:47,079 - Semanticka analiza uspesno zavrsena!
+INFO  21:56:47,082 - Generisanje koda je uspesno!

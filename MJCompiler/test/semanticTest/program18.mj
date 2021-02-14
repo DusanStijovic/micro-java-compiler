@@ -1,0 +1,23 @@
+//Condition 
+
+program MJ 
+int a, b;
+char a1,b1;
+bool a2,b2;
+
+int array1[], array2 [];
+char array3[], array4[];
+
+{
+
+void main(){
+
+a = 4;
+print(4);
+array1 = new int[10];
+print(len(array1));
+array1 = null;
+print(len(array1));
+}
+
+}

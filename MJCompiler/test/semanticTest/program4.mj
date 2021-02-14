@@ -1,0 +1,42 @@
+    //metode main  dve metode formalni parametri
+//Svaki test pustitit posebno
+program test302
+
+
+int a[];
+char b[]; 
+bool c[];
+
+
+int int_;
+char char_;
+bool bool_;
+ 
+{
+
+//Test1
+    int main(){}
+    int main(){}
+    int main(){return 2;}
+
+
+  //Test2  
+   void main(){}
+    int main(){}
+    int main(){return 2;}
+
+
+//Test3
+    int main(int a, char b){}
+    int main(){}
+    int main(){return 2;}
+
+//Test4
+    int main()
+        int a, char b;
+    {}
+    
+    int main(){}
+    int main(){return 2;}
+
+}

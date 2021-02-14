@@ -1,0 +1,33 @@
+// continue i break i petlje
+program test302
+
+
+{
+
+
+void main(){
+
+do {
+ break;
+ continue;
+}
+ while(true);
+
+ break;
+ continue;
+
+ do {
+     do{
+         break;
+         continue;
+     } while(false);
+
+     break;
+     continue;
+ }while(true);
+
+ break;
+ continue;
+
+}
+}

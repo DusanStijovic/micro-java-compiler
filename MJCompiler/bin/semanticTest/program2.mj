@@ -1,0 +1,26 @@
+//metode ima, nema ret i povratni tip 
+
+program test302
+
+
+
+ 
+{
+
+    void noret(){}
+    void ret(){return;}
+
+    int ret_int(){ return 2;}
+    //No ret 
+    int no_ret_int(){}
+
+    char ret_char(){ return '2';}
+    //No ret 
+    char no_ret_chrar(return) 
+
+    bool ret_bool(){return true;}
+    bool no_ret_bool(){}
+
+ void main(){}
+
+}

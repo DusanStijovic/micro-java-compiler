@@ -1,0 +1,33 @@
+//Expression 
+program MJ 
+int ai , bia[];
+char ac, bca[];
+bool ab, bba[];
+
+const int aic= 2;
+const char acc = 'a';
+const bool abc = true;
+
+
+{
+
+void main()
+int a;
+
+{
+
+a = ai * 2 + ai - ai/2;
+a = aic + a;
+
+a = ac;
+a = ac + 5;
+a = ab;
+a = ab + 5;
+a = bia;
+a = bia[2] * 3 + ai;
+a = bca[2] * 2 + ac;
+a = bba[3] * 4  + ab; 
+
+
+}
+}

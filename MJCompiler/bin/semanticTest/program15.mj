@@ -1,0 +1,51 @@
+//Formalni i aktuelni parametri metoda
+
+
+//Expression 
+program MJ 
+int ai , bia[];
+char ac, bca[];
+bool ab, bba[];
+
+const int aic= 2;
+const char acc = 'a';
+const bool abc = true;
+
+
+{
+void oneParam(int a){
+
+}#
+
+void multipleparam(int a, bool b, char c){
+
+}
+
+void arrayParams(int a[], char k[]){
+
+}
+
+
+
+void main()
+int a, aa[];
+char c, ca[];
+bool b, ba[];
+
+{
+
+oneParam(a);
+oneParam();
+oneParam(a,b);
+
+multipleparam(a,b,c);
+multipleparam(c,b,a);
+multipleparam(b,c,a);
+
+
+arrayParams(a,b);
+arrayParams(aa,ca);
+arrayParams(b,ba);
+
+}
+}
